@@ -22,7 +22,8 @@
   /* Font for text */
   --fontMain: "Roboto", sans-serif;
 
-  --productListImageHeight: 400px;
+  --productCardMaxWidth: 300px;
+  --productListImageMaxHeight: 350px;
 
   --maxWidth: 1280px;
 

@@ -7,7 +7,7 @@ img {
 main {
   display: grid;
   > p,
-  #btnSortBy {
+  .sort {
     justify-self: right;
   }
 
@@ -20,19 +20,20 @@ main {
     flex-flow: column nowrap;
     gap: 20px;
 
-    @media (width > 390px) {
+    @media (width > 665px) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
     }
 
-    @media (width > 780px) {
+    @media (width > 998px) {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
     }
 
     article {
+      max-width: var(--productCardMaxWidth);
       img {
-        height: var(--productListImageHeight);
+        height: var(--productListImageMaxHeight);
         width: 100%;
       }
     }
@@ -41,7 +42,7 @@ main {
   .hidden {
     display: none;
   }
-  .sort {
+  #sort {
     position: relative;
   }
   #sortDropdown {
