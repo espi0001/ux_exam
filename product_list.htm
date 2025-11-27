@@ -5,10 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products | UX</title>
+    <link rel="stylesheet" href="css/product_list.css">
+    <script type="module" src="js/products.js"></script>
 </head>
 
 <body>
 
+    <header>
+        <h2>Products</h2>
+    </header>
+    <main>
+        <div class="sort">
+            <button id="btnSortBy">Sort by</button>
+            <div id="sortDropdown" class="hidden">
+                <button data-sort="price-asc">Price: Low → High</button>
+                <button data-sort="price-desc">Price: High → Low</button>
+            </div>
+        </div>
+        <p>Showing <span id="shownCount"></span> of <span id="totalCount"></span></p>
+        <section id="productList">
+        </section>
+        <button id="btnLoadMore">Load more</button>
+    </main>
+
 </body>
+<template id="singleProduct">
+    <article>
+        <img src="" alt="">
+        <div>
+            <h3></h3>
+            <p></p>
+            <a href="">View product</a>
+        </div>
+    </article>
+</template>
 
 </html>

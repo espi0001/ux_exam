@@ -21,4 +21,6 @@
 
   /* Font for text */
   --fontMain: "Roboto", sans-serif;
+
+  --productListImageHeight: 400px;
 }
