@@ -5,10 +5,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up | UX</title>
+    <link rel="stylesheet" href="css/signup.css">
+    <script src="js/signup.js" type="module"></script>
 </head>
 
 <body>
 
+    <main>
+        <div class="auth-container">
+            <div class="auth-tabs">
+                <a href="signup.htm" class="tab active">Sign up</a>
+                <a href="login.htm" class="tab">Login</a>
+            </div>
+
+            <section class="auth-form">
+                <h2>Sign Up</h2>
+                <p>Enter your information below to proceed. If you already have an account, please log in instead.</p>
+
+                <form id="frmSignup">
+
+                    <div class="form-group">
+                        <label for="txtEmail">Email</label>
+                        <input type="email" id="txtEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtPassword">Password</label>
+                        <input type="password" id="txtPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtRepeatPassword">Repeat password</label>
+                        <input type="password" id="txtRepeatPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn-primary">Sign up</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+    <dialog id="mdlInfo">
+        <header>
+            <h1></h1>
+            <button class="close">&times;</button>
+        </header>
+        <p></p>
+    </dialog>
 </body>
 
 </html>
