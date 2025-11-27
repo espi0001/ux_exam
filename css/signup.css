@@ -1,0 +1,209 @@
+@import "styles.css";
+@import "_dialog.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  font-family: var(--fontMain);
+
+  > header,
+  > footer {
+    padding: 0.5rem 1rem;
+    text-align: center;
+    color: var(--colorTextPrimary);
+    background-color: var(--colourBgMain);
+  }
+}
+
+button {
+  color: var(--colorTextSecondary);
+  background-color: var(--buttonPrimaryColor);
+  border: none;
+  cursor: pointer;
+}
+
+/* STYLING FOR SIGNUP/LOGIN PAGES */
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 12.5rem);
+  padding: 1rem;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 100%;
+  box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
+}
+
+.auth-tabs {
+  display: flex;
+  border-bottom: 0.125rem solid var(--bgColorSecondary);
+
+  .tab {
+    flex: 1;
+    text-align: center;
+    padding: 0.75rem;
+    text-decoration: none;
+    color: var(--colorTextPrimary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    background-color: var(--bgColorSecondary);
+    transition: background-color 0.3s;
+
+    /* Pseudo-class for hover state */
+    &:hover {
+      background-color: #e8e8e8;
+    }
+
+    &.active {
+      background-color: var(--bgColorPrimary);
+      color: var(--colorTextPrimary);
+      border-bottom: 0.1875rem solid var(--buttonPrimaryColor);
+    }
+  }
+}
+
+.auth-form {
+  padding: 1.5rem;
+  background-color: var(--bgColorPrimary);
+
+  h2 {
+    font-family: var(--fontHeader);
+    text-align: center;
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+  }
+
+  p {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+/* Form styling - works for both #frmSignup and #frmLogin */
+#frmSignup,
+#frmLogin {
+  .form-group {
+    margin-bottom: 1.25rem;
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 0.0625rem solid #ddd;
+      border-radius: 0.25rem;
+      font-size: 1rem;
+
+      /* Pseudo-class for focus state */
+      &:focus {
+        outline: none;
+        border-color: var(--buttonPrimaryColor);
+      }
+    }
+
+    /* Link styling for "Forgot password" */
+    a {
+      color: var(--buttonPrimaryColor);
+      text-decoration: none;
+      font-size: 0.875rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .btn-primary {
+      width: 100%;
+      padding: 0.875rem;
+      background-color: var(--buttonPrimaryColor);
+      color: white;
+      border: none;
+      border-radius: 0.25rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      /* Pseudo-class for hover state */
+      &:hover {
+        background-color: #7b1fa2;
+      }
+
+      /* Pseudo-class for active state */
+      &:active {
+        background-color: #6a1b8a;
+      }
+    }
+  }
+}
+
+/* Tablet screens (37.5em = 600px) */
+@media (min-width: 37.5em) {
+  main {
+    padding: 2rem 1rem;
+    min-height: calc(100vh - 14rem);
+  }
+
+  .auth-container {
+    max-width: 31.25rem;
+  }
+
+  .auth-tabs .tab {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .auth-form {
+    padding: 2rem;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  #frmSignup .form-group,
+  #frmLogin .form-group {
+    margin-bottom: 1.5rem;
+
+    label {
+      font-size: 1rem;
+    }
+  }
+}
+
+/* Desktop screens (64em = 1024px) */
+@media (min-width: 64em) {
+  main {
+    min-height: calc(100vh - 15rem);
+  }
+
+  .auth-container {
+    max-width: 34.375rem;
+  }
+
+  .auth-form {
+    padding: 2.5rem;
+  }
+}
