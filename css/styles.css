@@ -24,6 +24,15 @@ body {
     font-family: var(--fontMain);
     background-color: var(--bgColorPrimary);
     color: var(--colorTextPrimary);
+    font-family: var(--fontMain);
+
+    >header,
+    >footer {
+        padding: 0.5rem 1rem;
+        text-align: center;
+        color: var(--colorTextPrimary);
+        background-color: var(--colourBgMain);
+    }
 
 /* NAVIGATION */
     header {
@@ -111,4 +120,11 @@ body {
             }
         }
     }
+}
+
+.primary_btn {
+    color: var(--colorTextSecondary);
+    background-color: var(--buttonPrimaryColor);
+    border: none;
+    cursor: pointer;
 }
