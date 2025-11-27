@@ -23,4 +23,10 @@
   --fontMain: "Roboto", sans-serif;
 
   --productListImageHeight: 400px;
+
+  --maxWidth: 1280px;
+
+  /* --maxWidthL: 1024; */
+
+  --imgMaxWidth: ;
 }
