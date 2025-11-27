@@ -10,7 +10,47 @@
 </head>
 
 <body>
+    <header>
+        <div class="max_width nav-styling">
 
+            <div>
+                <h1 class="logo"><a href="index.html"><span>UX</span>SHOP</a></h1>
+
+                <!-- Main -->
+                <nav id="navMain">
+                    <ul class="menu">
+                        <li><a href="" title="Men's clothing page">Men's clothing</a></li>
+                        <!-- burde vi have data-target eller data-category? -->
+                        <li><a href="" title="Womens's clothing page">Womens's clothing</a></li>
+                        <li><a href="" title="Jewelery page">Jewelery</a></li>
+                        <li><a href="" title="Electronics page">Electronics</a></li>
+                    </ul>
+
+                    <div class="burger">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- Utility -->
+            <nav id="navUtility">
+                <div id="account">
+                    <button class="icon-button" id="accountButton">
+                        <img src="assets/icons/account_big.svg" alt="Account">
+                    </button>
+                </div>
+
+                <div id="cart">
+                    <button class="icon-button" id="cartButton">
+                        <img src="assets/icons/cart_big.svg" alt="Cart">
+                    </button>
+                </div>
+            </nav>
+
+        </div>
+    </header>
     <main>
         <div class="auth-container">
             <div class="auth-tabs">
@@ -37,7 +77,7 @@
                         <input type="password" id="txtRepeatPassword" required>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn-primary">Sign up</button>
+                        <button type="submit" class="primary_btn">Sign up</button>
                     </div>
                 </form>
             </section>

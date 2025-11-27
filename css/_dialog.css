@@ -1,6 +1,6 @@
 dialog {
   margin: 6rem auto;
-  border: 4px solid var(--colourBgMain);
+  border: 4px solid var(--bgColorPrimary);
 
   > * {
     padding: 0.5rem 1rem;
@@ -12,7 +12,7 @@ dialog {
     justify-content: space-between;
     font-size: 0.7rem;
     color: var(--colorTextPrimary);
-    background-color: var(--colourBgMain);
+    background-color: var(--bgColorPrimary);
 
     button {
       font-size: 1.2rem;

@@ -6,46 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | UX</title>
     <link rel="stylesheet" href="css/styles.css">
-    <!-- <script type="module" src="js/menu.js"></script> -->
+    <script type="module" src="js/menu.js"></script>
 </head>
 
 <body>
     <header>
-        <div class="max_width nav-styling">
-
-            <div class="burger">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
-    
             <h1 class="logo"><a href="index.html"><span>UX</span> SHOP</a></h1>
             
-            <nav>
-                <ul class="main_menu">
+            <!-- Main navigation -->
+            <nav id="navMain">
+                <ul class="menu">
                     <li><a href="" title="Men's clothing page">Men's clothing</a></li> <!-- burde vi have data-target eller data-category? -->
                     <li><a href="" title="Womens's clothing page">Womens's clothing</a></li>
                     <li><a href="" title="Jewelery page">Jewelery</a></li>
                     <li><a href="" title="Electronics page">Electronics</a></li>
                 </ul>
-    
                 
-                
-                <ul class="nav-icons">
-                    <li id="account">
-                        <button class="icon-button" id="accountButton">
-                            <img src="assets/icons/account_big.svg" alt="Account">
-                        </button>
-                    </li>
-                    
-                    <li id="cart">
-                        <button class="icon-button" id="cartButton">
-                            <img src="assets/icons/cart_big.svg" alt="Cart">
-                        </button>
-                    </li>
-                </ul>
+                <div class="burger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
             </nav>
-        </div>
+
+        <!-- Utility navigation -->
+        <nav id="navUtility">
+            <div id="account">
+                <button class="icon-button" id="accountButton">
+                    <img src="assets/icons/account_big.svg" alt="Account">
+                </button>
+            </div>
+
+            <div id="cart">
+                <button class="icon-button" id="cartButton">
+                    <img src="assets/icons/cart_big.svg" alt="Cart">
+                </button>
+            </div>
+        </nav>
     </header>
 
 
@@ -53,7 +50,11 @@
 
     </main>
     <footer>
-
+        <header>
+            <h2 class="logo"><a href="index.html"><span>UX</span> SHOP</a></h2>
+        </header>
+        <hr>
+        <p>&copy; 2025 EK Web Development</p>
     </footer>
 </body>
 
