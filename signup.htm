@@ -11,45 +11,17 @@
 
 <body>
     <header>
-        <div class="max_width nav-styling">
-
-            <div>
-                <h1 class="logo"><a href="index.html"><span>UX</span>SHOP</a></h1>
-
-                <!-- Main -->
-                <nav id="navMain">
-                    <ul class="menu">
-                        <li><a href="" title="Men's clothing page">Men's clothing</a></li>
-                        <!-- burde vi have data-target eller data-category? -->
-                        <li><a href="" title="Womens's clothing page">Womens's clothing</a></li>
-                        <li><a href="" title="Jewelery page">Jewelery</a></li>
-                        <li><a href="" title="Electronics page">Electronics</a></li>
-                    </ul>
-
-                    <div class="burger">
-                        <div class="line"></div>
-                        <div class="line"></div>
-                        <div class="line"></div>
-                    </div>
-                </nav>
-            </div>
-
-            <!-- Utility -->
-            <nav id="navUtility">
-                <div id="account">
-                    <button class="icon-button" id="accountButton">
-                        <img src="assets/icons/account_big.svg" alt="Account">
-                    </button>
-                </div>
-
-                <div id="cart">
-                    <button class="icon-button" id="cartButton">
-                        <img src="assets/icons/cart_big.svg" alt="Cart">
-                    </button>
-                </div>
-            </nav>
-
-        </div>
+        <h1 class="logo"><a href="index.html"><span>UX</span> SHOP</a></h1>
+        <p id="user"></p>
+    
+        <nav>
+            <ul>
+                <li id="login"><a href="login.htm" title="Log in" class="primary_btn">Log in</a></li>
+                <li id="signup"><a href="signup.htm" title="Sign up" class="primary_btn">Sign up</a></li>
+                <li id="logout" class="hidden"><button id="btnLogout" class="primary_btn">Log out</button></li>
+                <li id="signup"><a href="cart.htm" title="Cart"><img src="assets/icons/cart_big.svg" alt=""></a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
@@ -92,6 +64,14 @@
             </section>
         </article>
     </main>
+
+    <footer>
+        <header>
+            <h2 class="logo"><a href="index.html"><span>UX</span> SHOP</a></h2>
+        </header>
+        <hr>
+        <p>&copy; 2025s UX Shop. All rights reserved.</p>
+    </footer>
 
     <dialog id="mdlInfo">
         <header>
