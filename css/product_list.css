@@ -5,7 +5,6 @@ img {
 }
 
 main {
-  margin: auto;
   display: grid;
   > p,
   #btnSortBy {
