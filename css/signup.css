@@ -193,26 +193,3 @@ main {
     }
   }
 }
-
-/*  PRIMARY BUTTON STYLING > skal ind på styles 
-   */
-.primary_btn {
-  color: var(--colorTextSecondary);
-  background-color: var(--buttonPrimaryColor);
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  padding: 0.9rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 0.25rem;
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: #7b1fa2;
-  }
-
-  &:active {
-    background-color: #6a1b8a;
-  }
-}
