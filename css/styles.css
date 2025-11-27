@@ -13,9 +13,7 @@ img {
 }
 
 .max_width {
-    max-width: var(--maxWidth);
-    padding: 20px;
-    margin: auto;
+
 }
 
 /* 
@@ -27,109 +25,114 @@ img {
 */
 
 body {
-    font-family: var(--fontMain);
+    max-width: var(--maxWidth);
+    padding: 20px;
+    margin: auto;
+    
     background-color: var(--bgColorPrimary);
     color: var(--colorTextPrimary);
     font-family: var(--fontMain);
 
-    >header,
-    >footer {
-        /* padding: 0.5rem 1rem; */
-        text-align: center;
-        color: var(--colorTextPrimary);
-        background-color: var(--colourBgMain);
-    }
 
-/* NAVIGATION */
-header {
-    border-bottom: 1px solid var(--colorTextPrimary);
+    /* NAVIGATION */
+    >header {
+        border-bottom: 1px solid var(--colorTextPrimary);
 
-    .nav-styling {
-        /* padding: 15px 20px; */
-        width: 100%;
-    
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    
-        @media screen and (min-width: 768px) { 
-            /* padding: 16px 64px; */
-        }
-    
-        >.burger {
-            width: 30px;
-            height: 20px;
-            cursor: pointer;
-    
-            .line {
-                width: 100%;
-                height: 2px;
-                background-color: #333;
-                margin-bottom: 5px;
-                transition: 0.2s linear;
-            }
-    
-            @media screen and (min-width: 768px) {
-                display: none;
-            }
-        }
-        
-        > h1 {
-            font-family: var(--fontHeader);
-            text-wrap-mode: nowrap;
-            span {
-                color: var(--buttonPrimaryColor);
-            }
-            @media screen and (min-width: 768px) {
-                padding-right: 40px;
-            }
-        }
-        
-        a {
-            text-decoration: none;
-            color: var(--colorTextPrimary);
-        }
-    
-        nav {
+        .nav-styling {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            
-            @media screen and (min-width: 768px) {
-                width: 100%;
+        
+            @media screen and (min-width: 768px) { 
+                
             }
-    
-            >ul {
-                display: flex;
-                list-style-type: none;
-                
-                
-                &.main_menu {
-                    display: none;
-                    
-                    @media screen and (min-width: 768px) {
-                        display: flex;
-                        gap: 40px;
-                    }
-                    
+            
+            > h1 {
+                font-family: var(--fontHeader);
+                text-wrap-mode: nowrap;
+
+                span {
+                    color: var(--buttonPrimaryColor);
                 }
+                @media screen and (min-width: 768px) {
+                    padding-right: 40px;
+                }
+            }
+            
+            a {
+                text-decoration: none;
+                color: var(--colorTextPrimary);
+            }
+            
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            #navMain {
+                order: -1;
+
+                @media screen and (min-width: 768px) {
+                    order: 0;
+                }
+
+                >ul {
+                    display: flex;
+                    list-style-type: none;
+
+                    &.menu {
+                        display: none;
+                    
+                        @media screen and (min-width: 768px) {
+                            display: flex;
+                            gap: 40px;
+                        }
+                    }
+
+                    >li {
+
+                        >a:hover,
+                        a:active {
+                            text-decoration: underline;
+                            color: var(--buttonPrimaryColor);
+                        }
+                    }
+                }
+
+                /* Burger menu */
+                >.burger {
+                    width: 30px;
+                    height: 20px;
+                    cursor: pointer;
+        
+                    .line {
+                        width: 100%;
+                        height: 2px;
+                        background-color: #333;
+                        margin-bottom: 5px;
+                        transition: 0.2s linear;
+                    }
+        
+                    @media screen and (min-width: 768px) {
+                        display: none;
+                    }
+                }
+            }
+
+            #navUtility {
+                display: flex;
+                gap: 16px;
                 
-    
                 &.nav-icons {
                     gap: 16px;
                 }
     
-                >li {
-                    > a:hover, a:active {
-                        text-decoration: underline;
-                        color: var(--buttonPrimaryColor);
-                    }
-                }
+                
+                
             }
         }
     }
-}
-
 }
 
 .primary_btn {
