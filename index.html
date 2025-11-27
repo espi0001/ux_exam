@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | UX</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/product_list.css">
     <script src="js/loginCheck.js" type="module"></script>
     <script src="js/logout.js" type="module"></script>
     <script type="module" src="js/menu.js"></script>
+    <script type="module" src="js/products.js"></script>
 </head>
 
 <body>
@@ -50,14 +51,43 @@
 
 
     <main>
-    </main>
-    <footer>
         <header>
-            <h2 class="logo"><a href="index.html"><span>UX</span> SHOP</a></h2>
+            <h2>Products</h2>
         </header>
-        <hr>
-        <p>&copy; 2025 EK Web Development</p>
-    </footer>
+
+        <!-- <div id="sort">
+                            <button id="btnSortBy">Sort by</button>
+                            <div id="sortDropdown" class="hidden">
+                                <button data-sort="price-asc">Price: Low → High</button>
+                                <button data-sort="price-desc">Price: High → Low</button>
+                            </div>
+                        </div> -->
+        <!-- <p>Showing <span id="shownCount"></span> of <span id="totalCount"></span></p> -->
+        <section id="productList">
+        </section>
+        <!-- <button id="btnLoadMore">Load more</button> -->
+    </main>
+
+</body>
+<template id="singleProduct">
+    <article>
+        <img src="" alt="">
+        <div>
+            <h3></h3>
+            <p></p>
+            <a class="primary_btn" href="">View product</a>
+        </div>
+    </article>
+</template>
+
+</main>
+<footer>
+    <header>
+        <h2 class="logo"><a href="index.html"><span>UX</span> SHOP</a></h2>
+    </header>
+    <hr>
+    <p>&copy; 2025 EK Web Development</p>
+</footer>
 </body>
 
 </html>
