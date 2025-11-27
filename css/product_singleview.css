@@ -1,0 +1,54 @@
+@import "styles.css";
+
+main {
+  #btnBack {
+    width: auto;
+  }
+
+  section#singleProduct {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+
+    @media (width > 500px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    div {
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 0.5rem;
+    }
+
+    header {
+      grid-area: 1 / 2 / 2 / 3;
+    }
+
+    img {
+      min-height: 100%;
+      max-width: var(--singleProductImageMaxWidth);
+      margin: auto;
+      order: -1;
+      grid-area: 1 / 1 / 5 / 2;
+    }
+
+    div-first-of-type {
+      grid-area: 2 / 2 / 3 / 3;
+    }
+
+    #descriptionContainer {
+      padding: 1rem 0;
+      border-top: 1px solid var(--colorTextPrimary);
+      border-bottom: 1px solid var(--colorTextPrimary);
+
+      grid-area: 3 / 2 / 4 / 3;
+    }
+
+    #rating {
+      display: flex;
+      flex-flow: row nowrap;
+      gap: 0.5rem;
+    }
+  }
+}

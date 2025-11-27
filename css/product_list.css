@@ -1,0 +1,83 @@
+@import "styles.css";
+
+img {
+  width: 100%;
+}
+
+main {
+  display: grid;
+  > p,
+  .sort {
+    justify-self: right;
+  }
+
+  #btnLoadMore {
+    justify-self: center;
+  }
+
+  #productList {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 4rem;
+
+    @media (width > 665px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (width > 998px) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    article {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      max-width: var(--productCardMaxWidth);
+
+      img {
+        height: var(--productListImageMaxHeight);
+        width: 100%;
+      }
+
+      div {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem 0;
+
+        h3 {
+          font-size: 0.8rem;
+        }
+
+        a {
+          margin-top: auto;
+        }
+      }
+    }
+  }
+
+  /* .hidden {
+    display: none;
+  }
+  #sort {
+    position: relative;
+  }
+  #sortDropdown {
+    position: absolute;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  #sortDropdown button {
+    display: block;
+    width: 100%;
+    border: none;
+    background: none;
+    padding: 6px;
+    text-align: left;
+    cursor: pointer;
+  } */
+}
