@@ -11,24 +11,24 @@
 
 <body>
 
-    <header>
-        <h2>Products</h2>
-    </header>
+
     <main>
-        <div class="sort">
-            <button id="btnSortBy">Sort by</button>
-            <div id="sortDropdown" class="hidden">
-                <button data-sort="price-asc">Price: Low → High</button>
-                <button data-sort="price-desc">Price: High → Low</button>
+        <header>
+            <h2>Products</h2>
+        </header>
+        <div class="max_width">
+            <div class="sort">
+                <button id="btnSortBy">Sort by</button>
+                <div id="sortDropdown" class="hidden">
+                    <button data-sort="price-asc">Price: Low → High</button>
+                    <button data-sort="price-desc">Price: High → Low</button>
+                </div>
             </div>
+            <p>Showing <span id="shownCount"></span> of <span id="totalCount"></span></p>
+            <section id="productList">
+            </section>
+            <button id="btnLoadMore">Load more</button>
         </div>
-        <p>Showing <span id="shownCount"></span> of <span id="totalCount"></span></p>
-        <section id="productList">
-        </section>
-        <button id="btnLoadMore">Load more</button>
-        <section>
-            <div class="max-width"></div>
-        </section>
     </main>
 
 </body>
