@@ -21,4 +21,10 @@
 
   /* Font for text */
   --fontMain: "Roboto", sans-serif;
+
+  --maxWidth: 1280px;
+
+  /* --maxWidthL: 1024; */
+
+  --imgMaxWidth: ;
 }
