@@ -1,6 +1,10 @@
 @import "styles.css";
 
 main {
+  #btnBack {
+    width: auto;
+  }
+
   section#singleProduct {
     display: flex;
     flex-flow: column nowrap;

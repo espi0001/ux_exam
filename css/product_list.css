@@ -31,20 +31,29 @@ main {
     }
 
     article {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
       max-width: var(--productCardMaxWidth);
+
       img {
         height: var(--productListImageMaxHeight);
         width: 100%;
       }
 
       div {
+        flex-grow: 1;
         display: flex;
-        flex-flow: column nowrap;
+        flex-direction: column;
         gap: 0.5rem;
-        padding: 1rem;
+        padding: 1rem 0;
 
         h3 {
           font-size: 0.8rem;
+        }
+
+        a {
+          margin-top: auto;
         }
       }
     }
