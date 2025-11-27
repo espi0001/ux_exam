@@ -1,106 +1,201 @@
 @import "styles.css";
 @import "_dialog.css";
 
-/* STYLING FOR SIGNUP/LOGIN PAGES */
+/* STYLING FOR SIGNUP & LOGIN PAGES */
 
+/* main container - centers the auth form vertically and horizontally */
 main {
+  /* used flexbox to center content */
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 12.5rem);
-  padding: 1rem;
 }
 
+/* container for the authentication form and tabs */
 .auth-container {
+  /* full width on mobile devices */
   width: 100%;
   max-width: 100%;
+
+  /* a little shadow around the form */
   box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
+
+  /* tablet > limited width a little for better readability */
+  @media screen and (min-width: 768px) {
+    max-width: 30rem;
+  }
+
+  /* desktop > slightly increase max width */
+  @media screen and (min-width: 1024px) {
+    max-width: 35rem;
+  }
 }
 
+/* tab navigation for switching between sign up and login */
 .auth-tabs {
+  /* display tabs in a row */
   display: flex;
+
+  /* border below tabs > QUESTION: should they be black or purple? */
   border-bottom: 0.125rem solid var(--bgColorSecondary);
 
   .tab {
+    /* each tab takes equal width */
     flex: 1;
+
+    /* center text inside tab */
     text-align: center;
+
+    /* add padding for clickable area */
     padding: 0.75rem;
+
+    /* remove default link underline */
     text-decoration: none;
+
     color: var(--colorTextPrimary);
     font-weight: 600;
+
+    /* slightly smaller font on mobile */
     font-size: 0.9rem;
+
+    /* use secondary background color */
     background-color: var(--bgColorSecondary);
+
     transition: background-color 0.3s;
 
-    /* Pseudo-class for hover state */
-    &:hover {
-      background-color: #e8e8e8;
+    /* tablet > increase padding and font size */
+    @media screen and (min-width: 768px) {
+      padding: 1rem;
+      font-size: 1rem;
     }
 
+    /* change background on hover */
+    &:hover {
+      background-color: var(--bgColorPrimary);
+    }
+
+    /* active tab > highlight the current page */
     &.active {
       background-color: var(--bgColorPrimary);
       color: var(--colorTextPrimary);
+      /* add colored border at bottom to indicate active state */
       border-bottom: 0.1875rem solid var(--buttonPrimaryColor);
     }
   }
 }
 
+/* form section containing heading, description, and form */
 .auth-form {
+  /* add padding around form content */
   padding: 1.5rem;
+
   background-color: var(--bgColorPrimary);
+
+  /* tablet screens > increase padding for more space */
+  @media screen and (min-width: 768px) {
+    padding: 2rem;
+  }
+
+  /* desktop > more increased padding */
+  @media screen and (min-width: 1024px) {
+    padding: 2.5rem;
+  }
 
   h2 {
     font-family: var(--fontHeader);
     text-align: center;
     margin-bottom: 0.75rem;
     font-size: 1.5rem;
+
+    /* tablet > increase heading size */
+    @media screen and (min-width: 768px) {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
   }
 
+  /* Description text below heading */
   p {
+    /* Center the description text */
     text-align: center;
+
+    /* Add space below description */
     margin-bottom: 1.5rem;
+
+    /* Set font size */
     font-size: 1rem;
+
+    /* Improve readability with line height */
     line-height: 1.5;
+
+    /* Tablet screens: adjust font size and spacing */
+    @media screen and (min-width: 768px) {
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
   }
 }
 
-/* Form styling - works for both #frmSignup and #frmLogin */
+/* ============================================
+   FORM STYLING
+   Works for both signup and login forms
+   ============================================ */
 #frmSignup,
 #frmLogin {
   .form-group {
+    /* add space between form fields */
     margin-bottom: 1.25rem;
 
-    label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-      font-size: 0.9rem;
+    /* tablet > increase spacing between fields */
+    @media screen and (min-width: 768px) {
+      margin-bottom: 1.5rem;
     }
 
-    input {
-      width: 100%;
-      padding: 0.75rem;
-      border: 0.0625rem solid #ddd;
-      font-size: 1rem;
-      /* Pseudo-class for focus state */
-      &:focus {
-        outline: none;
-        border-color: var(--buttonPrimaryColor);
+    /* label for input field */
+    label {
+      /* display as block to take full width */
+      display: block;
+
+      /* space between label and input */
+      margin-bottom: 0.5rem;
+
+      /* label text medium weight */
+      font-weight: 500;
+
+      /* label font size */
+      font-size: 0.9rem;
+
+      /* tablet > increase label font size */
+      @media screen and (min-width: 768px) {
+        font-size: 1rem;
       }
     }
-    /* Link styling for "Forgot password" */
-    a {
-      color: var(--buttonPrimaryColor);
-      text-decoration: none;
-      font-size: 0.875rem;
 
-      &:hover {
-        text-decoration: underline;
+    /* input fields for email and password */
+    input {
+      /* take full width of container */
+      width: 100%;
+
+      /* padding inside input */
+      padding: 0.75rem;
+      border: 0.0625rem solid #ddd;
+
+      font-size: 1rem;
+
+      /* highlight input when focused */
+      &:focus {
+        /* remove default browser outline */
+        outline: none;
+
+        /* change border color to match theme > QUESTION: should they be black or purple? */
+        border-color: var(--buttonPrimaryColor);
       }
     }
   }
 }
 
+/*  PRIMARY BUTTON STYLING > skal ind på styles 
+   */
 .primary_btn {
   color: var(--colorTextSecondary);
   background-color: var(--buttonPrimaryColor);
@@ -110,62 +205,14 @@ main {
   padding: 0.9rem;
   font-size: 1rem;
   font-weight: 600;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s;
+
   &:hover {
     background-color: #7b1fa2;
   }
-}
 
-/* Tablet screens (37.5em = 600px) */
-@media (min-width: 37.5em) {
-  main {
-    padding: 2rem 1rem;
-    min-height: calc(100vh - 14rem);
-  }
-
-  .auth-container {
-    max-width: 31.25rem;
-  }
-
-  .auth-tabs .tab {
-    padding: 1rem;
-    font-size: 1rem;
-  }
-
-  .auth-form {
-    padding: 2rem;
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 0.9rem;
-      margin-bottom: 2rem;
-    }
-  }
-
-  #frmSignup .form-group,
-  #frmLogin .form-group {
-    margin-bottom: 1.5rem;
-
-    label {
-      font-size: 1rem;
-    }
-  }
-}
-
-/* Desktop screens (64em = 1024px) */
-@media (min-width: 64em) {
-  main {
-    min-height: calc(100vh - 15rem);
-  }
-
-  .auth-container {
-    max-width: 34.375rem;
-  }
-
-  .auth-form {
-    padding: 2.5rem;
+  &:active {
+    background-color: #6a1b8a;
   }
 }
