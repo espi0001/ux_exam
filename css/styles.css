@@ -164,8 +164,7 @@ body {
   }
 }
 
-/*  PRIMARY BUTTON STYLING > skal ind på styles 
-   */
+/* PRIMARY BUTTON STYLING > skal ind på styles */
 .primary_btn {
   color: var(--colorTextSecondary);
   background-color: var(--buttonPrimaryColor);

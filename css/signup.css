@@ -114,21 +114,15 @@ main {
     }
   }
 
-  /* Description text below heading */
+  /* description text below heading */
   p {
-    /* Center the description text */
     text-align: center;
-
-    /* Add space below description */
     margin-bottom: 1.5rem;
-
-    /* Set font size */
     font-size: 1rem;
 
-    /* Improve readability with line height */
     line-height: 1.5;
 
-    /* Tablet screens: adjust font size and spacing */
+    /* tablet > font size and spacing */
     @media screen and (min-width: 768px) {
       font-size: 0.9rem;
       margin-bottom: 2rem;
@@ -136,10 +130,7 @@ main {
   }
 }
 
-/* ============================================
-   FORM STYLING
-   Works for both signup and login forms
-   ============================================ */
+/* FORM STYLING > works for both signup and login form */
 #frmSignup,
 #frmLogin {
   .form-group {
@@ -192,4 +183,11 @@ main {
       }
     }
   }
+}
+
+/* remove default styling */
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
 }

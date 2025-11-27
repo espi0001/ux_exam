@@ -4,43 +4,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in | UX</title>
     <link rel="stylesheet" href="css/signup.css">
     <script src="js/login.js" type="module"></script>
-    <title>Log in | UX</title>
 </head>
 
 <body>
-    <main>
-        <div class="auth-container">
-            <div class="auth-tabs">
-                <a href="signup.htm" class="tab">Sign up</a>
-                <a href="login.htm" class="tab active">Login</a>
+    <header>
+        <div class="max_width nav-styling">
+
+            <div>
+                <h1 class="logo"><a href="index.html"><span>UX</span>SHOP</a></h1>
+
+                <!-- Main -->
+                <nav id="navMain">
+                    <ul class="menu">
+                        <li><a href="" title="Men's clothing page">Men's clothing</a></li>
+                        <li><a href="" title="Womens's clothing page">Womens's clothing</a></li>
+                        <li><a href="" title="Jewelery page">Jewelery</a></li>
+                        <li><a href="" title="Electronics page">Electronics</a></li>
+                    </ul>
+
+                    <div class="burger">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                </nav>
             </div>
 
+            <!-- Utility -->
+            <nav id="navUtility">
+                <div id="account">
+                    <button class="icon-button" id="accountButton">
+                        <img src="assets/icons/account_big.svg" alt="Account">
+                    </button>
+                </div>
+
+                <div id="cart">
+                    <button class="icon-button" id="cartButton">
+                        <img src="assets/icons/cart_big.svg" alt="Cart">
+                    </button>
+                </div>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+        <article class="auth-container">
+            <nav class="auth-tabs" aria-label="Authentication navigation">
+                <a href="signup.htm" class="tab">Sign up</a>
+                <a href="login.htm" class="tab active" aria-current="page">Login</a>
+            </nav>
+
             <section class="auth-form">
-                <h2>Log In</h2>
-                <p>If you have an account with us, please log in.</p>
+                <header>
+                    <h2>Log In</h2>
+                    <p>If you have an account with us, please log in.</p>
+                </header>
 
                 <form id="frmLogin">
+                    <fieldset>
 
-                    <div class="form-group">
-                        <label for="txtEmail">Email</label>
-                        <input type="email" id="txtEmail" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="txtPassword">Password</label>
-                        <input type="password" id="txtPassword" required>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="primary_btn">Login</button>
-                    </div>
+                        <div class="form-group">
+                            <label for="txtEmail">Email</label>
+                            <input type="email" id="txtEmail" name="email" required aria-required="true">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txtPassword">Password</label>
+                            <input type="password" id="txtPassword" name="password" required aria-required="true">
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="primary_btn">Login</button>
+                        </div>
+                    </fieldset>
                 </form>
             </section>
-        </div>
+        </article>
     </main>
+
     <dialog id="mdlInfo">
         <header>
-            <h1></h1>
+            <h1 id="modalTitle"></h1>
             <button class="close">&times;</button>
         </header>
         <p></p>
