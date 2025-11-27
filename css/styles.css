@@ -69,6 +69,7 @@ body {
       @media screen and (min-width: 768px) {
         order: 0;
       }
+
       &.active .menu {
         display: flex;
         flex-direction: column;
@@ -162,9 +163,39 @@ body {
       }
     }
   }
+
+  > footer {
+    padding: 48px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    border-top: 1px solid var(--colorTextPrimary);
+
+    @media screen and (min-width: 768px) {
+      padding: 80px 42px;
+    }
+
+    h2 {
+      font-family: var(--fontHeader);
+      span {
+        color: var(--buttonPrimaryColor);
+      }
+
+      > a {
+        text-decoration: none;
+        color: var(--colorTextPrimary);
+      }
+    }
+
+    > hr {
+      width: 100%;
+    }
+  }
 }
 
-/* PRIMARY BUTTON STYLING > skal ind på styles */
+/*  PRIMARY BUTTON STYLING > skal ind på styles 
+    */
 .primary_btn {
   color: var(--colorTextSecondary);
   background-color: var(--buttonPrimaryColor);
