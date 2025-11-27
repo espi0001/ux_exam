@@ -1,32 +1,6 @@
 @import "styles.css";
 @import "_dialog.css";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0 auto;
-  font-family: var(--fontMain);
-
-  > header,
-  > footer {
-    padding: 0.5rem 1rem;
-    text-align: center;
-    color: var(--colorTextPrimary);
-    background-color: var(--colourBgMain);
-  }
-}
-
-button {
-  color: var(--colorTextSecondary);
-  background-color: var(--buttonPrimaryColor);
-  border: none;
-  cursor: pointer;
-}
-
 /* STYLING FOR SIGNUP/LOGIN PAGES */
 
 main {
@@ -107,16 +81,13 @@ main {
       width: 100%;
       padding: 0.75rem;
       border: 0.0625rem solid #ddd;
-      border-radius: 0.25rem;
       font-size: 1rem;
-
       /* Pseudo-class for focus state */
       &:focus {
         outline: none;
         border-color: var(--buttonPrimaryColor);
       }
     }
-
     /* Link styling for "Forgot password" */
     a {
       color: var(--buttonPrimaryColor);
@@ -127,29 +98,20 @@ main {
         text-decoration: underline;
       }
     }
+  }
+}
 
-    .btn-primary {
-      width: 100%;
-      padding: 0.875rem;
-      background-color: var(--buttonPrimaryColor);
-      color: white;
-      border: none;
-      border-radius: 0.25rem;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.3s;
-
-      /* Pseudo-class for hover state */
-      &:hover {
-        background-color: #7b1fa2;
-      }
-
-      /* Pseudo-class for active state */
-      &:active {
-        background-color: #6a1b8a;
-      }
-    }
+.primary_btn {
+  color: var(--colorTextSecondary);
+  background-color: var(--buttonPrimaryColor);
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1rem;
+  font-weight: 600;
+  &:hover {
+    background-color: #7b1fa2;
   }
 }
 
