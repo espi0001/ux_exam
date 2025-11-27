@@ -1,16 +1,16 @@
 const burger = document.querySelector(".burger");
-const nav = document.querySelector("nav");
-const main_menu = document.querySelector(".main_menu");
-const links = document.querySelectorAll(".main_menu li a");
+const navMain = document.querySelector("#navMain");
+const menu = document.querySelector(".menu");
+const links = document.querySelectorAll(".menu li a");
 
 burger.addEventListener("click", () => {
   burger.classList.toggle("active");
-  nav.classList.toggle("active");
+  navMain.classList.toggle("active");
 });
 
 links.forEach((link) => {
   link.addEventListener("click", () => {
     burger.classList.remove("active");
-    nav.classList.remove("active");
+    navMain.classList.remove("active");
   });
 });
