@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart | UX</title>
     <link rel="stylesheet" href="css/cart.css">
+    <script type="module" src="js/cart.js"></script>
 </head>
 
 <body>
@@ -54,36 +55,28 @@
             
             <p>Items placed in this basket is not reserved.</p> <!-- skal den være i header? -->
 
+
             <section class="order_summary">
-                <article class="product">
-                    <img src="" alt="">
-                    <div>
-                        <header>
-                            <h3>product name</h3>
-                        </header>
-                        <p>Price</p>
-                        <div>
-                            <select name="" id=""></select>
-                            <button>Remove</button>
-                        </div>
-                    </div>
-                </article>
-    
+                <!-- The Card Items -->
+                <div id="cartItems" class="cart_items"></div>
+
+
+                <!-- Summary -->
                 <section class="order_summary_price">
                     <div class="subtotal_delivery">
                         <div class="price">
                             <p><strong>Subtotal</strong></p> <!-- Skal det være strong eller bold?? -->
-                            <p><strong>Price</strong></p>
+                            <p id="subtotalAmount"><strong>Price</strong></p>
                         </div>
                         <div class="price">
                             <p><strong>Delivery</strong></p>
-                            <p>Price</p>
+                            <p id="deliveryAmount">Price</p>
                         </div>
                     </div>
                     <hr>
                     <div class="price">
                         <p><strong>Total price</strong> <span>VAT included</span></p>
-                        <p>Price</p>
+                        <p id="totalAmount">Price</p>
                     </div>
                     <div class="primary_btn">
                         <a href="checkout.htm">Checkout</a> <!-- skal den have title? -->
@@ -194,5 +187,27 @@
         <p>&copy; 2025s UX Shop. All rights reserved.</p>
     </footer>
 </body>
-
+<template id="cartItemTemplate">
+    <article class="product">
+        <div class="product_image">
+            <img src="" alt="">
+        </div>
+        <div class="product_info">
+            <header>
+                <h3 class="product_name"></h3>
+            </header>
+            <p class="product_price">Price</p>
+            <div class="product_actions">
+                <select class="product_qty" name="" id="">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select> <!-- skal den have name og id?? -->
+                <button class="product_remove_btn" type="button">Remove</button>
+            </div>
+        </div>
+    </article>
+</template>
 </html>

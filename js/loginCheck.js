@@ -16,3 +16,5 @@ if (email !== null) {
   document.querySelector("#signup").classList.remove("hidden");
   document.querySelector("#logout").classList.add("hidden");
 }
+
+// når man logger ud skal man ikke kunne se noget i cart, men cart skal ikke blive 0
