@@ -10,7 +10,7 @@ fetch(`${BASE_URL}/products/${id}`)
 
     singleProduct.querySelector("h2").innerText = product.title;
     singleProduct.querySelector("img").src = product.image;
-    singleProduct.querySelector("#price").innerText = `${product.price} kr.`;
+    singleProduct.querySelector("#price").innerText = `€${product.price}`;
     singleProduct.querySelector("#rate").innerText = `${product.rating["rate"]}`;
     singleProduct.querySelector("#count").innerText = `${product.rating["count"]} reviews`;
     singleProduct.querySelector("#description").innerText = product.description;
