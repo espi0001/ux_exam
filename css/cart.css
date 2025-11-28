@@ -1,0 +1,39 @@
+@import "styles.css";
+
+.payment_methods {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.order_summary {
+    display: flex;
+    justify-content: space-between;
+
+    .order_summary_price {
+        max-width: 370px;
+        display: grid;
+
+        background-color: var(--bgColorSecondary);
+        border: 1px solid var(--colorTextPrimary);
+
+        @media screen and (min-width: 768px) {
+            padding: 20px;
+            gap: 2.5rem;
+        }
+
+        .subtotal_delivery {
+            display: grid;
+
+            @media screen and (min-width: 768px) {
+                gap: 1.25rem;
+            }
+        }
+        
+        .price {
+            display: flex;
+            justify-content: space-between;
+
+            
+        }
+    }
+}
