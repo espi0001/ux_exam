@@ -132,7 +132,8 @@ main {
 
 /* FORM STYLING > works for both signup and login form */
 #frmSignup,
-#frmLogin {
+#frmLogin,
+#frmCheckout {
   .form-group {
     /* add space between form fields */
     margin-bottom: 1.25rem;
