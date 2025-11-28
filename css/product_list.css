@@ -48,10 +48,6 @@ main {
         gap: 0.5rem;
         padding: 1rem 0;
 
-        h3 {
-          font-size: 0.8rem;
-        }
-
         a {
           margin-top: auto;
         }

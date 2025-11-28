@@ -23,7 +23,6 @@ img {
 body {
   max-width: var(--maxWidth);
   margin: auto;
-
   background-color: var(--bgColorPrimary);
   color: var(--colorTextPrimary);
   font-family: var(--fontMain);
@@ -32,28 +31,38 @@ body {
     padding: 20px;
     margin: auto;
 
-    >header {
+    > header {
       margin-bottom: 1.5rem;
 
       @media screen and (min-width: 768px) {
         margin-bottom: 3rem;
       }
-
-      h2 {
-        font-size: 2.5rem;
-        
-        @media screen and (min-width: 768px) {
-          font-size: 3rem;
-        }
-      }
     }
   }
 
-
-  h1, h2 {
+  h1,
+  h2 {
     font-family: var(--fontHeader);
   }
 
+  h1 {
+    text-wrap-mode: nowrap;
+    font-size: var(--fontSize-h1);
+    span {
+      color: var(--buttonPrimaryColor);
+    }
+  }
+
+  h2 {
+    font-size: var(--fontSize-h2);
+  }
+  h3 {
+    font-size: var(--fontSize-h3);
+  }
+
+  p {
+    font-size: var(--fontSize-body);
+  }
   /* NAVIGATION */
   > header {
     padding: 12px 20px;
@@ -67,21 +76,13 @@ body {
       margin-bottom: 3rem;
     }
 
-    > h1 {
-      text-wrap-mode: nowrap;
-
-      span {
-        color: var(--buttonPrimaryColor);
-      }
-    }
-
     a {
       text-decoration: none;
       color: var(--colorTextPrimary);
     }
 
     nav {
-      >ul {
+      > ul {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -90,10 +91,8 @@ body {
       }
     }
   }
-  
-    
 
-  >footer {
+  > footer {
     padding: 48px 20px;
     display: flex;
     flex-direction: column;
@@ -141,7 +140,7 @@ body {
   &:hover {
     _background-color: #7b1fa2;
     background-color: var(--bgColorPrimary);
-    color:var(--colorTextPrimary);
+    color: var(--colorTextPrimary);
   }
 
   &:active {
