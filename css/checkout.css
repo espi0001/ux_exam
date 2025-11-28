@@ -1,0 +1,12 @@
+@import "styles.css";
+
+main {
+  flex-direction: column;
+  gap: 20px;
+
+  @media (width > 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+}
