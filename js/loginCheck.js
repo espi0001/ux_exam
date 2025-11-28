@@ -8,9 +8,11 @@ const email = sessionStorage.getItem(SESSION_STORAGE_USER_EMAIL);
 if (email !== null) {
   // user IS logged in > hide login + signup and show logout button
   document.querySelector("#login").classList.add("hidden");
+  document.querySelector("#signup").classList.add("hidden");
   document.querySelector("#logout").classList.remove("hidden");
 } else {
   // user is NOT logged in > show login + signup and hide logout
   document.querySelector("#login").classList.remove("hidden");
+  document.querySelector("#signup").classList.remove("hidden");
   document.querySelector("#logout").classList.add("hidden");
 }
