@@ -126,22 +126,29 @@ body {
 /*  PRIMARY BUTTON STYLING > skal ind på styles 
     */
 .primary_btn {
-  color: var(--colorTextSecondary);
   background-color: var(--buttonPrimaryColor);
-  border: none;
-  cursor: pointer;
-  _width: 100%;
+  color: var(--colorTextSecondary);
+  border: 2px solid var(--buttonPrimaryColor);
+  transition: background-color 0.3s;
+  
   padding: 0.9rem;
   font-size: 1rem;
-  _font-weight: 600;
-  _border-radius: 0.25rem;
-  transition: background-color 0.3s;
-  border: 2px solid var(--buttonPrimaryColor);
+  
+  cursor: pointer;
+  
+  >a {
+    color: var(--colorTextSecondary);
+    text-decoration: none;
+  }
 
   &:hover {
     _background-color: #7b1fa2;
     background-color: var(--bgColorPrimary);
     color:var(--colorTextPrimary);
+    >a {
+      color: var(--colorTextPrimary);
+      text-decoration: none;
+    }
   }
 
   &:active {
