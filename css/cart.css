@@ -1,17 +1,18 @@
 @import "styles.css";
 
-.payment_methods {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .order_summary {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    @media screen and (min-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+    }
 
     .order_summary_price {
         max-width: 370px;
+        max-height: 450px;
+        padding: 1rem;
         display: grid;
+        gap: 1rem;
 
         background-color: var(--bgColorSecondary);
         border: 1px solid var(--colorTextPrimary);
@@ -34,6 +35,49 @@
             justify-content: space-between;
 
             
+        }
+    }
+    .payment_methods {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+        margin-top: 10px;
+        img {
+            max-width: 58px;
+        }
+    }
+}
+.cart_items {
+    display: grid;
+    @media screen and (min-width: 768px) {
+        gap: 64px;
+    }
+    .product {
+        display: grid;
+        gap: 1rem;
+        @media screen and (min-width: 768px) {
+            display: flex;
+            align-items: center;
+        }
+        .product_image {
+            max-width: 100px;
+
+            @media screen and (min-width: 768px) {
+                max-width: 200px;
+            }
+        }
+    
+        .product_info {
+            display: grid;
+            gap: 20px;
+    
+            .product_actions {
+                display: flex;
+                gap: 1rem;
+                
+                @media screen and (min-width: 768px) {
+                }
+            }
         }
     }
 }
