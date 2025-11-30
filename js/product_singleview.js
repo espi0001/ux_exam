@@ -16,37 +16,7 @@ if (backBtn) {
     window.history.back();
   });
 }
-/*
-// Get the users email (from login)
-// const userEmail = sessionStorage.getItem(SESSION_STORAGE_USER_EMAIL);
 
-// CART
-// Get the cart from the logged in user
-function getCartKey() {
-  const email = sessionStorage.getItem(SESSION_STORAGE_USER_EMAIL);
-  if (!email) return null; // if not logged in then return null
-  return `cart${email}`; // key used in both product_singleview.js and cart.js
-}
-
-
-// Read cart 
-function getCart() {
-  const cartKey = getCartKey(); // check if user is logged in (from SESSION_STORAGE_USER_EMAIL)
-  if (!cartKey) return []; // if not logged in then return empty array
-
-  const raw = localStorage.getItem(cartKey);
-  return raw ? JSON.parse(raw) : []; 
-}
-
-// Save cart
-function saveCart(cart) {
-  const cartKey = getCartKey();
-  if (!cartKey) return; // if not logged in return empty cart (should not happen if we only allow loggen-in users)
-
-  // store cart data as JSON string in localStorage
-  localStorage.setItem(cartKey, JSON.stringify(cart));
-}
-*/
 
 // FETCH PRODUCT & SHOW IT
 fetch(`${BASE_URL}/products/${id}`)
@@ -71,8 +41,6 @@ fetch(`${BASE_URL}/products/${id}`)
 
 
 
-
-
 // ADD TO CART BUTTON
 const addToCartBtn = document.querySelector("#addToCartBtn");
 
@@ -85,7 +53,7 @@ addToCartBtn.addEventListener("click", () => {
 
 // ADD TO CART
 function addToCart(product) {
-  const cartKey = getCartKey();
+  const cartKey = getCartKey(); // from module
 
   // IF USER IS NOT LOGGED IN
   if (!cartKey) {
@@ -93,7 +61,7 @@ function addToCart(product) {
     return;
   }
 
-  const cart = getCart()
+  const cart = getCart() // from module
   // checking if the products allready exsist in the cart
   const existing = cart.find((item) => item.id === product.id);
 
@@ -108,7 +76,7 @@ function addToCart(product) {
       quantity: 1,
     });
   }
-  saveCart(cart);
+  saveCart(cart); // From module
 
   // alert when adding something to the cart
   alert("Product added to cart");

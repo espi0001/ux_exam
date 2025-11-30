@@ -1,15 +1,13 @@
-// import { SESSION_STORAGE_USER_EMAIL } from "./info.js";
-// import { getCart, saveCart, getCartKey } from "./cartStorage";
 import { getCart, saveCart, getCartKey } from "./cartStorage.js"; // modules for localstorage
 
 
 const cartItemsContainer = document.querySelector('#cartItems');
 const cartItemTemplate = document.querySelector('#cartItemTemplate');
 
-const DELIVERY_FLAT = 3.8; // delivery price
+const DELIVERY_FLAT = 3.8; // delivery price // Question: should we delete this? - Its more code and irrelevant too
 
 // BACK BUTTON
-const backBtn = document.querySelector("#backBtn"); // VIRKER IKKE
+const backBtn = document.querySelector("#backBtn");
 
 if (backBtn) {
     backBtn.addEventListener("click", (e) => {
@@ -17,34 +15,7 @@ if (backBtn) {
         window.history.back();
     });
 }
-/*
-function getCartKey() {
-    const email = sessionStorage.getItem(SESSION_STORAGE_USER_EMAIL);
-    if (!email) return null; // no cart if not logged in
-    return `cart${email}`; // key used in both product_singleview.js and cart.js
-}
 
-function getCart() {
-    const cartKey = getCartKey();
-    if (!cartKey) return []; // if not logged in return empty cart (should not happen if we only allow loggen-in users)
-
-
-    // QUESTION: hvad gør dette?
-    const raw = localStorage.getItem(cartKey);
-    return raw ? JSON.parse(raw) : []; 
-}
-
-
-// Question: understand this
-function saveCart(cart) {
-    const cartKey = getCartKey();
-    if (!cartKey) return; // if not logged in return empty cart (should not happen if we only allow loggen-in users)
-    
-    // store cart data as JSON string in localStorage
-    localStorage.setItem(cartKey, JSON.stringify(cart));
-}
-
- */
 
 function formatPrice(amount) {
     // currency string
@@ -53,7 +24,6 @@ function formatPrice(amount) {
 
 
 // show different states
-
 const mainSections = document.querySelectorAll("main > section");
 // 0: "login to see your cart"
 // 1: "your cart is empty"
@@ -69,22 +39,16 @@ function updateView(cart) {
     if (!isLoggedIn) {
         // 1. User is NOT logged in
         if (loginSection) loginSection.classList.remove("hidden");
-        if (emptySection) emptySection.classList.add("hidden")
-        if (cartSection) cartSection.classList.add("hidden");
     } else if (!hasItems) {
         // 2. User IS logged in, but NO items in cart
-        if (loginSection) loginSection.classList.add("hidden")
         if (emptySection) emptySection.classList.remove("hidden")
-        if (cartSection) cartSection.classList.add("hidden");
     } else {
         // 3. User IS logged in and HAS items in cart
-        if (loginSection) loginSection.classList.add("hidden")
-        if (emptySection) emptySection.classList.add("hidden")
         if (cartSection) cartSection.classList.remove("hidden");
     }
 }
 
-
+// TODO: make it more simple
 // render summary
 const subtotalAmount = document.querySelector('#subtotalAmount');
 const deliveryAmount = document.querySelector('#deliveryAmount');

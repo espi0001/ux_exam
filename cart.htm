@@ -26,36 +26,37 @@
         </nav>
     </header>
     <main>
-        <section class="hidden">
+        <section class="hidden"> <!-- TODO: ADD STYLING -->
             <header>
                 <h2>Your cart</h2>
                 <h3>Login to see your cart</h3>
             </header>
             <div class="primary_btn">
-                <a href="login.htm" title="Log in">Log in</a> <!--skal den have en title?-->
+                <a href="login.htm" title="Log in">Log in</a> <!-- Question: skal den have en title?-->
             </div>
-            <p>Dont have a user? — <a href="signup.htm" title="Sign up" class="">Sign up</a></p> <!--skal den have en title?-->
+            <p>Dont have a user? — <a href="signup.htm" title="Sign up" class="">Sign up</a></p> <!-- Question: skal den have en title?-->
         </section>
-        <section class="hidden">
+        
+        <section class="hidden"> <!-- TODO: ADD STYLING -->
             <header>
                 <h2>Your cart</h2>
                 <h3>Your cart is empty</h3>
             </header>
             <p>Items placed in this basket is not reserved.</p>
             <div class="primary_btn">
-                <a href="index.html">Browse products</a> <!--skal den have en title?-->
+                <a href="index.html">Browse products</a> <!-- Question: skal den have en title?-->
             </div>
         </section>
 
-        <section class="">
+        <section class="hidden"> <!-- All hidden because change depending og logged in and/or empty cart -->
             <div class="">
-                <a href="" id="backBtn"> ← Go back</a> <!-- Tilføj en svg pil-->
+                <a href="" id="backBtn"> ← Go back</a> <!-- TODO: Tilføj en svg pil-->
             </div>
             <header>
                 <h2>Your cart</h2>
             </header>
             
-            <p>Items placed in this basket is not reserved.</p> <!-- skal den være i header? -->
+            <p>Items placed in this basket is not reserved.</p> <!-- Question: skal den være i header? -->
 
 
             <section class="order_summary">
@@ -67,25 +68,25 @@
                 <section class="order_summary_price">
                     <div class="subtotal_delivery">
                         <div class="price">
-                            <p><strong>Subtotal</strong></p> <!-- Skal det være strong eller bold?? -->
+                            <p><strong>Subtotal</strong></p> <!-- Question: Skal det være strong eller bold?? -->
                             <p id="subtotalAmount"><strong>Price</strong></p>
                         </div>
-                        <div class="price">
+                        <div class="price"> <!-- Question: Should we remove this -->
                             <p><strong>Delivery</strong></p>
                             <p id="deliveryAmount">Price</p>
                         </div>
                     </div>
                     <hr>
                     <div class="price">
-                        <p><strong>Total price</strong> <span>VAT included</span></p>
+                        <p><strong>Total price</strong> <span>VAT included</span></p> <!-- TODO: span should be thin maybe -->
                         <p id="totalAmount">Price</p>
                     </div>
                     <div class="primary_btn">
-                        <a href="checkout.htm">Checkout</a> <!-- skal den have title? -->
+                        <a href="checkout.htm">Checkout</a> <!-- Question: skal den have title? --> <!-- TODO: Text center -->
                     </div>
                     <div class="">
                         <p>We accept</p>
-                        <div class="payment_methods">
+                        <div class="payment_methods"> <!-- TODO: Add alt tag -->
                             <img src="assets/icons/card-visa.svg" alt="">
                             <img src="assets/icons/card-mastercard.svg" alt="">
                             <img src="assets/icons/card-paypall.svg" alt="">
