@@ -26,7 +26,7 @@
         </nav>
     </header>
     <main>
-        <section class="hidden"> <!-- TODO: ADD STYLING -->
+        <section class="hidden" id="notLoggedIn"> <!-- TODO: ADD STYLING -->
             <header>
                 <h2>Your cart</h2>
                 <h3>Login to see your cart</h3>
@@ -37,7 +37,7 @@
             <p>Dont have a user? — <a href="signup.htm" title="Sign up" class="">Sign up</a></p> <!-- Question: skal den have en title?-->
         </section>
         
-        <section class="hidden"> <!-- TODO: ADD STYLING -->
+        <section class="hidden" id="cartEmpty"> <!-- TODO: ADD STYLING -->
             <header>
                 <h2>Your cart</h2>
                 <h3>Your cart is empty</h3>
@@ -48,7 +48,7 @@
             </div>
         </section>
 
-        <section class="hidden"> <!-- All hidden because change depending og logged in and/or empty cart -->
+        <section class="hidden" id="cartFilled"> <!-- All hidden because change depending og logged in and/or empty cart -->
             <div class="">
                 <a href="" id="backBtn"> ← Go back</a> <!-- TODO: Tilføj en svg pil-->
             </div>
@@ -66,20 +66,10 @@
 
                 <!-- Summary -->
                 <section class="order_summary_price">
-                    <div class="subtotal_delivery">
-                        <div class="price">
-                            <p><strong>Subtotal</strong></p> <!-- Question: Skal det være strong eller bold?? -->
-                            <p id="subtotalAmount"><strong>Price</strong></p>
-                        </div>
-                        <div class="price"> <!-- Question: Should we remove this -->
-                            <p><strong>Delivery</strong></p>
-                            <p id="deliveryAmount">Price</p>
-                        </div>
-                    </div>
-                    <hr>
                     <div class="price">
-                        <p><strong>Total price</strong> <span>VAT included</span></p> <!-- TODO: span should be thin maybe -->
-                        <p id="totalAmount">Price</p>
+                        <p><strong>Subtotal</strong></p> <!-- Question: Skal det være strong eller bold?? -->
+                        <p id="subtotalAmount"></p>
+                    </div>
                     </div>
                     <div class="primary_btn">
                         <a href="checkout.htm">Checkout</a> <!-- Question: skal den have title? --> <!-- TODO: Text center -->
