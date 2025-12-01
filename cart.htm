@@ -26,6 +26,8 @@
         </nav>
     </header>
     <main>
+        <!-- QUESTION: MÅSKE man kan gøre så de første to sections er én template som ændrer sig alt efter states og man kun ændre det i js? -->
+        <!-- NOT LOGGED IN -->
         <section class="hidden" id="notLoggedIn"> <!-- TODO: ADD STYLING -->
             <header>
                 <h2>Your cart</h2>
@@ -37,6 +39,7 @@
             <p>Dont have a user? — <a href="signup.htm" title="Sign up" class="">Sign up</a></p> <!-- Question: skal den have en title?-->
         </section>
         
+        <!-- CART EMPTY -->
         <section class="hidden" id="cartEmpty"> <!-- TODO: ADD STYLING -->
             <header>
                 <h2>Your cart</h2>
@@ -48,6 +51,7 @@
             </div>
         </section>
 
+        <!-- CART FILLED -->
         <section class="hidden" id="cartFilled"> <!-- All hidden because change depending og logged in and/or empty cart -->
             <div class="">
                 <a href="" id="backBtn"> ← Go back</a> <!-- TODO: Tilføj en svg pil-->
