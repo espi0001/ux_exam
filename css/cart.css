@@ -1,7 +1,13 @@
 @import "styles.css";
 
+
+main {
+    min-height: 75vh;
+    display: grid;
+}
+
 #notLoggedIn {
-    _display: flex;
+    display: flex;
     flex-direction: column;
     gap: 1.5rem;
     height: 100%; /* TODO: Få den til at fylde hele siden */

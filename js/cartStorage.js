@@ -1,9 +1,9 @@
-import { SESSION_STORAGE_USER_EMAIL } from "./info.js";
+import { LOCAL_STORAGE_USER_EMAIL } from "./info.js";
 
 
 // Get the storage key for the current user's cart
 export function getCartKey() {
-    const email = sessionStorage.getItem(SESSION_STORAGE_USER_EMAIL);
+    const email = localStorage.getItem(LOCAL_STORAGE_USER_EMAIL);
     if (!email) return null; // no cart if not logged in
     return `cart${email}`; // same key used everywhere
 }

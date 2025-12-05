@@ -26,10 +26,11 @@ body {
   background-color: var(--bgColorPrimary);
   color: var(--colorTextPrimary);
   font-family: var(--fontMain);
-
+  
   main {
     padding: 20px;
     margin: auto;
+    
 
     > header {
       margin-bottom: 1.5rem;
