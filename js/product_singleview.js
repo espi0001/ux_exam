@@ -29,7 +29,7 @@ fetch(`${BASE_URL}/products/${id}`)
 
     const img = singleProduct.querySelector("img");
     img.src = product.image;
-    img.alt = product.title;
+    img.alt = `${product.title} - Product image`; // Mere beskrivende alt text
 
     singleProduct.querySelector("#price").innerText = `€${product.price.toFixed(2)}`; // Format the price to have 2 decimals
     singleProduct.querySelector("#rate").innerText = product.rating.rate;
