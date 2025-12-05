@@ -56,7 +56,8 @@ body {
   h2 {
     font-size: var(--fontSize-h2);
   }
-  h3 {
+  h3,
+  h4 {
     font-size: var(--fontSize-h3);
   }
 
