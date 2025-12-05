@@ -26,11 +26,10 @@ body {
   background-color: var(--bgColorPrimary);
   color: var(--colorTextPrimary);
   font-family: var(--fontMain);
-  
+
   main {
     padding: 20px;
     margin: auto;
-    
 
     > header {
       margin-bottom: 1.5rem;
@@ -130,14 +129,14 @@ body {
   color: var(--colorTextSecondary);
   border: 2px solid var(--buttonPrimaryColor);
   transition: background-color 0.3s;
-  
+
   padding: 0.9rem;
   font-size: 1rem;
   text-align: center;
-  
+
   cursor: pointer;
-  
-  >a {
+
+  > a {
     color: var(--colorTextSecondary);
     text-decoration: none;
   }
@@ -145,8 +144,8 @@ body {
   &:hover {
     _background-color: #7b1fa2;
     background-color: var(--bgColorPrimary);
-    color:var(--colorTextPrimary);
-    >a {
+    color: var(--colorTextPrimary);
+    > a {
       color: var(--colorTextPrimary);
       text-decoration: none;
     }
@@ -160,4 +159,30 @@ body {
 /* For the navigation */
 .hidden {
   display: none;
+}
+
+#cart {
+  a {
+    position: relative;
+    display: inline-block;
+
+    .cart-counter {
+      position: absolute;
+      top: 14px;
+      right: -8px;
+      background-color: var(--buttonPrimaryColor);
+      color: var(--colorTextSecondary);
+      border-radius: 50%;
+      min-width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: bold;
+      line-height: 1;
+      padding: 0 4px;
+      box-sizing: border-box;
+    }
+  }
 }
