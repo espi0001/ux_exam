@@ -8,6 +8,12 @@ await fetch(`${BASE_URL}/products`)
 
     data.forEach((product) => {
       const singleProduct = document.querySelector("#singleProduct").content.cloneNode(true);
+
+      const imgElement = singleProduct.querySelector("img");
+      imgElement.src = product.image;
+      imgElement.alt = `${product.title} product image`;
+      imgElement.loading = "lazy";
+
       singleProduct.querySelector("img").src = product.image;
       singleProduct.querySelector("h3").innerText = product.title;
       singleProduct.querySelector("p").innerText = `€${product.price}`;

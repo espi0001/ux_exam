@@ -1,7 +1,6 @@
 import { BASE_URL } from "./info.js";
 import { getCart, saveCart, getCartKey } from "./cartStorage.js"; // modules for localstorage handling
 
-
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
@@ -17,8 +16,7 @@ if (backBtn) {
   });
 }
 
-
-// FETCH PRODUCT & SHOW IT 
+// FETCH PRODUCT & SHOW IT
 fetch(`${BASE_URL}/products/${id}`)
   .then((res) => res.json()) // Convert the response into JSON
   .then((product) => {
@@ -30,7 +28,7 @@ fetch(`${BASE_URL}/products/${id}`)
 
     const img = singleProduct.querySelector("img");
     img.src = product.image;
-    img.alt = product.title;
+    img.alt = `${product.title} - Product image`; // Mere beskrivende alt text
 
     singleProduct.querySelector("#price").innerText = `€${product.price.toFixed(2)}`; // Format the price to have 2 decimals
     singleProduct.querySelector("#rate").innerText = product.rating.rate;
@@ -41,8 +39,6 @@ fetch(`${BASE_URL}/products/${id}`)
     console.error("Error loading product", err); // Debuggin if something goes wrong
   });
 
-
-
 // ADD TO CART BUTTON
 const addToCartBtn = document.querySelector("#addToCartBtn");
 
@@ -51,8 +47,6 @@ addToCartBtn.addEventListener("click", () => {
   if (!currentProduct) return; // Safety, if fetch is not done yet / product not loaded yet
   addToCart(currentProduct);
 });
-
-
 
 // ADD PRODUCT TO CART
 function addToCart(product) {
@@ -66,8 +60,8 @@ function addToCart(product) {
   }
 
   // Load the user's cart from localStorage
-  const cart = getCart() // From cartStorage.js module
-  
+  const cart = getCart(); // From cartStorage.js module
+
   // Check if the product allready exists in the cart
   const existing = cart.find((item) => item.id === product.id);
 
@@ -75,7 +69,7 @@ function addToCart(product) {
     existing.quantity += 1; // add 1 to the amount if the product already exsist in the cart
   } else {
     // Else add ned product with quantity = 1
-    cart.push ({
+    cart.push({
       id: product.id,
       title: product.title,
       price: product.price,
