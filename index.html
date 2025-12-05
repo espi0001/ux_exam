@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/product_list.css">
     <script src="js/loginCheck.js" type="module"></script>
     <script src="js/logout.js" type="module"></script>
+    <script type="module" src="js/cartCounter.js"></script>
     <script type="module" src="js/products.js"></script>
 </head>
 
@@ -24,7 +25,12 @@
                 <li id="login"><a href="login.htm" title="Log in" class="primary_btn">Log in</a></li>
                 <li id="signup"><a href="signup.htm" title="Sign up" class="primary_btn">Sign up</a></li>
                 <li id="logout" class="hidden"><button id="btnLogout" class="primary_btn">Log out</button></li>
-                <li id="signup"><a href="cart.htm" title="Cart"><img src="assets/icons/cart_big.svg" alt=""></a></li>
+                <li id="cart">
+                    <a href="cart.htm" title="Cart">
+                        <img src="assets/icons/cart_big.svg" alt="">
+                        <span id="cartCounter" class="cart-counter">0</span>
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
