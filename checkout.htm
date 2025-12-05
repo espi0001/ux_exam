@@ -5,16 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout | UX</title>
-    <link rel="stylesheet" href="css/product_list.css">
+    <link rel="stylesheet" href="css/signup.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="stylesheet" href="css/cart.css">
+
     <script src="js/loginCheck.js" type="module"></script>
     <script src="js/logout.js" type="module"></script>
+    <script src="js/checkout.js" type="module"></script>
 </head>
 
 <body>
     <header>
         <h1 class="logo"><a href="index.html"><span>UX</span> SHOP</a></h1>
         <p id="user"></p>
-    
+
         <nav>
             <ul>
                 <li id="login"><a href="login.htm" title="Log in" class="primary_btn">Log in</a></li>
@@ -26,9 +30,39 @@
     </header>
 
     <main>
-        <header>
-            <h2>Checkout</h2>
-        </header>
+        <section class="auth-form auth-container">
+            <header>
+                <h2>Checkout</h2>
+                <p>Enter your information below to proceed.
+                </p>
+            </header>
+            <form id="frmCheckout">
+                <fieldset>
+
+                    <div class="form-group">
+                        <label for="txtDeliveryAddress">Delivery Address</label>
+                        <input type="text" id="txtDeliveryAddress" name="txtDeliveryAddress" required
+                            aria-required="true" tabindex="1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtBillingAddress">Billing Address</label>
+                        <input type="text" id="txtBillingAddress" name="txtBillingAddress" required aria-required="true"
+                            tabindex="2">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtCardNumber">Credit Card Number</label>
+                        <input type="text" id="txtCardNumber" name="txtCardNumber" maxlength="19"
+                            placeholder="1234 5678 9012 3456" required aria-required="true" tabindex="3">
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="primary_btn" tabindex="4">Checkout</button>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
     </main>
 
     <footer>
@@ -38,6 +72,14 @@
         <hr>
         <p>&copy; 2025s UX Shop. All rights reserved.</p>
     </footer>
+
+    <dialog id="mdlInfo">
+        <header>
+            <h1 id="modalTitle"></h1>
+            <button class="close">&times;</button>
+        </header>
+        <p></p>
+    </dialog>
 </body>
 
 </html>
