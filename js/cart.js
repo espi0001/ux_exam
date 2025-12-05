@@ -99,16 +99,24 @@ function renderCart() {
     node.querySelector(".product_name").textContent = item.title;
     node.querySelector(".product_price").textContent = formatPrice(item.price * qty);
 
-    // QUANTITY SELECT
-    // TODO: a maximum amount
-    const qtySelect = node.querySelector(".product_qty");
-    qtySelect.value = String(qty); // set default value in dropdown
+    // QUANTITY DISPLAY (-/+ buttons)
+    const qtyDisplay = node.querySelector(".product_qty");
+    qtyDisplay.textContent = String(qty); 
 
-    // When user changes quantity -> update item in cart
-    qtySelect.addEventListener("change", (e) => {
-      const newQty = Number(e.target.value);
-      updateCartItem(item.id, newQty);
-    });
+    // find both +/- buttons for this product
+    const qtyButtons = node.querySelectorAll(".quantity-change");
+
+    qtyButtons.forEach((qbtn) => {
+        const change = Number(qbtn.dataset.change) || 0; // -1 or +1
+
+        qbtn.addEventListener("click", () => {
+            // new quantity = current quantity + change
+            const newQty = Math.max(1, qty + change); // minimum 1
+            
+            updateCartItem(item.id, newQty);
+        })
+    })
+
 
     // REMOVE BUTTON
     const removeBtn = node.querySelector(".product_remove_btn");
