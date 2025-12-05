@@ -26,6 +26,7 @@ fetch(`${BASE_URL}/products/${id}`)
 
     // Insert product data into the page
     singleProduct.querySelector("h2").innerText = product.title;
+    singleProduct.querySelector("h4").innerText = product.category;
 
     const img = singleProduct.querySelector("img");
     img.src = product.image;

@@ -6,11 +6,7 @@ img {
 
 main {
   display: grid;
-  > p,
-  .sort {
-    justify-self: right;
-  }
-
+  justify-content: center;
   #btnLoadMore {
     justify-self: center;
   }
