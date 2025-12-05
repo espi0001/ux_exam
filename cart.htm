@@ -26,76 +26,63 @@
         </nav>
     </header>
     <main>
-        <!-- QUESTION: MÅSKE man kan gøre så de første to sections er én template som ændrer sig alt efter states og man kun ændre det i js? -->
+        <!-- All hidden because change depending og logged in and/or empty cart -->
+    
         <!-- NOT LOGGED IN -->
         <section class="hidden" id="notLoggedIn"> <!-- TODO: ADD STYLING -->
-            <header>
-                <h2>Your cart</h2>
-                <h3>Login to see your cart</h3>
-            </header>
-            <div class="primary_btn">
-                <a href="login.htm" title="Log in">Log in</a> <!-- Question: skal den have en title?-->
+            <div class="notLoggedIn">
+                <header>
+                    <h2>Your cart</h2>
+                    <h3>Login to see your cart</h3>
+                </header>
+                <div class="primary_btn">
+                    <a href="login.htm">Log in</a>
+                </div>
+                <p>Dont have a user? — <a href="signup.htm" class="">Sign up</a></p>
             </div>
-            <p>Dont have a user? — <a href="signup.htm" title="Sign up" class="">Sign up</a></p> <!-- Question: skal den have en title?-->
         </section>
         
         <!-- CART EMPTY -->
         <section class="hidden" id="cartEmpty"> <!-- TODO: ADD STYLING -->
-            <header>
-                <h2>Your cart</h2>
-                <h3>Your cart is empty</h3>
-            </header>
-            <p>Items placed in this basket is not reserved.</p>
-            <div class="primary_btn">
-                <a href="index.html">Browse products</a> <!-- Question: skal den have en title?-->
+            <div class="cartEmpty">
+                <header>
+                    <h2>Your cart</h2>
+                    <h3>Your cart is empty</h3>
+                </header>
+                <p>Items placed in this basket is not reserved.</p>
+                <div class="primary_btn">
+                    <a href="index.html">Browse products</a>
+                </div>
             </div>
         </section>
 
         <!-- CART FILLED -->
-        <section class="hidden" id="cartFilled"> <!-- All hidden because change depending og logged in and/or empty cart -->
-            <div class="">
-                <a href="" id="backBtn"> ← Go back</a> <!-- TODO: Tilføj en svg pil-->
-            </div>
-            <header>
-                <h2>Your cart</h2>
-            </header>
+        <section class="hidden" id="cartFilled">
             
-            <p>Items placed in this basket is not reserved.</p> <!-- Question: skal den være i header? -->
+            <div class="cartFilled">
+                
+                <div class="backBtn">
+                    <a href="" id="backBtn">&larr; Go back</a> <!-- TODO: gør samme på productlist og checkout -->
+                </div>
+                
+                <header>
+                    <h2>Your cart</h2>
+                    <p>Items placed in this basket is not reserved.</p> <!-- Question: skal den være i header? -->
+                </header>
 
-
-            <section class="order_summary">
-                <!-- The Card Items -->
-                <div id="cartItems" class="cart_items"></div>
-
-
-                <!-- Summary -->
-                <section class="order_summary_price">
-                    <div class="price">
-                        <p><strong>Subtotal</strong></p> <!-- Question: Skal det være strong eller bold?? -->
-                        <p id="subtotalAmount"></p>
-                    </div>
-                    </div>
+                <section class="order_summary">
+                    <!-- The Card Items -->
+                    <div id="cartItems" class="cart_items"></div>
+                    
                     <div class="primary_btn">
                         <a href="checkout.htm">Checkout</a> <!-- Question: skal den have title? --> <!-- TODO: Text center -->
                     </div>
-                    <div class="">
-                        <p>We accept</p>
-                        <div class="payment_methods"> <!-- TODO: Add alt tag -->
-                            <img src="assets/icons/card-visa.svg" alt="">
-                            <img src="assets/icons/card-mastercard.svg" alt="">
-                            <img src="assets/icons/card-paypall.svg" alt="">
-                            <img src="assets/icons/card-klarna.svg" alt="">
-                            <img src="assets/icons/card-apple_pay.svg" alt="">
-                            <img src="assets/icons/card-google_pay.svg" alt="">
-                            <img src="assets/icons/card-shop_pay.svg" alt="">
-                            <img src="assets/icons/card-amex.svg" alt="">
-                        </div>
-                    </div>
                 </section>
-            </section>
+            </div>
         </section>
 
     </main>
+
     <footer>
         <header>
             <h2 class="logo"><a href="index.html"><span>UX</span> SHOP</a></h2>
@@ -109,22 +96,16 @@
         <div class="product_image">
             <img src="" alt="">
         </div>
-        <div class="product_info">
-            <header>
-                <h3 class="product_name"></h3>
-            </header>
-            <p class="product_price">Price</p>
-            <div class="product_actions">
-                <select class="product_qty" name="" id="">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select> <!-- skal den have name og id?? -->
-                <button class="product_remove_btn" type="button">Remove</button>
-            </div>
+        <header>
+            <h3 class="product_name"></h3>
+        </header>
+        <p class="product_price">Price</p>
+        <div class="product_quantity">
+            <button type="button" class="primary_btn quantity-change" data-product-id="${product.id}" data-change="-1">-</button>
+            <p class="product_qty"></p>
+            <button type="button" class="primary_btn quantity-change" data-product-id="${product.id}" data-change="1">+</button>
         </div>
+        <button class="primary_btn product_remove_btn" type="button">Remove</button>
     </article>
 </template>
 </html>
