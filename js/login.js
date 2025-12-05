@@ -1,4 +1,4 @@
-import { USERS_BASE_URL, SESSION_STORAGE_USER_EMAIL } from "./info.js";
+import { USERS_BASE_URL, LOCAL_STORAGE_USER_EMAIL } from "./info.js";
 import { showModal } from "./modal.js";
 
 // add event listener to login form
@@ -24,7 +24,7 @@ document.querySelector("#frmLogin").addEventListener("submit", (e) => {
           // checking if email and password match
           if (user.email === email && user.password === password) {
             // save user email to session storage
-            sessionStorage.setItem(SESSION_STORAGE_USER_EMAIL, email);
+            localStorage.setItem(LOCAL_STORAGE_USER_EMAIL, email);
 
             // redirect to home page after login
             location.href = "index.html";

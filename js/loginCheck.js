@@ -1,8 +1,8 @@
 // here we import the session storage key for user email
-import { SESSION_STORAGE_USER_EMAIL } from "./info.js";
+import { LOCAL_STORAGE_USER_EMAIL } from "./info.js";
 
 // get the users email from session storage
-const email = sessionStorage.getItem(SESSION_STORAGE_USER_EMAIL);
+const email = localStorage.getItem(LOCAL_STORAGE_USER_EMAIL);
 
 // check if user is logged in
 if (email !== null) {
@@ -16,3 +16,5 @@ if (email !== null) {
   document.querySelector("#signup").classList.remove("hidden");
   document.querySelector("#logout").classList.add("hidden");
 }
+
+// når man logger ud skal man ikke kunne se noget i cart, men cart skal ikke blive 0
