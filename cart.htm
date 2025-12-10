@@ -4,23 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
     <title>Cart | UX</title>
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="css/cart.css">
+
+        <!-- JS -->
     <script src="js/loginCheck.js" type="module"></script> <!-- Er det et module? -->
     <script src="js/logout.js" type="module"></script> <!-- Er det et module? -->
-    <script type="module" src="js/cart.js"></script> <!-- Er det et module? -->
+    <script src="js/cart.js" type="module" ></script> <!-- Er det et module? -->
+    <script src="js/cartCounter.js" type="module"></script>
 </head>
 
 <body>
     <header>
         <h1 class="logo"><a href="index.html"><span>UX</span> SHOP</a></h1>
-        <p id="user"></p>
     
         <nav>
             <ul>
-                <li id="login" class="primary_btn"><a href="login.htm" title="Log in">Log in</a></li>
-                <li id="signup" class="primary_btn"><a href="signup.htm" title="Sign up">Sign up</a></li>
-                <li id="logout" class="hidden"><button id="btnLogout" class="primary_btn">Log out</button></li>
+                <li id="login" class="btn primary_btn"><a href="login.htm" title="Log in">Log in</a></li>
+                <li id="signup" class="btn secondary_btn"><a href="signup.htm" title="Sign up">Sign up</a></li>
+                <li id="logout" class="hidden"><button id="btnLogout" class="btn secondary_btn">Log out</button></li>
                 <li id="cart">
                     <a href="cart.htm" title="Cart">
                         <img src="assets/icons/cart_big.svg" alt="">
@@ -79,7 +89,7 @@
                     <!-- The Card Items -->
                     <div id="cartItems" class="cart_items"></div>
                     
-                    <div class="summary_">
+                    <div class="summary_checkout">
                         <!-- Price summary -->
                         <section class="subtotal">
                             <p><strong>Subtotal</strong></p>

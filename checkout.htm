@@ -4,26 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout | UX</title>
-    <link rel="stylesheet" href="css/signup.css">
-    <link rel="stylesheet" href="css/checkout.css">
-    <link rel="stylesheet" href="css/cart.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
+    <title>Checkout | UX</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/checkout.css">
+
+    <!-- JS -->
+    <script src="js/cart.js" type="module"></script>
     <script src="js/loginCheck.js" type="module"></script>
     <script src="js/logout.js" type="module"></script>
     <script src="js/checkout.js" type="module"></script>
+    <script src="js/cartCounter.js" type="module"></script>
 </head>
 
 <body>
     <header>
         <h1 class="logo"><a href="index.html"><span>UX</span> SHOP</a></h1>
-        <p id="user"></p>
-
+    
         <nav>
             <ul>
-                <li id="login" class="primary_btn"><a href="login.htm" title="Log in">Log in</a></li>
-                <li id="signup" class="primary_btn"><a href="signup.htm" title="Sign up">Sign up</a></li>
-                <li id="logout" class="hidden"><button id="btnLogout" class="primary_btn">Log out</button></li>
+                <li id="login" class="btn primary_btn"><a href="login.htm" title="Log in">Log in</a></li>
+                <li id="signup" class="btn secondary_btn"><a href="signup.htm" title="Sign up">Sign up</a></li>
+                <li id="logout" class="hidden"><button id="btnLogout" class="btn secondary_btn">Log out</button></li>
                 <li id="cart">
                     <a href="cart.htm" title="Cart">
                         <img src="assets/icons/cart_big.svg" alt="">
@@ -63,7 +71,7 @@
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" class="primary_btn" tabindex="4">Checkout</button>
+                        <button type="submit" class="primary_btn" tabindex="4">Checkout <span id="checkoutTotal">0.00 €</span></button>
                     </div>
                 </fieldset>
             </form>
