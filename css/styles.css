@@ -123,20 +123,34 @@ body {
   }
 }
 
-/*  PRIMARY BUTTON STYLING > skal ind på styles 
-    */
-.primary_btn {
-  background-color: var(--buttonPrimaryColor);
-  color: var(--colorTextSecondary);
-  border: 2px solid var(--buttonPrimaryColor);
+/* BUTTONS */
+/* Main styling for buttons */
+.btn {
   border-radius: 0.2rem;
   transition: background-color 0.3s;
+  border: 2px solid var(--buttonPrimaryColor);
+
 
   padding: 0.9rem;
   font-size: 1rem;
   text-align: center;
 
   cursor: pointer;
+}
+
+/* styling for primary btn - colors */
+.primary_btn {
+  background-color: var(--buttonPrimaryColor);
+  color: var(--colorTextSecondary);
+  border: 2px solid var(--buttonPrimaryColor);
+  border-radius: 0.2rem; /* Fjern, er i btn styling som er generel styling  */
+  transition: background-color 0.3s; /* Fjern, er i btn styling som er generel styling  */
+
+  padding: 0.9rem; /* Fjern, er i btn styling som er generel styling  */
+  font-size: 1rem; /* Fjern, er i btn styling som er generel styling  */
+  text-align: center; /* Fjern, er i btn styling som er generel styling  */
+
+  cursor: pointer; /* Fjern, er i btn styling som er generel styling  */
 
   > a {
     color: var(--colorTextSecondary);
@@ -158,11 +172,50 @@ body {
   }
 }
 
+
+.secondary_btn {
+  background-color: transparent;
+  color: var(--colorTextPrimary);
+
+  border: 2px solid var(--buttonPrimaryColor);
+
+  >a {
+    color: var(--colorTextSecondary);
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: var(--buttonPrimaryColor);
+    color: var(--colorTextSecondary);
+
+    >a {
+      color: var(--colorTextPrimary);
+      text-decoration: none;
+    }
+  }
+
+  &:active {
+    background-color: #6a1b8a;
+  }
+}
+
+  .backBtn {
+    >a {
+      color: var(--colorTextPrimary);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
 /* For the navigation */
 .hidden {
   display: none;
 }
 
+/* For cart in navigation */
 #cart {
   a {
     position: relative;

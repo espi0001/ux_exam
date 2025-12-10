@@ -79,15 +79,16 @@
                     <!-- The Card Items -->
                     <div id="cartItems" class="cart_items"></div>
                     
-                    <!-- Price summary -->
-                    <section>
-                        <div class="subtotal">
+                    <div class="summary_">
+                        <!-- Price summary -->
+                        <section class="subtotal">
                             <p><strong>Subtotal</strong></p>
                             <p id="subtotalAmount">0.00 €</p>
+                        </section>
+    
+                        <div class="btn primary_btn">
+                            <a href="checkout.htm">Checkout</a> 
                         </div>
-                    </section>
-                    <div class="primary_btn">
-                        <a href="checkout.htm">Checkout</a> 
                     </div>
                 </section>
             </div>
@@ -113,11 +114,11 @@
         </header>
         <p class="product_price">Price</p>
         <div class="product_quantity">
-            <button type="button" class="primary_btn quantity-change" data-product-id="${product.id}" data-change="-1">-</button>
+            <button type="button" class="btn secondary_btn quantity-change" data-product-id="${product.id}" data-change="-1">-</button>
             <p class="product_qty">1</p>
-            <button type="button" class="primary_btn quantity-change" data-product-id="${product.id}" data-change="1">+</button>
+            <button type="button" class="btn secondary_btn quantity-change" data-product-id="${product.id}" data-change="1">+</button>
         </div>
-        <button class="primary_btn product_remove_btn" type="button">Remove</button>
+        <button class="btn secondary_btn product_remove_btn" type="button">Remove</button>
     </article>
 </template>
 </html>

@@ -41,17 +41,6 @@ main {
 
     }
 
-    /* TODO: tilføj til styles.css */
-    .backBtn {
-        >a {
-            color: var(--colorTextPrimary);
-            text-decoration: none;
-
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    }
 
     .product {
         display: grid;
@@ -81,11 +70,11 @@ main {
 
         .product_quantity {
             display: flex;
+            align-items: center;
             gap: 0.5rem;
 
             .quantity-change {
                 padding: 0.25rem;
-                font-size: 1rem;
             }
 
             .product_qty {
@@ -94,10 +83,13 @@ main {
         }
 
         .product_remove_btn, .quantity-change {
-            font-size: 1rem;
-            background-color: transparent;
-            color: var(--colorTextPrimary);
             justify-self: start;
         }
+    }
+
+    .subtotal {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
     }
 }
