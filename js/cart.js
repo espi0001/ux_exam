@@ -14,7 +14,8 @@ if (backBtn) {
   });
 }
 
-// show different states of cart
+
+// Different states of cart
 const notLoggedIn = document.querySelector("#notLoggedIn"); // 1. User is NOT logged in
 const cartEmpty = document.querySelector("#cartEmpty"); // 2. User IS logged in, but NO items in cart
 const cartFilled = document.querySelector("#cartFilled"); // 3. User IS logged in and HAS items in cart
@@ -35,34 +36,35 @@ function updateView(cart) {
   }
 }
 
+
 // Summary price
 const subtotalAmount = document.querySelector("#subtotalAmount");
 
 function formatPrice(amount) {
-  // currency string
-  return `${amount.toFixed(2)} €`;
+  return `${amount.toFixed(2)} €`; // currency string
 }
+
+
 
 // Update the subtotal section in the cart summary
 function updateSummary(subtotal) {
   // If the element is not found in the HTML, then stop the function.
   // Prevents errors like: Cannot set textContent of null
   if (!subtotalAmount) return;
-
-  // Insert the subtotal into the <p id="subtotalAmount">
-  subtotalAmount.textContent = formatPrice(subtotal);
+  
+  subtotalAmount.textContent = formatPrice(subtotal); // Insert the subtotal into the <p id="subtotalAmount">
 }
+
+
 
 // Render (makes it visible) all cart items inside the cart page
 function renderCart() {
   // Get the current user's cart form local storage
   const cart = getCart(); // From cartStorage.js module
+  
+  updateView(cart); // Update which view should be shown (login, empty cart, or full cart)
 
-  // Update which view should be shown (login, empty cart, or full cart)
-  updateView(cart);
-
-  // Check if user is logged in (true if getCartKey() returns a key)
-  const isLoggedIn = !!getCartKey();
+  const isLoggedIn = !!getCartKey(); // Check if user is logged in (true if getCartKey() returns a key)
 
   // If the user is NOT logged in OR cart is empty:
   // Clear the item list and show subtotal = 0
@@ -71,23 +73,19 @@ function renderCart() {
     updateSummary(0); // show 0.00€
     return; // stop here (nothing more to render -> nothing more to make visible)
   }
-
-  // If there are items, clear the container before re-rendering them
-  cartItemsContainer.innerHTML = "";
-
-  // Create a fragment so we can append multiple items efficiently
-  const fragment = document.createDocumentFragment();
-
-  // Keep track of subtotal (sum of item prices)
-  let subtotal = 0;
+  
+  cartItemsContainer.innerHTML = ""; // If there are items, clear the container before re-rendering them
+  
+  const fragment = document.createDocumentFragment(); // Create a fragment so we can append multiple items efficiently
+  
+  let subtotal = 0; // Keep track of subtotal (sum of item prices)
 
   // Loop through every item in the cart
-  cart.forEach((item) => {
-    // Quantity fallback: use item.quantity or default 1
-    const qty = item.quantity ?? 1;
+  cart.forEach((item) => {    
+    const qty = item.quantity ?? 1; // Quantity fallback: use item.quantity or default 1
 
-    // Clone the <template> content so we can populate it
-    const node = cartItemTemplate.content.cloneNode(true);
+    const node = cartItemTemplate.content.cloneNode(true); // Clone the <template> content so we can populate it
+
 
     // IMAGE
     const img = node.querySelector(".product_image img");
@@ -95,9 +93,11 @@ function renderCart() {
     img.alt = item.title; // set alt text as the same as the title
     img.loading = "lazy"; // Question: maybe not needed
 
+
     // TEXT
     node.querySelector(".product_name").textContent = item.title;
     node.querySelector(".product_price").textContent = formatPrice(item.price * qty);
+
 
     // QUANTITY DISPLAY (-/+ buttons)
     const qtyDisplay = node.querySelector(".product_qty");
@@ -123,23 +123,19 @@ function renderCart() {
     removeBtn.addEventListener("click", () => {
       removeCartItem(item.id); // remove item from cart
     });
+    
+    fragment.appendChild(node); // Add this rendered item to the fragment
 
-    // Add this rendered item to the fragment
-    fragment.appendChild(node);
-
-    // Add item's price x wuantity to subtotal
-    subtotal += item.price * qty;
+    subtotal += item.price * qty; // Add item's price x wuantity to subtotal
   });
+  
+  cartItemsContainer.appendChild(fragment); // Add all rendered items to the cart container in one go
 
-  // Add all rendered items to the cart container in one go
-  cartItemsContainer.appendChild(fragment);
+  updateSummary(subtotal); // Update subtotal display
 
-  // Update subtotal display
-  updateSummary(subtotal);
-
-  // Update cart counter
-  updateCartCounter();
+  updateCartCounter(); // Update cart counter
 }
+
 
 // EDIT CART
 
@@ -148,23 +144,18 @@ function updateCartItem(id, quantity) {
   // Get the current cart form localStorage
   const cart = getCart(); // From cartStorage.js module
 
-  // Find the item in the cart that matches the given id
-  const item = cart.find((product) => product.id === id);
+  const item = cart.find((product) => product.id === id); // Find the item in the cart that matches the given id
 
-  // If the item does not exsist (safety check), stop the function
-  if (!item) return;
-
-  // Update the item's quantity to the new value
-  item.quantity = quantity;
+  if (!item) return; // If the item does not exsist (safety check), stop the function
+  
+  item.quantity = quantity; // Update the item's quantity to the new value
 
   // Save the updated cart back to localStorage
   saveCart(cart); // From cartStorage.js module
 
-  // Update cart counter
-  updateCartCounter();
+  updateCartCounter(); // Update cart counter
 
-  // Re-render the entire cart to show the new totals and prices at once
-  renderCart();
+  renderCart(); // Re-render the entire cart to show the new totals and prices at once
 }
 
 // Remove an item from the cart
@@ -179,13 +170,11 @@ function removeCartItem(id) {
   // Save the updated cart to localStorage
   saveCart(cart); // From cartStorage.js module
 
-  // Update cart counter
-  updateCartCounter();
-
-  // Re-render the cart so the removed items disappears at once
-  renderCart();
+  updateCartCounter(); // Update cart counter
+  
+  renderCart(); // Re-render the cart so the removed items disappears at once
 }
 
-// Render the cart as soon as the page has fully loaded
-// Question: Har Arturo ikke noget imod DOMContentLoaded???
-document.addEventListener("DOMContentLoaded", renderCart);
+// Render the cart when this module loads (DOM is ready because of type="module")
+// Render cart immediately (module runs after HTML is parsed)
+renderCart();
