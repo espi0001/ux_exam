@@ -130,7 +130,6 @@ body {
   transition: background-color 0.3s;
   border: 2px solid var(--buttonPrimaryColor);
 
-
   padding: 0.9rem;
   font-size: 1rem;
   text-align: center;
@@ -143,14 +142,6 @@ body {
   background-color: var(--buttonPrimaryColor);
   color: var(--colorTextSecondary);
   border: 2px solid var(--buttonPrimaryColor);
-  border-radius: 0.2rem; /* Fjern, er i btn styling som er generel styling  */
-  transition: background-color 0.3s; /* Fjern, er i btn styling som er generel styling  */
-
-  padding: 0.9rem; /* Fjern, er i btn styling som er generel styling  */
-  font-size: 1rem; /* Fjern, er i btn styling som er generel styling  */
-  text-align: center; /* Fjern, er i btn styling som er generel styling  */
-
-  cursor: pointer; /* Fjern, er i btn styling som er generel styling  */
 
   > a {
     color: var(--colorTextSecondary);
@@ -172,14 +163,13 @@ body {
   }
 }
 
-
 .secondary_btn {
   background-color: transparent;
   color: var(--colorTextPrimary);
 
   border: 2px solid var(--buttonPrimaryColor);
 
-  >a {
+  > a {
     color: var(--colorTextSecondary);
     text-decoration: none;
   }
@@ -188,7 +178,7 @@ body {
     background-color: var(--buttonPrimaryColor);
     color: var(--colorTextSecondary);
 
-    >a {
+    > a {
       color: var(--colorTextPrimary);
       text-decoration: none;
     }
@@ -199,16 +189,16 @@ body {
   }
 }
 
-  .backBtn {
-    >a {
-      color: var(--colorTextPrimary);
-      text-decoration: none;
+.backBtn {
+  > a {
+    color: var(--colorTextPrimary);
+    text-decoration: none;
 
-      &:hover {
-        text-decoration: underline;
-      }
+    &:hover {
+      text-decoration: underline;
     }
   }
+}
 
 /* For the navigation */
 .hidden {
@@ -228,13 +218,13 @@ body {
       padding: 0 4px;
 
       box-sizing: border-box;
-      
+
       background-color: var(--buttonPrimaryColor);
       color: var(--colorTextSecondary);
       border-radius: 50%;
       min-width: 20px;
       height: 20px;
-      
+
       display: flex;
       align-items: center;
       justify-content: center;
