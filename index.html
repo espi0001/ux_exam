@@ -4,27 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
     <title>Home | UX</title>
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="css/product_list.css">
+
+    <!-- JS -->
     <script src="js/loginCheck.js" type="module"></script>
     <script src="js/logout.js" type="module"></script>
-    <script type="module" src="js/cartCounter.js"></script>
-    <script type="module" src="js/products.js"></script>
+    <script src="js/cartCounter.js" type="module" ></script>
+    <script src="js/products.js" type="module" ></script>
 </head>
 
 <body>
     <header>
         <h1 class="logo"><a href="index.html"><span>UX</span> SHOP</a></h1>
-        <p id="user"></p>
-
+    
         <nav>
             <ul>
-                <li id="login"><a href="login.htm" title="Log in" class="btn primary_btn">Log in</a></li>
-                <li id="signup"><a href="signup.htm" title="Sign up" class="btn secondary_btn">Sign up</a></li>
-                <li id="logout" class="hidden"><button id="btnLogout" class="btn primary_btn">Log out</button></li>
+                <li id="login" class="btn primary_btn"><a href="login.htm" title="Log in">Log in</a></li>
+                <li id="signup" class="btn secondary_btn"><a href="signup.htm" title="Sign up">Sign up</a></li>
+                <li id="logout" class="hidden"><button id="btnLogout" class="btn secondary_btn">Log out</button></li>
                 <li id="cart">
                     <a href="cart.htm" title="Cart">
                         <img src="assets/icons/cart_big.svg" alt="">
@@ -41,17 +47,7 @@
             <h2>All products</h2>
         </header>
 
-        <!-- <div id="sort">
-                            <button id="btnSortBy">Sort by</button>
-                            <div id="sortDropdown" class="hidden">
-                                <button data-sort="price-asc">Price: Low → High</button>
-                                <button data-sort="price-desc">Price: High → Low</button>
-                            </div>
-                        </div> -->
-        <!-- <p>Showing <span id="shownCount"></span> of <span id="totalCount"></span></p> -->
-        <section id="productList">
-        </section>
-        <!-- <button id="btnLoadMore">Load more</button> -->
+        <section id="productList"></section>
     </main>
 
 
