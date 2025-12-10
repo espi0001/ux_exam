@@ -1,11 +1,12 @@
 import { BASE_URL } from "./info.js";
 import { getCart, saveCart, getCartKey } from "./cartStorage.js"; // modules for localstorage handling
 import { updateCartCounter } from "./cartCounter.js"; // module for updating the cart counter
+import { showModal } from "./modal.js"; // import showModal function
 
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
-let currentProduct = null; // product gets saved ehere, when its fetched
+let currentProduct = null; // product gets saved here, when its fetched
 
 // BACK BUTTON
 const backBtn = document.querySelector("#backBtn");
@@ -38,7 +39,7 @@ fetch(`${BASE_URL}/products/${id}`)
     singleProduct.querySelector("#description").innerText = product.description;
   })
   .catch((err) => {
-    console.error("Error loading product", err); // Debuggin if something goes wrong
+    console.error("Error loading product", err); // Debugging if something goes wrong
   });
 
 // ADD TO CART BUTTON
@@ -55,22 +56,22 @@ function addToCart(product) {
   // Get current user's cart key (null if not logged in)
   const cartKey = getCartKey(); // From cartStorage.js module
 
-  // If user is NOT logged in -> Show alert and stop
+  // If user is NOT logged in -> Show login prompt modal
   if (!cartKey) {
-    alert("You must be logged in to add products to your cart.");
+    showModal("Login required", "You must be logged in to add products to your cart.");
     return;
   }
 
   // Load the user's cart from localStorage
   const cart = getCart(); // From cartStorage.js module
 
-  // Check if the product allready exists in the cart
+  // Check if the product already exists in the cart
   const existing = cart.find((item) => item.id === product.id);
 
   if (existing) {
-    existing.quantity += 1; // add 1 to the amount if the product already exsist in the cart
+    existing.quantity += 1; // add 1 to the amount if the product already exists in the cart
   } else {
-    // Else add ned product with quantity = 1
+    // Else add new product with quantity = 1
     cart.push({
       id: product.id,
       title: product.title,
@@ -83,12 +84,12 @@ function addToCart(product) {
   // Save updated cart back to localStorage
   saveCart(cart); // From cartStorage.js module
 
-  // Feedback for user when adding something to the cart
-  // TODO - Maybe make a "toast thing as the feedback"
-  // alert("Product added to cart");
+  // Show success modal
+  showModal("Added to cart", "Product has been added to your cart!");
 
   // Update the cart counter
   updateCartCounter();
 }
+
 // Update cart counter when page loads
 updateCartCounter();
