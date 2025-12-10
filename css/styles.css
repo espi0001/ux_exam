@@ -28,14 +28,22 @@ body {
   font-family: var(--fontMain);
 
   main {
-    padding: 20px;
+    padding: 1.25rem;
     margin: auto;
-
+    
+    @media screen and (min-width: 768px) {
+      padding: 1.25rem 2rem;
+    }
+    
+    @media screen and (min-width: 1024px) {
+      padding: 1.25rem 4rem;
+    }
+    
     > header {
       margin-bottom: 1.5rem;
 
       @media screen and (min-width: 768px) {
-        margin-bottom: 3rem;
+        margin-bottom: 3rem; 
       }
     }
   }
@@ -64,9 +72,10 @@ body {
   p {
     font-size: var(--fontSize-body);
   }
+
   /* NAVIGATION */
   > header {
-    padding: 12px 20px;
+    padding: 1rem 1.25rem;
     border-bottom: 1px solid var(--colorTextPrimary);
 
     display: flex;
@@ -94,15 +103,16 @@ body {
   }
 
   > footer {
-    padding: 48px 20px;
+    padding: 3rem 1.25rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 32px;
+    gap: 2rem;
     border-top: 1px solid var(--colorTextPrimary);
 
     @media screen and (min-width: 768px) {
-      padding: 80px 42px;
+      padding: 5rem 2.625;
+      margin-top: 3rem;
     }
 
     h2 {
@@ -135,43 +145,44 @@ body {
   text-align: center;
 
   cursor: pointer;
+
+  text-decoration: none;
+
+  >a {
+      text-decoration: none;
+    }
+
+  &:active {
+    background-color: var(--buttonPrimaryColor);
+  }
 }
 
-/* styling for primary btn - colors */
+/* primary btn */
 .primary_btn {
   background-color: var(--buttonPrimaryColor);
   color: var(--colorTextSecondary);
-  border: 2px solid var(--buttonPrimaryColor);
 
   > a {
     color: var(--colorTextSecondary);
-    text-decoration: none;
   }
 
   &:hover {
-    _background-color: #7b1fa2;
-    background-color: var(--bgColorPrimary);
+    background-color: transparent;
     color: var(--colorTextPrimary);
+
     > a {
       color: var(--colorTextPrimary);
-      text-decoration: none;
     }
-  }
-
-  &:active {
-    background-color: #6a1b8a;
   }
 }
 
+/* secondary btn */
 .secondary_btn {
   background-color: transparent;
   color: var(--colorTextPrimary);
 
-  border: 2px solid var(--buttonPrimaryColor);
-
   > a {
-    color: var(--colorTextSecondary);
-    text-decoration: none;
+    color: var(--colorTextPrimary);
   }
 
   &:hover {
@@ -179,17 +190,15 @@ body {
     color: var(--colorTextSecondary);
 
     > a {
-      color: var(--colorTextPrimary);
-      text-decoration: none;
+      color: var(--colorTextSecondary);
     }
-  }
-
-  &:active {
-    background-color: #6a1b8a;
   }
 }
 
 .backBtn {
+  color: var(--colorTextPrimary);
+  text-decoration: none;
+  
   > a {
     color: var(--colorTextPrimary);
     text-decoration: none;
@@ -199,6 +208,7 @@ body {
     }
   }
 }
+
 
 /* For the navigation */
 .hidden {

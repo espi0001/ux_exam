@@ -1,7 +1,7 @@
 @import "styles.css";
 @import "_dialog.css";
 
-/* STYLING FOR SIGNUP & LOGIN PAGES */
+/* STYLING FOR SIGNUP & LOGIN & Checkout */
 
 /* main container - centers the auth form vertically and horizontally */
 main {
@@ -16,9 +16,7 @@ main {
   /* full width on mobile devices */
   width: 100%;
   max-width: 100%;
-
-  /* a little shadow around the form */
-  box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1); /* a little shadow around the form */
 
   /* tablet > limited width a little for better readability */
   @media screen and (min-width: 768px) {
@@ -33,33 +31,19 @@ main {
 
 /* tab navigation for switching between sign up and login */
 .auth-tabs {
-  /* display tabs in a row */
-  display: flex;
-
-  /* border below tabs > QUESTION: should they be black or purple? */
+  display: flex; /* display tabs in a row */
   border-bottom: 0.125rem solid var(--bgColorSecondary);
 
   .tab {
-    /* each tab takes equal width */
-    flex: 1;
-
-    /* center text inside tab */
-    text-align: center;
-
-    /* add padding for clickable area */
-    padding: 0.75rem;
-
-    /* remove default link underline */
-    text-decoration: none;
+    flex: 1; /* each tab takes equal width */
+    text-align: center; /* center text inside tab */
+    padding: 0.75rem; /* add padding for clickable area */
+    text-decoration: none; /* remove default link underline */
 
     color: var(--colorTextPrimary);
     font-weight: 600;
-
-    /* slightly smaller font on mobile */
-    font-size: 0.9rem;
-
-    /* use secondary background color */
-    background-color: var(--bgColorSecondary);
+    font-size: 0.9rem; /* slightly smaller font on mobile */
+    background-color: var(--bgColorSecondary); /* use secondary background color */
 
     transition: background-color 0.3s;
 
@@ -86,8 +70,7 @@ main {
 
 /* form section containing heading, description, and form */
 .auth-form {
-  /* add padding around form content */
-  padding: 1.5rem;
+  padding: 1.5rem; /* add padding around form content */
 
   background-color: var(--bgColorPrimary);
 
@@ -135,8 +118,7 @@ main {
 #frmLogin,
 #frmCheckout {
   .form-group {
-    /* add space between form fields */
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.25rem; /* add space between form fields */
 
     /* tablet > increase spacing between fields */
     @media screen and (min-width: 768px) {
@@ -145,17 +127,10 @@ main {
 
     /* label for input field */
     label {
-      /* display as block to take full width */
-      display: block;
-
-      /* space between label and input */
-      margin-bottom: 0.5rem;
-
-      /* label text medium weight */
-      font-weight: 500;
-
-      /* label font size */
-      font-size: 0.9rem;
+      display: block; /* display as block to take full width */
+      margin-bottom: 0.5rem; /* space between label and input */
+      font-weight: 500; /* label text medium weight */
+      font-size: 0.9rem; /* label font size */
 
       /* tablet > increase label font size */
       @media screen and (min-width: 768px) {
@@ -165,8 +140,7 @@ main {
 
     /* input fields for email and password */
     input {
-      /* take full width of container */
-      width: 100%;
+      width: 100%; /* take full width of container */
 
       /* padding inside input */
       padding: 0.75rem;
@@ -176,10 +150,8 @@ main {
 
       /* highlight input when focused */
       &:focus {
-        /* remove default browser outline */
-        outline: none;
+        outline: none; /* remove default browser outline */
 
-        /* change border color to match theme > QUESTION: should they be black or purple? */
         border-color: var(--buttonPrimaryColor);
       }
     }
@@ -189,6 +161,10 @@ main {
       text-align: left;
     }
   }
+
+  #signupBtn, #loginBtn, #checkoutBtn {
+      justify-self: center;
+    }
 }
 
 /* remove default styling */
