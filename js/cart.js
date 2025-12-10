@@ -1,5 +1,6 @@
 import { getCart, saveCart, getCartKey } from "./cartStorage.js"; // modules for localstorage
 import { updateCartCounter } from "./cartCounter.js"; // module for updating the cart counter
+import { getCartSubtotal, formatPrice } from "./cartTotal.js";
 
 const cartItemsContainer = document.querySelector("#cartItems");
 const cartItemTemplate = document.querySelector("#cartItemTemplate");
@@ -40,9 +41,9 @@ function updateView(cart) {
 // Summary price
 const subtotalAmount = document.querySelector("#subtotalAmount");
 
-function formatPrice(amount) {
-  return `${amount.toFixed(2)} €`; // currency string
-}
+// export function formatPrice(amount) {
+//   return `${amount.toFixed(2)} €`; // currency string
+// }
 
 
 
@@ -53,6 +54,7 @@ function updateSummary(subtotal) {
   if (!subtotalAmount) return;
   
   subtotalAmount.textContent = formatPrice(subtotal); // Insert the subtotal into the <p id="subtotalAmount">
+
 }
 
 
@@ -78,31 +80,31 @@ function renderCart() {
   
   const fragment = document.createDocumentFragment(); // Create a fragment so we can append multiple items efficiently
   
-  let subtotal = 0; // Keep track of subtotal (sum of item prices)
+  // let subtotal = 0; // Keep track of subtotal (sum of item prices)
 
   // Loop through every item in the cart
   cart.forEach((item) => {    
+    
     const qty = item.quantity ?? 1; // Quantity fallback: use item.quantity or default 1
-
     const node = cartItemTemplate.content.cloneNode(true); // Clone the <template> content so we can populate it
-
-
+    
+    
     // IMAGE
     const img = node.querySelector(".product_image img");
     img.src = item.image; // set image url
     img.alt = item.title; // set alt text as the same as the title
     img.loading = "lazy"; // Question: maybe not needed
-
-
+    
+    
     // TEXT
     node.querySelector(".product_name").textContent = item.title;
     node.querySelector(".product_price").textContent = formatPrice(item.price * qty);
-
-
+    
+    
     // QUANTITY DISPLAY (-/+ buttons)
     const qtyDisplay = node.querySelector(".product_qty");
     qtyDisplay.textContent = String(qty); 
-
+    
     // find both +/- buttons for this product
     const qtyButtons = node.querySelectorAll(".quantity-change");
 
@@ -126,12 +128,13 @@ function renderCart() {
     
     fragment.appendChild(node); // Add this rendered item to the fragment
 
-    subtotal += item.price * qty; // Add item's price x wuantity to subtotal
+    // subtotal += item.price * qty; // Add item's price x wuantity to subtotal
   });
   
   cartItemsContainer.appendChild(fragment); // Add all rendered items to the cart container in one go
 
-  updateSummary(subtotal); // Update subtotal display
+  // updateSummary(subtotal); // Update subtotal display
+  updateSummary(getCartSubtotal()); // Update subtotal display
 
   updateCartCounter(); // Update cart counter
 }
