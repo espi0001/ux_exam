@@ -9,6 +9,7 @@ export function getCartKey() {
 }
 
 
+
 // Read cart from localStorage for the current user
 export function getCart() {
     const cartKey = getCartKey();

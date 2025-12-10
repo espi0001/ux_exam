@@ -98,7 +98,6 @@ main {
             background-color: transparent;
             color: var(--colorTextPrimary);
             justify-self: start;
-            border-radius: 0.2rem;
         }
     }
 }
