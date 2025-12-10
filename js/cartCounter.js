@@ -33,13 +33,9 @@ export function updateCartCounter() {
     }
   });
 }
+
 // Update cart counter when page loads
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", updateCartCounter);
-} else {
-  // DOM already loaded
-  updateCartCounter();
-}
+updateCartCounter();
 
 // Also update when page becomes visible (when navigating back to the page)
 document.addEventListener("visibilitychange", () => {
