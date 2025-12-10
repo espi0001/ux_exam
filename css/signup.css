@@ -183,6 +183,11 @@ main {
         border-color: var(--buttonPrimaryColor);
       }
     }
+
+    p {
+      font-size: var(--fontSize-tiny);
+      text-align: left;
+    }
   }
 }
 

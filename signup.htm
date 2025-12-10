@@ -50,15 +50,22 @@
 
                         <div class="form-group">
                             <label for="txtEmail">Email</label>
-                            <input type="email" id="txtEmail" name="email" required aria-required="true">
+                            <input type="email" id="txtEmail" name="email" required aria-required="true"
+                                pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" title="Enter a valid email address.">
                         </div>
 
                         <div class="form-group">
                             <label for="txtPassword">Password</label>
-                            <input type="password" id="txtPassword" name="password" required aria-required="true">
+                            <input type="password" id="txtPassword" name="password" required aria-required="true"
+                                minlength="8" maxlength="20"
+                                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,20}$"
+                                title="Password must be 8–20 chars, include lowercase, uppercase, number, and special character.">
+                            <p>Password must be 8–20 characters, include lowercase, uppercase, number, and special
+                                character.
+                            </p>
                         </div>
 
-                        <div class="form-group">
+                        <div class=" form-group">
                             <label for="txtRepeatPassword">Repeat password</label>
                             <input type="password" id="txtRepeatPassword" name="repeatPassword" required
                                 aria-required="true">
