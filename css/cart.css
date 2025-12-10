@@ -87,9 +87,18 @@ main {
         }
     }
 
-    .subtotal {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 1rem;
+    .summary_checkout {
+        .subtotal {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            gap: 1rem;
+            
+            
+            @media screen and (min-width: 768px) {
+                justify-content: flex-end;
+            }
+        }
     }
+
 }
