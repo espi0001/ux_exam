@@ -170,13 +170,17 @@ body {
   transition: background-color 0.3s;
   border: 2px solid var(--buttonPrimaryColor);
 
-  padding: 0.9rem;
+  padding: 0.5721rem;
   font-size: 1rem;
   text-align: center;
 
   cursor: pointer;
 
   text-decoration: none;
+
+  @media screen and (min-width: 768px) {
+    padding: 0.9rem;
+  }
 
   >a {
       text-decoration: none;
