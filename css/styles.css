@@ -10,7 +10,6 @@ img {
   width: 100%;
   height: auto;
   display: block;
-  _object-fit: cover;
 }
 
 html,
@@ -39,20 +38,20 @@ body {
   main {
     padding: 1.25rem;
     margin: auto;
-    
+
     @media screen and (min-width: 768px) {
       padding: 1.25rem 2rem;
     }
-    
+
     @media screen and (min-width: 1024px) {
       padding: 1.25rem 4rem;
     }
-    
+
     > header {
       margin-bottom: 1.5rem;
 
       @media screen and (min-width: 768px) {
-        margin-bottom: 3rem; 
+        margin-bottom: 3rem;
       }
     }
   }
@@ -84,7 +83,7 @@ body {
     font-size: var(--fontSize-body);
     max-width: 64ch;
   }
-/* 
+  /* 
     Usual break points
     - Mobile: 320px, 480px 
     - Tablet: 768px 
@@ -101,7 +100,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    
+
     @media screen and (min-width: 440px) {
       flex-direction: row;
     }
@@ -161,6 +160,11 @@ body {
       width: 100%;
     }
   }
+
+  *:focus-visible {
+    outline: 2px solid #0011ff;
+    outline-offset: 4px;
+  }
 }
 
 /* BUTTONS */
@@ -178,13 +182,9 @@ body {
 
   text-decoration: none;
 
-  @media screen and (min-width: 768px) {
-    padding: 0.9rem;
+  > a {
+    text-decoration: none;
   }
-
-  >a {
-      text-decoration: none;
-    }
 
   &:active {
     background-color: var(--buttonPrimaryColor);
@@ -232,7 +232,7 @@ body {
 .backBtn {
   color: var(--colorTextPrimary);
   text-decoration: none;
-  
+
   > a {
     color: var(--colorTextPrimary);
     text-decoration: none;
@@ -242,7 +242,6 @@ body {
     }
   }
 }
-
 
 /* For the navigation */
 .hidden {
