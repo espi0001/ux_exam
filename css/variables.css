@@ -37,7 +37,7 @@
   --minTouchWidth: 48px;
 
   /* font sizes med clamp() */
-  --fontSize-h1: clamp(1rem, 3vw + 0.5rem, 1.9rem); /* TODO: Mindste size skal være 1.6rem */
+  --fontSize-h1: clamp(2rem, 3vw + 0.5rem, 1.9rem); /* TODO: Mindste size skal være 1.6rem */
   --fontSize-h2: clamp(1.5rem, 3.5vw + 0.5rem, 2.5rem);
   --fontSize-h3: clamp(1rem, 0.5vw + 0.75rem, 1rem);
 

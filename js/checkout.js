@@ -15,7 +15,7 @@ document.querySelector("#frmCheckout").addEventListener("submit", (e) => {
 
   saveCart([]);
 
-  showModal("Payment received", "Your order is being shipped");
+  showModal("Payment received", "Your order is being shipped", "Go back to all products", "index.html");
 });
 
 

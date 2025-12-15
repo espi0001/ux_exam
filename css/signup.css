@@ -3,6 +3,11 @@
 
 /* STYLING FOR SIGNUP & LOGIN & Checkout */
 
+main {
+  display: flex;
+  justify-content: center;
+}
+
 /* container for the authentication form and tabs */
 .auth-container {
   /* full width on mobile devices */

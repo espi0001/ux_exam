@@ -58,7 +58,7 @@ function addToCart(product) {
 
   // If user is NOT logged in -> Show login prompt modal
   if (!cartKey) {
-    showModal("Login required", "You must be logged in to add products to your cart.");
+    showModal("Login required", "You must be logged in to add products to your cart.", "Go to log in", "login.htm");
     return;
   }
 
@@ -85,7 +85,7 @@ function addToCart(product) {
   saveCart(cart); // From cartStorage.js module
 
   // Show success modal
-  showModal("Added to cart", "Product has been added to your cart!");
+  showModal("Added to cart", "Product has been added to your cart!", "Go to cart", "cart.htm");
 
   // Update the cart counter
   updateCartCounter();
