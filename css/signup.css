@@ -3,14 +3,6 @@
 
 /* STYLING FOR SIGNUP & LOGIN & Checkout */
 
-/* main container - centers the auth form vertically and horizontally */
-main {
-  /* used flexbox to center content */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 /* container for the authentication form and tabs */
 .auth-container {
   /* full width on mobile devices */
@@ -162,9 +154,11 @@ main {
     }
   }
 
-  #signupBtn, #loginBtn, #checkoutBtn {
-      justify-self: center;
-    }
+  #signupBtn,
+  #loginBtn,
+  #checkoutBtn {
+    justify-self: center;
+  }
 }
 
 /* remove default styling */
