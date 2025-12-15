@@ -28,18 +28,19 @@
     
         <nav>
             <ul>
-                <li id="login" class="btn primary_btn"><a href="login.htm" title="Log in">Log in</a></li>
-                <li id="signup" class="btn secondary_btn"><a href="signup.htm" title="Sign up">Sign up</a></li>
+                <li id="login"><a href="login.htm" title="Log in" class="btn primary_btn">Log in</a></li>
+                <li id="signup"><a href="signup.htm" title="Sign up" class="btn secondary_btn">Sign up</a></li>
                 <li id="logout" class="hidden"><button id="btnLogout" class="btn secondary_btn">Log out</button></li>
                 <li id="cart">
-                    <a href="cart.htm" title="Cart">
-                        <img src="assets/icons/cart_big.svg" alt="">
+                    <a href="cart.htm" title="Cart" class="cart_nav">
+                        <img src="assets/icons/cart_big.svg" alt="Cart icon">
                         <span id="cartCounter" class="cart-counter">0</span>
                     </a>
                 </li>
             </ul>
         </nav>
     </header>
+
     <main>
         <!-- All hidden because change depending og logged in and/or empty cart -->
     
@@ -78,7 +79,7 @@
                 
                 <div class="backBtn">
                     <a href="" id="backBtn">&larr; Go back</a> <!-- TODO: gør samme på productlist og checkout -->
-                </div>
+                </div>                                          
                 
                 <header>
                     <h2>Your cart</h2>
@@ -96,39 +97,47 @@
                             <p id="subtotalAmount">0.00 €</p>
                         </section>
     
-                        <div class="btn primary_btn">
-                            <a href="checkout.htm">Checkout</a> 
+                        <div class="checkout_btn">
+                            <a href="checkout.htm" class="btn primary_btn">Checkout</a> 
                         </div>
                     </div>
                 </section>
             </div>
         </section>
-
     </main>
 
     <footer>
         <header>
             <h2 class="logo"><a href="index.html"><span>UX</span> SHOP</a></h2>
         </header>
-        <hr>
-        <p>&copy; 2025s UX Shop. All rights reserved.</p>
+    
+        <p>&copy; 2025 UX Shop. All rights reserved.</p>
     </footer>
 </body>
+
 <template id="cartItemTemplate">
     <article class="product">
         <div class="product_image">
             <img src="" alt="">
         </div>
-        <header>
-            <h3 class="product_name"></h3>
-        </header>
-        <p class="product_price">Price</p>
-        <div class="product_quantity">
-            <button type="button" class="btn secondary_btn quantity-change" data-product-id="${product.id}" data-change="-1">-</button>
-            <p class="product_qty">1</p>
-            <button type="button" class="btn secondary_btn quantity-change" data-product-id="${product.id}" data-change="1">+</button>
+
+        <div class="text_buttons">
+            <div class="name_price">
+                <header>
+                    <h3 class="product_name"></h3>
+                </header>
+                <p class="product_price">Price</p>
+            </div>
+            
+            <div class="qty_remove">
+                <section class="product_quantity">
+                    <button type="button" class="quantity-change" data-product-id="${product.id}" data-change="-1">&minus;</button>
+                    <p class="product_qty">1</p>
+                    <button type="button" class="quantity-change" data-product-id="${product.id}" data-change="1">&plus;</button>
+                </section>
+                <button class="btn secondary_btn product_remove_btn" type="button">Remove</button>
+            </div>
         </div>
-        <button class="btn secondary_btn product_remove_btn" type="button">Remove</button>
     </article>
 </template>
 </html>
