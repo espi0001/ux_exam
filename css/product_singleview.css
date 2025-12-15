@@ -11,7 +11,7 @@ main {
     flex-flow: column nowrap;
     gap: 1rem;
 
-    @media (width > 500px) {
+    @media (min-width: 500px) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
     }
@@ -40,8 +40,8 @@ main {
 
     #descriptionContainer {
       padding: 1rem 0;
-      border-top: 1px solid var(--colorTextPrimary);
-      border-bottom: 1px solid var(--colorTextPrimary);
+      border-top: 1px solid var(--colorBorder);
+      border-bottom: 1px solid var(--colorBorder);
 
       grid-area: 3 / 2 / 4 / 3;
     }

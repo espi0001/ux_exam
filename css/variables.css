@@ -9,11 +9,12 @@
 
   /* Our purple brand color */
   /* --buttonPrimaryColor: #710096; */
-  --buttonPrimaryColor: black;
+  --buttonPrimaryColor: #282828;
 
   /* Our black body text color + headings + navigation */
   --colorTextPrimary: #282828;
 
+  --colorBorder: lightgrey;
   /* Our white text color for buttons + text overlays */
   --colorTextSecondary: #fefefe;
 

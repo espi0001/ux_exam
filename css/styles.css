@@ -60,6 +60,7 @@ body {
   h1,
   h2 {
     font-family: var(--fontHeader);
+    max-width: 64ch;
   }
 
   h1 {
@@ -76,10 +77,12 @@ body {
   h3,
   h4 {
     font-size: var(--fontSize-h3);
+    max-width: 64ch;
   }
 
   p {
     font-size: var(--fontSize-body);
+    max-width: 64ch;
   }
 /* 
     Usual break points
@@ -91,9 +94,10 @@ body {
   /* NAVIGATION */
   > header {
     padding: 1rem 1.25rem;
-    border-bottom: 1px solid var(--colorTextPrimary);
+    border-bottom: 1px solid var(--colorBorder);
 
     display: flex;
+    gap: 1rem;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -134,7 +138,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    border-top: 1px solid var(--colorTextPrimary);
+    border-top: 1px solid var(--colorBorder);
 
     @media screen and (min-width: 768px) {
       padding: 5rem 2.625;
