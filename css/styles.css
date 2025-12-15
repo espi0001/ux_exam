@@ -30,20 +30,20 @@ body {
   main {
     padding: 1.25rem;
     margin: auto;
-    
+
     @media screen and (min-width: 768px) {
       padding: 1.25rem 2rem;
     }
-    
+
     @media screen and (min-width: 1024px) {
       padding: 1.25rem 4rem;
     }
-    
+
     > header {
       margin-bottom: 1.5rem;
 
       @media screen and (min-width: 768px) {
-        margin-bottom: 3rem; 
+        margin-bottom: 3rem;
       }
     }
   }
@@ -131,6 +131,10 @@ body {
       width: 100%;
     }
   }
+
+  *:focus-visible {
+    outline: 2px solid #ffbf00;
+  }
 }
 
 /* BUTTONS */
@@ -148,9 +152,9 @@ body {
 
   text-decoration: none;
 
-  >a {
-      text-decoration: none;
-    }
+  > a {
+    text-decoration: none;
+  }
 
   &:active {
     background-color: var(--buttonPrimaryColor);
@@ -198,7 +202,7 @@ body {
 .backBtn {
   color: var(--colorTextPrimary);
   text-decoration: none;
-  
+
   > a {
     color: var(--colorTextPrimary);
     text-decoration: none;
@@ -208,7 +212,6 @@ body {
     }
   }
 }
-
 
 /* For the navigation */
 .hidden {
