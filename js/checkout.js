@@ -10,12 +10,13 @@ if (checkoutTotal) {
   checkoutTotal.textContent = formatPrice(subtotal);
 }
 
-document.querySelector("#frmCheckout").addEventListener("submit", (e) => {
+const form = document.querySelector("#frmCheckout");
+form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   saveCart([]);
 
+  form.reset();
+
   showModal("Payment received", "Your order is being shipped", "Go back to all products", "index.html");
 });
-
-
