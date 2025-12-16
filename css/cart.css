@@ -108,6 +108,7 @@ main {
           text-wrap: nowrap;
         }
       }
+      
       .qty_remove {
         display: flex;
         justify-content: space-between;
@@ -156,6 +157,9 @@ main {
       justify-content: space-between;
       margin-bottom: 1rem;
       gap: 1rem;
+      p {
+        _font-size: var(--fontSize-body-big);
+      }
 
       @media screen and (min-width: 768px) {
         justify-content: flex-end;

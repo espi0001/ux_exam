@@ -4,35 +4,44 @@ dialog::backdrop {
 }
 
 dialog {
-  margin: 6rem auto;
-  _width: 28rem;
-  _max-width: 90%;
-  padding: 1rem;
-
+  margin: 3rem auto;
+  width: 500px;
+  max-width: 90%;
+  padding: 1rem 1.5rem 1.5rem 1.5rem;
+  
   border: 2px solid var(--bgColorPrimary);
-  border-radius: 1rem 0.5rem;
+  border-radius: 1rem;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-
-  _display: flex;
-  _flex-direction: column;
-  _gap: 1rem;
-
-  /* generel padding for alle direkte children */
-  > * {
-    _padding: 0.5rem 1rem;
+  
+  
+  @media (min-width: 450px) {
+    margin: 4rem auto;
+    padding: 1rem 1.8rem 1.5rem 1.8rem;
+    max-width: 85%;
+  }
+  
+  @media (min-width: 730px) {
+    margin: 7rem auto;
+    max-width: 55%;
+    padding: 1rem 2rem 2rem 2rem;
   }
 
+
   /* header sektion med titel og luk knap */
-  header {
+  >header {
     /* Layout */
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 1.5rem;
+    padding: 0.75rem 0;
 
     color: var(--colorTextPrimary);
     background-color: var(--bgColorPrimary);
+
+    @media (min-width: 480px) {
+      padding: 1rem 0;
+    }
 
     h1 {
       margin: 0;
@@ -46,10 +55,16 @@ dialog {
       background: none;
       border: none;
       padding: 0;
+      min-width: var(--minTouchWidth);
+      min-height: var(--minTouchHeight);
 
-      font-size: 1.5rem;
+      font-size: 2rem;
       color: var(--colorTextPrimary);
       cursor: pointer;
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
 
       /* hover effekt */
       &:hover {
@@ -60,28 +75,13 @@ dialog {
 
   /* dialog tekst indhold */
   p {
-    padding: 1.5rem;
+    padding: 1rem 0;
     margin: 0;
     line-height: 1.6;
-  }
-}
-
-@media (max-width: 30rem) {
-  dialog {
-    margin: 2rem auto;
-    width: 92%;
-    header {
-      padding: 0.75rem 1rem;
-
-      /* Mindre titel */
-      h1 {
-        font-size: 1rem;
-      }
+    
+    @media (min-width: 480px) {
+      padding: 1.5rem 0;
     }
-
-    p {
-      padding: 1rem;
-      font-size: 0.875rem;
-    }
+    
   }
 }
