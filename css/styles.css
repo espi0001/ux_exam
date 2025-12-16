@@ -39,13 +39,8 @@ body {
   flex-direction: column;
 
   main {
-<<<<<<< HEAD
     flex: 1;
-    padding: 1.25rem;
-=======
     padding: 2.25rem 1.25rem;
-    margin: auto;
->>>>>>> styling-single-ester
 
     @media screen and (min-width: 768px) {
       padding: 1.25rem 2rem;
