@@ -1,5 +1,9 @@
 @import "signup.css";
 
+main {
+  display: block ;
+}
+
 .auth-container {
   justify-self: center;
 }
