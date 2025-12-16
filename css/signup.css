@@ -154,8 +154,8 @@ main {
     }
 
     p {
-      font-size: var(--fontSize-tiny);
       text-align: left;
+      font-style: italic;
     }
   }
 

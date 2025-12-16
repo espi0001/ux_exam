@@ -5,17 +5,21 @@ dialog::backdrop {
 
 dialog {
   margin: 6rem auto;
-  width: 28rem;
-  max-width: 90%;
-  padding: 0;
+  _width: 28rem;
+  _max-width: 90%;
+  padding: 1rem;
 
-  border: 4px solid var(--bgColorPrimary);
-  border-radius: 0.5rem;
+  border: 2px solid var(--bgColorPrimary);
+  border-radius: 1rem 0.5rem;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+
+  _display: flex;
+  _flex-direction: column;
+  _gap: 1rem;
 
   /* generel padding for alle direkte children */
   > * {
-    padding: 0.5rem 1rem;
+    _padding: 0.5rem 1rem;
   }
 
   /* header sektion med titel og luk knap */

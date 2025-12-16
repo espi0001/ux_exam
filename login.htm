@@ -83,12 +83,19 @@
         <p>&copy; 2025 UX Shop. All rights reserved.</p>
     </footer>
 
+
+    <!-- DIALOG for error or success -->
     <dialog id="mdlInfo">
         <header>
             <h1 id="modalTitle"></h1>
-            <button class="close">&times;</button>
+            <button type="button" class="close" aria-label="Close dialog">&times;</button>
         </header>
-        <p></p>
+    
+        <p id="modalText"></p>
+    
+        <div class="a_wrapper hidden" id="modalAction">
+            <a class="btn primary_btn" id="modalLink" href="#"></a>
+        </div>
     </dialog>
 </body>
 
