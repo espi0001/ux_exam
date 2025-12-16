@@ -78,6 +78,9 @@ body {
     font-size: var(--fontSize-h3);
     max-width: 64ch;
   }
+  h4 {
+    font-weight: 400;
+  }
 
   p {
     font-size: var(--fontSize-body);
