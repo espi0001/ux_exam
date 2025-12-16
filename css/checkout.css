@@ -3,3 +3,7 @@
 .auth-container {
   justify-self: center;
 }
+
+.btn {
+  gap: 0.5rem;
+}
