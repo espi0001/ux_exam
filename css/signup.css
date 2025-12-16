@@ -45,7 +45,7 @@ main {
     transition: background-color 0.3s;
 
     /* tablet > increase padding and font size */
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
       padding: 1rem;
       font-size: 1rem;
     }
@@ -72,12 +72,12 @@ main {
   background-color: var(--bgColorPrimary);
 
   /* tablet screens > increase padding for more space */
-  @media screen and (min-width: 768px) {
+  @media (min-width: 768px) {
     padding: 2rem;
   }
 
   /* desktop > more increased padding */
-  @media screen and (min-width: 1024px) {
+  @media (min-width: 1024px) {
     padding: 2.5rem;
   }
 
@@ -88,7 +88,7 @@ main {
     font-size: 1.5rem;
 
     /* tablet > increase heading size */
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
       font-size: 2rem;
       margin-bottom: 1rem;
     }
@@ -103,7 +103,7 @@ main {
     line-height: 1.5;
 
     /* tablet > font size and spacing */
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
       font-size: 0.9rem;
       margin-bottom: 2rem;
     }
@@ -118,7 +118,7 @@ main {
     margin-bottom: 1.25rem; /* add space between form fields */
 
     /* tablet > increase spacing between fields */
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
       margin-bottom: 1.5rem;
     }
 
@@ -130,7 +130,7 @@ main {
       font-size: 0.9rem; /* label font size */
 
       /* tablet > increase label font size */
-      @media screen and (min-width: 768px) {
+      @media (min-width: 768px) {
         font-size: 1rem;
       }
     }
