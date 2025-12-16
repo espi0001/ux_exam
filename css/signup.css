@@ -163,6 +163,7 @@ main {
   #loginBtn,
   #checkoutBtn {
     justify-self: center;
+    width: 100%;
   }
 }
 
