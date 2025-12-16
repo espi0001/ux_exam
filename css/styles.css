@@ -179,7 +179,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: var(--minTouchHeight);
-  min-height: var(--minTouchWidth);
+  min-width: var(--minTouchWidth);
   border-radius: 0.2rem;
   transition: background-color 0.3s;
   border: 2px solid var(--buttonPrimaryColor);
