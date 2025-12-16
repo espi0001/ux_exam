@@ -1,5 +1,5 @@
 import { saveCart } from "./cartStorage.js";
-import { showModal } from "./modal.js";
+import { showModalBtn } from "./modal_btn.js";
 import { getCartSubtotal, formatPrice } from "./cartTotal.js";
 
 const checkoutTotal = document.querySelector("#checkoutTotal");

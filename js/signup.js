@@ -1,22 +1,14 @@
-// import the URL for the users API from the info.js file
-import { USERS_BASE_URL } from "./info.js";
+import { USERS_BASE_URL } from "./info.js"; // import the URL for the users API from the info.js file
 
-// the showModal function to display messages to the user after sign up
-import { showModal } from "./modal.js";
+import { showModal } from "./modal.js"; // showModal function to display messages to the user after sign up
 
 // select the signup form and add a submit event listener
 document.querySelector("#frmSignup").addEventListener("submit", (e) => {
-  // prevent page reload
-  e.preventDefault();
+  e.preventDefault(); // prevent page reload
 
-  // get the email value from the form and remove whitespace with trim
-  const email = e.target.txtEmail.value.trim();
-
-  // same with password
-  const password = e.target.txtPassword.value.trim();
-
-  // and also with the repeated password
-  const repeatPassword = e.target.txtRepeatPassword.value.trim();
+  const email = e.target.txtEmail.value.trim(); // get the email value from the form and remove whitespace with trim
+  const password = e.target.txtPassword.value.trim(); // same with password
+  const repeatPassword = e.target.txtRepeatPassword.value.trim(); // and also with the repeated password
 
   // here we are checking if the passwords match
   if (password !== repeatPassword) {
@@ -47,7 +39,7 @@ document.querySelector("#frmSignup").addEventListener("submit", (e) => {
     // handle the successful response
     .then((data) => {
       // show success modal to the user
-      showModal("Signed up", "User was created successfully");
+      showModal("Signed up", "User was created successfully", "Go to log in", "login.htm");
 
       // reset / clear all form fields
       e.target.reset();

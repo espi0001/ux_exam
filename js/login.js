@@ -36,7 +36,7 @@ document.querySelector("#frmLogin").addEventListener("submit", (e) => {
 
       // if no match found, show error modal
       if (!found) {
-        showModal("Validation error", "Incorrect credentials.");
+        showModal("Validation error", "Incorrect credentials.", "", "");
       }
     })
     .catch((error) => console.log(error));
