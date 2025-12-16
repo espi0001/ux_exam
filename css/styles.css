@@ -107,7 +107,7 @@ body {
     justify-content: space-between;
     align-items: center;
 
-    @media screen and (min-width: 440px) {
+    @media screen and (min-width: 450px) {
       flex-direction: row;
     }
     @media screen and (min-width: 768px) {
@@ -125,11 +125,44 @@ body {
         align-items: center;
         gap: 1rem;
         list-style: none;
+        
         > li {
           display: flex;
+        
           .cart_nav {
             min-width: var(--minTouchWidth);
             min-height: var(--minTouchHeight);
+          }
+        }
+        
+        /* For cart in navigation */
+        #cart {
+          a {
+            position: relative;
+            display: inline-block;
+
+            .cart-counter {
+              position: absolute;
+              top: 14px;
+              right: -8px;
+              padding: 0 4px;
+
+              box-sizing: border-box;
+
+              background-color: var(--buttonPrimaryColor);
+              color: var(--colorTextSecondary);
+              border-radius: 50%;
+              min-width: 20px;
+              height: 20px;
+
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              font-size: 11px;
+              font-weight: bold;
+              line-height: 1;
+            }
           }
         }
       }
@@ -240,9 +273,12 @@ body {
   }
 }
 
+/* Back button */
 .backBtn {
   color: var(--colorTextPrimary);
+  font-size: var(--fontSize-body-big);
   text-decoration: none;
+  padding-bottom: 2rem;
 
   > a {
     color: var(--colorTextPrimary);
@@ -259,33 +295,4 @@ body {
   display: none;
 }
 
-/* For cart in navigation */
-#cart {
-  a {
-    position: relative;
-    display: inline-block;
 
-    .cart-counter {
-      position: absolute;
-      top: 14px;
-      right: -8px;
-      padding: 0 4px;
-
-      box-sizing: border-box;
-
-      background-color: var(--buttonPrimaryColor);
-      color: var(--colorTextSecondary);
-      border-radius: 50%;
-      min-width: 20px;
-      height: 20px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      font-size: 11px;
-      font-weight: bold;
-      line-height: 1;
-    }
-  }
-}
