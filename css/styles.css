@@ -59,6 +59,7 @@ body {
     }
   }
 
+  /* ---- FONTS ---- */
   h1,
   h2 {
     font-family: var(--fontHeader);
@@ -76,11 +77,13 @@ body {
   h2 {
     font-size: var(--fontSize-h2);
   }
+
   h3,
   h4 {
     font-size: var(--fontSize-h3);
     max-width: 64ch;
   }
+
   h4 {
     font-weight: 400;
   }
@@ -89,14 +92,8 @@ body {
     font-size: var(--fontSize-body);
     max-width: 64ch;
   }
-  /* 
-    Usual break points
-    - Mobile: 320px, 480px 
-    - Tablet: 768px 
-    - Desktop 1024px 
-    - TV: 1200px 
-*/
-  /* NAVIGATION */
+
+  /* ---- NAVIGATION ---- */
   > header {
     padding: 1rem 1.25rem;
     border-bottom: 1px solid var(--colorBorder);
@@ -169,6 +166,7 @@ body {
     }
   }
 
+  /* ---- FOOTER ---- */
   > footer {
     padding: 3rem 1.25rem;
     display: flex;
@@ -205,7 +203,7 @@ body {
   }
 }
 
-/* BUTTONS */
+/* ---- BUTTONS ---- */
 /* Main styling for buttons */
 .btn {
   display: flex;
@@ -291,7 +289,7 @@ body {
   }
 }
 
-/* For the navigation */
+/* For hidden things */
 .hidden {
   display: none;
 }

@@ -1,4 +1,6 @@
-@import "signup.css";
+@import "styles.css";
+@import "_form.css";
+@import "_dialog.css";
 
 main {
     display: flex;
