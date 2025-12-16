@@ -175,6 +175,11 @@ body {
 /* BUTTONS */
 /* Main styling for buttons */
 .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--minTouchHeight);
+  min-height: var(--minTouchWidth);
   border-radius: 0.2rem;
   transition: background-color 0.3s;
   border: 2px solid var(--buttonPrimaryColor);
