@@ -11,21 +11,21 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
     <title>Cart | UX</title>
-    
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/cart.css">
 
     <!-- JS -->
     <script src="js/loginCheck.js" type="module"></script> <!-- Er det et module? -->
     <script src="js/logout.js" type="module"></script> <!-- Er det et module? -->
-    <script src="js/cart.js" type="module" ></script> <!-- Er det et module? -->
+    <script src="js/cart.js" type="module"></script> <!-- Er det et module? -->
     <script src="js/cartCounter.js" type="module"></script>
 </head>
 
 <body>
     <header>
         <h1 class="logo"><a href="index.html"><span>UX</span> SHOP</a></h1>
-    
+
         <nav>
             <ul>
                 <li id="home"><a href="index.html" title="All products" class="">All products</a></li>
@@ -43,8 +43,11 @@
     </header>
 
     <main>
+        <div class="backBtn">
+            <a href="" id="backBtn">&larr; Go back</a> <!-- TODO: gør samme på productlist og checkout -->
+        </div>
         <!-- All hidden because change depending og logged in and/or empty cart -->
-    
+
         <!-- NOT LOGGED IN -->
         <section class="hidden" id="notLoggedIn"> <!-- TODO: ADD STYLING -->
             <div class="notLoggedIn">
@@ -58,7 +61,7 @@
                 <p>Dont have a user? — <a href="signup.htm" class="">Sign up</a></p>
             </div>
         </section>
-        
+
         <!-- CART EMPTY -->
         <section class="hidden" id="cartEmpty"> <!-- TODO: ADD STYLING -->
             <div class="cartEmpty">
@@ -75,13 +78,8 @@
 
         <!-- CART FILLED -->
         <section class="hidden" id="cartFilled">
-            
+
             <div class="cartFilled">
-                
-                <div class="backBtn">
-                    <a href="" id="backBtn">&larr; Go back</a> <!-- TODO: gør samme på productlist og checkout -->
-                </div>                                          
-                
                 <header>
                     <h2>Your cart</h2>
                     <p>Items placed in this basket is not reserved.</p> <!-- Question: skal den være i header? -->
@@ -90,16 +88,16 @@
                 <section class="order_summary">
                     <!-- The Card Items -->
                     <div id="cartItems" class="cart_items"></div>
-                    
+
                     <div class="summary_checkout">
                         <!-- Price summary -->
                         <section class="subtotal">
                             <p><strong>Subtotal</strong></p>
                             <p id="subtotalAmount">0.00 €</p>
                         </section>
-    
+
                         <div class="checkout_btn">
-                            <a href="checkout.htm" class="btn primary_btn">Checkout</a> 
+                            <a href="checkout.htm" class="btn primary_btn">Checkout</a>
                         </div>
                     </div>
                 </section>
@@ -111,7 +109,7 @@
         <header>
             <h2 class="logo"><a href="index.html"><span>UX</span> SHOP</a></h2>
         </header>
-    
+
         <p>&copy; 2025 UX Shop. All rights reserved.</p>
     </footer>
 </body>
@@ -129,16 +127,19 @@
                 </header>
                 <p class="product_price">Price</p>
             </div>
-            
+
             <div class="qty_remove">
                 <section class="product_quantity">
-                    <button type="button" class="quantity-change" data-product-id="${product.id}" data-change="-1">&minus;</button>
+                    <button type="button" class="quantity-change" data-product-id="${product.id}"
+                        data-change="-1">&minus;</button>
                     <p class="product_qty">1</p>
-                    <button type="button" class="quantity-change" data-product-id="${product.id}" data-change="1">&plus;</button>
+                    <button type="button" class="quantity-change" data-product-id="${product.id}"
+                        data-change="1">&plus;</button>
                 </section>
                 <button class="btn secondary_btn product_remove_btn" type="button">Remove</button>
             </div>
         </div>
     </article>
 </template>
+
 </html>
