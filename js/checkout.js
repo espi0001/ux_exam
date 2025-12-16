@@ -14,14 +14,12 @@ if (checkoutTotal) {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  // Extra check in case the button was somehow enabled
   const cart = getCart();
   if (!cart || cart.length === 0) {
-    showModal("Checkout error", "Your cart is empty. Please add items first.");
+    showModal("Checkout error", "Your cart is empty. Please add products first.", "Browse products", "index.html");
     return;
   }
 
-  // Clear cart and show success modal
   saveCart([]);
   form.reset();
   showModal("Payment received", "Your order is being shipped", "Go back to all products", "index.html");
