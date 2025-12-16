@@ -1,5 +1,5 @@
 import { saveCart } from "./cartStorage.js";
-import { showModal } from "./modal.js";
+import { showModalBtn } from "./modal_btn.js";
 import { getCartSubtotal, formatPrice } from "./cartTotal.js";
 
 const checkoutTotal = document.querySelector("#checkoutTotal");
@@ -15,7 +15,7 @@ document.querySelector("#frmCheckout").addEventListener("submit", (e) => {
 
   saveCart([]);
 
-  showModal("Payment received", "Your order is being shipped", "Go back to all products", "index.html");
+  showModalBtn("Payment received", "Your order is being shipped", "Go back to all products", "index.html");
 });
 
 
