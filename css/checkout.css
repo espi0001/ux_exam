@@ -1,7 +1,10 @@
 @import "signup.css";
 
 main {
-  display: block ;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .auth-container {

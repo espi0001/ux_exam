@@ -279,6 +279,7 @@ body {
   font-size: var(--fontSize-body-big);
   text-decoration: none;
   padding-bottom: 2rem;
+  width: 100%;
 
   > a {
     color: var(--colorTextPrimary);
