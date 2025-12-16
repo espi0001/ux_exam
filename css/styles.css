@@ -34,10 +34,13 @@ body {
   background-color: var(--bgColorPrimary);
   color: var(--colorTextPrimary);
   font-family: var(--fontMain);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 
   main {
+    flex: 1;
     padding: 1.25rem;
-    margin: auto;
 
     @media screen and (min-width: 768px) {
       padding: 1.25rem 2rem;
