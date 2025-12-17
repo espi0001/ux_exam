@@ -10,9 +10,10 @@
   @media (min-width: 545px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    align-items: center;
   }
   
-  header {
+  >header {
     grid-area: 1 / 2 / 2 / 3;
     
     h4 {
