@@ -59,25 +59,22 @@
 
                     <div class="form-group">
                         <label for="txtDeliveryAddress">Delivery Address</label>
-                        <input type="text" id="txtDeliveryAddress" name="txtDeliveryAddress" required
-                            aria-required="true">
+                        <input type="text" id="txtDeliveryAddress" name="txtDeliveryAddress" required> <!-- redundant to have aria-required="true" -->
                     </div>
 
                     <div class="form-group">
                         <label for="txtBillingAddress">Billing Address</label>
-                        <input type="text" id="txtBillingAddress" name="txtBillingAddress" required
-                            aria-required="true">
+                        <input type="text" id="txtBillingAddress" name="txtBillingAddress" required>
                     </div>
 
                     <div class="form-group">
                         <label for="txtCardNumber">Credit Card Number</label>
-                        <input type="text" id="txtCardNumber" name="txtCardNumber" maxlength="21"
-                            placeholder="1234 5678 9012 3456" required aria-required="true">
+                        <input type="text" inputmode="numeric" id="txtCardNumber" name="txtCardNumber" maxlength="21"
+                            placeholder="1234 5678 9012 3456" required>
                     </div>
 
                     <div class="form-group" id="checkoutBtn">
-                        <button type="submit" class="btn primary_btn">Pay <span id="checkoutTotal">
-                                0.00€</span></button>
+                        <button type="submit" class="btn primary_btn">Pay <span id="checkoutTotal"></span></button>
                     </div>
                 </fieldset>
             </form>
