@@ -33,9 +33,9 @@
                 <li id="signup"><a href="signup.htm" title="Sign up" class="btn secondary_btn">Sign up</a></li>
                 <li id="logout" class="hidden"><button id="btnLogout" class="btn secondary_btn">Log out</button></li>
                 <li id="cart" class="hidden">
-                    <a href="cart.htm" title="Cart" class="cart_nav">
-                        <img src="assets/icons/cart_big.svg" alt="Cart icon">
-                        <span id="cartCounter" class="cart-counter">0</span>
+                    <a href="cart.htm" title="Cart" class="cart_nav" aria-label="Cart">
+                        <img src="assets/icons/cart_big.svg" alt="Cart icon" aria-hidden="true">
+                        <span id="cartCounter" class="cart-counter" aria-live="polite" aria-label="Items in cart">0</span>
                     </a>
                 </li>
             </ul>
@@ -55,9 +55,8 @@
                     <h2>Your cart</h2>
                     <h3>Your cart is empty</h3>
                 </header>
-                <p>Items placed in this basket is not reserved.</p>
-                <div class="btn primary_btn">
-                    <a href="index.html" class="">Browse products</a>
+                <div class="browse_products_btn">
+                    <a href="index.html" class="btn primary_btn">Browse products</a>
                 </div>
             </div>
         </section>
@@ -116,10 +115,12 @@
             <div class="qty_remove">
                 <section class="product_quantity">
                     <button type="button" class="quantity-change" data-product-id="${product.id}"
-                        data-change="-1">&minus;</button>
-                    <p class="product_qty">1</p>
+                        data-change="-1" aria-label="Decrease quantity">&minus;</button>
+                    
+                    <p class="product_qty" aria-live="polite" aria-label="Product quantity">1</p>
+                    
                     <button type="button" class="quantity-change" data-product-id="${product.id}"
-                        data-change="1">&plus;</button>
+                        data-change="1" aria-label="Increase quantity">&plus;</button>
                 </section>
                 <button class="btn secondary_btn product_remove_btn" type="button">Remove</button>
             </div>

@@ -4,7 +4,6 @@ main {
   display: grid;
 }
 
-.notLoggedIn,
 .cartEmpty {
   display: flex;
   flex-direction: column;
@@ -14,15 +13,13 @@ main {
   justify-content: center;
   align-items: center;
 
-  header {
+  > header {
     display: grid;
     gap: 1.5rem;
   }
 
-  p {
-    > a {
-      color: var(--colorTextPrimary);
-    }
+  .browse_products_btn {
+    width: 100%;
   }
 
   .btn {
