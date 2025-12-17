@@ -4,28 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-    
+
     <title>Home | UX SHOP</title>
-    
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/product_list.css">
 
     <!-- JS -->
     <script src="js/loginCheck.js" type="module"></script>
     <script src="js/logout.js" type="module"></script>
-    <script src="js/cartCounter.js" type="module" ></script>
-    <script src="js/products.js" type="module" ></script>
+    <script src="js/cartCounter.js" type="module"></script>
+    <script src="js/products.js" type="module"></script>
 </head>
 
 <body>
     <header>
         <h1 class="logo"><a href="index.html">UX SHOP</a></h1>
-    
+
         <nav>
             <ul>
                 <li id="home"><a href="index.html" title="All products" class="">All products</a></li>
@@ -35,7 +35,8 @@
                 <li id="cart" class="hidden">
                     <a href="cart.htm" title="Cart" class="cart_nav" aria-label="Cart">
                         <img src="assets/icons/cart_big.svg" alt="Cart icon" aria-hidden="true">
-                        <span id="cartCounter" class="cart-counter" aria-live="polite" aria-label="Items in cart">0</span>
+                        <span id="cartCounter" class="cart-counter" aria-live="polite"
+                            aria-label="Items in cart">0</span>
                     </a>
                 </li>
             </ul>
@@ -57,21 +58,20 @@
         <header>
             <h2 class="logo"><a href="index.html"><span>UX</span> SHOP</a></h2>
         </header>
-        
+
         <p>&copy; 2025 UX Shop. All rights reserved.</p>
     </footer>
 </body>
 <template id="singleProduct">
     <article>
-        <section class="image_wrapper">
+        <div class="image_wrapper">
             <img src="" alt="">
-        </section>
-        <div class="wrapper">
+        </div>
+        <div class="info_wrapper">
             <h4></h4>
             <h3></h3>
             <p></p>
             <a class="btn primary_btn" href="">View product</a>
-        
         </div>
     </article>
 </template>

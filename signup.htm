@@ -11,7 +11,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 
     <title>Sign up | UX SHOP</title>
-    
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/signup.css">
 
@@ -23,7 +23,7 @@
 <body>
     <header>
         <h1 class="logo"><a href="index.html">UX SHOP</a></h1>
-    
+
         <nav>
             <ul>
                 <li id="home"><a href="index.html" title="All products" class="">All products</a></li>
@@ -33,7 +33,8 @@
                 <li id="cart" class="hidden">
                     <a href="cart.htm" title="Cart" class="cart_nav" aria-label="Cart">
                         <img src="assets/icons/cart_big.svg" alt="Cart icon" aria-hidden="true">
-                        <span id="cartCounter" class="cart-counter" aria-live="polite" aria-label="Items in cart">0</span>
+                        <span id="cartCounter" class="cart-counter" aria-live="polite"
+                            aria-label="Items in cart">0</span>
                     </a>
                 </li>
             </ul>
@@ -57,17 +58,17 @@
                     <fieldset>
                         <div class="form-group">
                             <label for="txtEmail">Email</label>
-                            <input type="email" id="txtEmail" name="email" required
-                                pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" title="Enter a valid email address.">
+                            <input type="email" id="txtEmail" name="email" required pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+                                title="Enter a valid email address.">
                         </div>
 
                         <div class="form-group">
                             <label for="txtPassword">Password</label>
-                            <input type="password" id="txtPassword" name="password" required
-                                minlength="8" maxlength="20"
-                                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,20}$"
+                            <input type="password" id="txtPassword" name="password" required minlength="8"
+                                maxlength="20" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,20}$"
                                 title="Password must be 8–20 characters, include lowercase, uppercase, number, and special character.">
-                            <p>Password must be 8–20 characters, include lowercase, uppercase, number, and special character.</p>
+                            <p>Password must be 8–20 characters, include lowercase, uppercase, number, and special
+                                character.</p>
                         </div>
 
                         <div class=" form-group">
@@ -88,7 +89,7 @@
         <header>
             <h2 class="logo"><a href="index.html"><span>UX</span> SHOP</a></h2>
         </header>
-    
+
         <p>&copy; 2025 UX Shop. All rights reserved.</p>
     </footer>
 
@@ -98,9 +99,9 @@
             <h1 id="modalTitle"></h1>
             <button type="button" class="close" aria-label="Close dialog">&times;</button>
         </header>
-    
+
         <p id="modalText"></p>
-    
+
         <div class="a_wrapper hidden" id="modalAction">
             <a class="btn primary_btn" id="modalLink" href="#"></a>
         </div>

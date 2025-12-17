@@ -2,6 +2,7 @@ import { saveCart, getCart } from "./cartStorage.js";
 import { showModal } from "./modal.js";
 import { getCartSubtotal, formatPrice } from "./cartTotal.js";
 
+// Show total when the page loads
 const checkoutTotal = document.querySelector("#checkoutTotal");
 const form = document.querySelector("#frmCheckout");
 const cardNumberInput = document.querySelector("#txtCardNumber");

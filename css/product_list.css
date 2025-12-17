@@ -46,7 +46,7 @@ h2 {
       height: var(--productListImageMaxHeight);
       background-color: var(--bgCard);
       display: flex;
-      
+
       img {
         height: 100%;
         margin: auto;
@@ -56,7 +56,7 @@ h2 {
       }
     }
 
-    div {
+    .info_wrapper {
       flex-grow: 1;
       display: flex;
       flex-direction: column;

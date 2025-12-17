@@ -14,5 +14,5 @@ export function getCartSubtotal() {
 
 // Format a number into a readable currency string
 export function formatPrice(amount) {
-  return `${amount.toFixed(2)}€`; // Always show 2 decimals + currency
+  return `${amount.toFixed(2)} €`; // Always show 2 decimals + currency
 }
