@@ -27,7 +27,7 @@
 <body>
     <header>
         <h1 class="logo"><a href="index.html">UX SHOP</a></h1>
-
+    
         <nav>
             <ul>
                 <li id="home"><a href="index.html" title="All products" class="">All products</a></li>
@@ -35,9 +35,9 @@
                 <li id="signup"><a href="signup.htm" title="Sign up" class="btn secondary_btn">Sign up</a></li>
                 <li id="logout" class="hidden"><button id="btnLogout" class="btn secondary_btn">Log out</button></li>
                 <li id="cart" class="hidden">
-                    <a href="cart.htm" title="Cart" class="cart_nav">
-                        <img src="assets/icons/cart_big.svg" alt="Cart icon">
-                        <span id="cartCounter" class="cart-counter">0</span>
+                    <a href="cart.htm" title="Cart" class="cart_nav" aria-label="Cart">
+                        <img src="assets/icons/cart_big.svg" alt="Cart icon" aria-hidden="true">
+                        <span id="cartCounter" class="cart-counter" aria-live="polite" aria-label="Items in cart">0</span>
                     </a>
                 </li>
             </ul>
