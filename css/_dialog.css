@@ -1,4 +1,5 @@
-/* overlay bag dialogen når den er åben */
+/* ------- DIALOG STYLING ------- */
+
 dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.6);
 }
@@ -13,7 +14,6 @@ dialog {
   border-radius: 1rem;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   
-  
   @media (min-width: 450px) {
     margin: 4rem auto;
     padding: 1rem 1.8rem 1.5rem 1.8rem;
@@ -26,10 +26,7 @@ dialog {
     padding: 1rem 2rem 2rem 2rem;
   }
 
-
-  /* header sektion med titel og luk knap */
   >header {
-    /* Layout */
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
