@@ -3,14 +3,11 @@ import { getCart, saveCart, getCartKey } from "./cartStorage.js"; // modules for
 import { updateCartCounter } from "./cartCounter.js"; // module for updating the cart counter
 import { showModal } from "./modal.js"; // import showModal function
 
-const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
-
 let currentProduct = null; // product gets saved here, when its fetched
 
 // BACK BUTTON
-const backBtn = document.querySelector("#backBtn");
 
+const backBtn = document.querySelector("#backBtn");
 if (backBtn) {
   backBtn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -19,6 +16,8 @@ if (backBtn) {
 }
 
 // FETCH PRODUCT & SHOW IT
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
 fetch(`${BASE_URL}/products/${id}`)
   .then((res) => res.json()) // Convert the response into JSON
   .then((product) => {
@@ -90,6 +89,5 @@ function addToCart(product) {
   // Update the cart counter
   updateCartCounter();
 }
-
-// Update cart counter when page loads
 updateCartCounter();
+// Update cart counter when page loads

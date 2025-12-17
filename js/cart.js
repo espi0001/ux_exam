@@ -2,58 +2,20 @@ import { getCart, saveCart, getCartKey } from "./cartStorage.js"; // modules for
 import { updateCartCounter } from "./cartCounter.js"; // module for updating the cart counter
 import { getCartSubtotal, formatPrice } from "./cartTotal.js";
 
-const cartItemsContainer = document.querySelector("#cartItems");
-const cartItemTemplate = document.querySelector("#cartItemTemplate");
-
 // BACK BUTTON
-const backBtn = document.querySelector("#backBtn");
 
 if (backBtn) {
+  const backBtn = document.querySelector("#backBtn");
   backBtn.addEventListener("click", (e) => {
     e.preventDefault();
     window.history.back(); // Navigate back in browser history
   });
 }
 
-// Different states of cart
-const notLoggedIn = document.querySelector("#notLoggedIn"); // 1. User is NOT logged in
-const cartEmpty = document.querySelector("#cartEmpty"); // 2. User IS logged in, but NO items in cart
-const cartFilled = document.querySelector("#cartFilled"); // 3. User IS logged in and HAS items in cart
-
-function updateView(cart) {
-  const isLoggedIn = !!getCartKey(); // true if a user is logged in (email in sessionStorage)
-  const hasItems = cart && cart.length > 0; // true if there are items in the cart
-
-  if (cartEmpty) cartEmpty.classList.add("hidden");
-  if (cartFilled) cartFilled.classList.add("hidden");
-
-  if (!hasItems) {
-    // 2. User IS logged in, but NO items in cart
-    if (cartEmpty) cartEmpty.classList.remove("hidden");
-  } else {
-    // 3. User IS logged in and HAS items in cart
-    if (cartFilled) cartFilled.classList.remove("hidden");
-  }
-}
-
-// Summary price
-const subtotalAmount = document.querySelector("#subtotalAmount");
-
-// export function formatPrice(amount) {
-//   return `${amount.toFixed(2)} €`; // currency string
-// }
-
-// Update the subtotal section in the cart summary
-function updateSummary(subtotal) {
-  // If the element is not found in the HTML, then stop the function.
-  // Prevents errors like: Cannot set textContent of null
-  if (!subtotalAmount) return;
-
-  subtotalAmount.textContent = formatPrice(subtotal); // Insert the subtotal into the <p id="subtotalAmount">
-}
-
 // Render (makes it visible) all cart items inside the cart page
 function renderCart() {
+  const cartItemsContainer = document.querySelector("#cartItems");
+  const cartItemTemplate = document.querySelector("#cartItemTemplate");
   // Get the current user's cart form local storage
   const cart = getCart(); // From cartStorage.js module
 
@@ -126,6 +88,40 @@ function renderCart() {
 
   updateCartCounter(); // Update cart counter
 }
+// Render the cart when this module loads (DOM is ready because of type="module")
+// Render cart immediately (module runs after HTML is parsed)
+renderCart();
+
+function updateView(cart) {
+  // Different states of cart
+  const cartEmpty = document.querySelector("#cartEmpty"); // 2. User IS logged in, but NO items in cart
+  const cartFilled = document.querySelector("#cartFilled"); // 3. User IS logged in and HAS items in cart
+
+  const hasItems = cart && cart.length > 0; // true if there are items in the cart
+
+  if (cartEmpty) cartEmpty.classList.add("hidden");
+  if (cartFilled) cartFilled.classList.add("hidden");
+
+  if (!hasItems) {
+    // 2. User IS logged in, but NO items in cart
+    if (cartEmpty) cartEmpty.classList.remove("hidden");
+  } else {
+    // 3. User IS logged in and HAS items in cart
+    if (cartFilled) cartFilled.classList.remove("hidden");
+  }
+}
+
+// Update the subtotal section in the cart summary
+function updateSummary(subtotal) {
+  // Summary price
+  const subtotalAmount = document.querySelector("#subtotalAmount");
+
+  // If the element is not found in the HTML, then stop the function.
+  // Prevents errors like: Cannot set textContent of null
+  if (!subtotalAmount) return;
+
+  subtotalAmount.textContent = formatPrice(subtotal); // Insert the subtotal into the <p id="subtotalAmount">
+}
 
 // EDIT CART
 
@@ -164,7 +160,3 @@ function removeCartItem(id) {
 
   renderCart(); // Re-render the cart so the removed items disappears at once
 }
-
-// Render the cart when this module loads (DOM is ready because of type="module")
-// Render cart immediately (module runs after HTML is parsed)
-renderCart();

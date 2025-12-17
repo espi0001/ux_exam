@@ -2,15 +2,14 @@ import { saveCart, getCart } from "./cartStorage.js";
 import { showModal } from "./modal.js";
 import { getCartSubtotal, formatPrice } from "./cartTotal.js";
 
-const checkoutTotal = document.querySelector("#checkoutTotal");
-const form = document.querySelector("#frmCheckout");
-
 // Show total when the page loads
+const checkoutTotal = document.querySelector("#checkoutTotal");
 if (checkoutTotal) {
   const subtotal = getCartSubtotal();
   checkoutTotal.textContent = formatPrice(subtotal);
 }
 
+const form = document.querySelector("#frmCheckout");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
