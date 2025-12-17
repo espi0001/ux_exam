@@ -11,6 +11,8 @@
   --colorTextSecondary: #fefefe;
 
   --colorBorder: #d3d3d3;
+
+  --colorFocus: #0011ff;
   
   
   /* --- FONTS --- */
@@ -27,6 +29,8 @@
   
   
   /* --- MAX WIDTH/HEIGHT --- */
+  --maxWidth: 1280px;
+
   --cartProductMaxWidth: 250px;
   
   --productCardMaxWidth_small: 300px;
@@ -35,10 +39,7 @@
   --productListImageMaxHeight: 350px;
   --singleProductImageMaxWidth: 300px;
   
-  --maxWidth: 1280px;
-  
-  /* --maxWidthL: 1024; */
-  --imgMaxWidth: ;
+  --cartCounterSize: 20px;
   
   --minTouchWidth: 48px;
   --minTouchHeight: 48px;
