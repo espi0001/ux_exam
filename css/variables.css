@@ -4,6 +4,7 @@
   /* --- Colors --- */
   --bgColorPrimary: #fefefe; 
   --bgColorSecondary: #f5f5f5;
+  --bgCard: #f6f6f6;
   --buttonPrimaryColor: #282828;
 
   --colorTextPrimary: #282828;
@@ -18,14 +19,16 @@
   
   --fontSize-h1: clamp(1.75rem, 1.6477rem + 0.4545vw, 2rem); /* TODO: Mindste size skal være 1.6rem */
   --fontSize-h2: clamp(1.875rem, 1.7727rem + 0.4545vw, 2.125rem);
-  --fontSize-h3: clamp(1rem, 0.5vw + 0.75rem, 1rem);
+  --fontSize-h3_h4: 1rem;
   
-  --fontSize-body: clamp(1rem, 0.5vw + 0.75rem, 1rem);
+  --fontSize-body: 1rem;
   --fontSize-body-big: clamp(1rem, 0.8977rem + 0.4545vw, 1.25rem);
   
   
   
   /* --- MAX WIDTH/HEIGHT --- */
+  --cartProductMaxWidth: 250px;
+  
   --productCardMaxWidth_small: 300px;
   --productCardMaxWidth_big: 400px;
   

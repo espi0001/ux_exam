@@ -23,20 +23,6 @@ h2 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-self: auto;
-
-    /* Select every 2nd item in each group of 3
-    (i.e. the middle column in each row)
-    3n + 2 → 2, 5, 8, 11, ... */
-    > article:nth-child(3n + 2) {
-      _justify-self: center;
-    }
-
-    /* Select every 3rd item in each group of 3
-    (i.e. the last column in each row)
-    3n + 3 → 3, 6, 9, 12, ... */
-    > article:nth-child(3n + 3) {
-      _justify-self: end;
-    }
   }
 
   /* ---- Product Template ---- */
@@ -58,9 +44,9 @@ h2 {
 
     .image_wrapper {
       height: var(--productListImageMaxHeight);
-      background-color: #f6f6f6;
+      background-color: var(--bgCard);
       display: flex;
-      _border: 1px solid var(--colorBorder);
+      
       img {
         height: 100%;
         margin: auto;
