@@ -72,7 +72,7 @@ main {
     }
 
     .product_image {
-      max-width: 250px; /* TODO: add maxwith variable */
+      max-width: var(--cartProductMaxWidth);
     }
 
     .text_buttons {
@@ -136,15 +136,18 @@ main {
           gap: 0.5rem;
 
           .quantity-change {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
             width: var(--minTouchWidth);
             height: var(--minTouchHeight);
             background-color: transparent;
             border: none;
             padding: 0.25rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            
             font-size: 1.5rem;
+            cursor: pointer;
           }
         }
       }
@@ -158,7 +161,7 @@ main {
       margin-bottom: 1rem;
       gap: 1rem;
       p {
-        _font-size: var(--fontSize-body-big);
+        font-weight: 600;
       }
 
       @media screen and (min-width: 768px) {

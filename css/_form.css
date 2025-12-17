@@ -111,6 +111,7 @@ main {
 
             &:focus {
                 border-color: var(--buttonPrimaryColor);
+                outline: none;
             }
         }
 

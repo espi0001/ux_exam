@@ -27,6 +27,8 @@
   
   
   /* --- MAX WIDTH/HEIGHT --- */
+  --cartProductMaxWidth: 250px;
+  
   --productCardMaxWidth_small: 300px;
   --productCardMaxWidth_big: 400px;
   
