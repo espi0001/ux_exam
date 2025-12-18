@@ -1,6 +1,7 @@
 @import "styles.css";
 @import "_dialog.css";
 
+/* ------- PRODUCT SINGLEVIEW STYLING ------- */
 
 #singleProduct {
   display: flex;

@@ -34,12 +34,4 @@ export function updateCartCounter() {
   });
 }
 
-// Update cart counter when page loads
-updateCartCounter();
-
-// Also update when page becomes visible (when navigating back to the page)
-// document.addEventListener("visibilitychange", () => {
-//   if (!document.hidden) {
-//     updateCartCounter();
-//   }
-// });
+updateCartCounter(); // Update cart counter when page loads
