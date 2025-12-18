@@ -1,16 +1,10 @@
 import { getCart, saveCart, getCartKey } from "./cartStorage.js"; // modules for localstorage
 import { updateCartCounter } from "./cartCounter.js"; // module for updating the cart counter
 import { getCartSubtotal, formatPrice } from "./cartTotal.js";
+import { backButton } from "./backBtn.js";
 
 // BACK BUTTON
-
-if (backBtn) {
-  const backBtn = document.querySelector("#backBtn");
-  backBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    window.history.back(); // Navigate back in browser history
-  });
-}
+backButton();
 
 // Render (makes it visible) all cart items inside the cart page
 function renderCart() {

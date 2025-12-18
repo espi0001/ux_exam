@@ -145,7 +145,7 @@ body {
       }
     }
     .all_products_mobile {
-      border-top: 1px solid rgba(0, 0, 0, 0.119);
+      border-top: 1px solid var(--colorHeaderSeperator);
       width: 100%;
       text-align: center;
       @media (min-width: 520px) {
