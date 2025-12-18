@@ -4,7 +4,6 @@ import { getCart } from "./cartStorage.js";
 function getCartItemCount() {
   const cart = getCart();
 
-  // If cart is empty or user not logged in, return 0
   if (!cart || cart.length === 0) return 0;
 
   // Sum up all quantities in the cart
@@ -34,4 +33,4 @@ export function updateCartCounter() {
   });
 }
 
-updateCartCounter(); // Update cart counter when page loads
+updateCartCounter();

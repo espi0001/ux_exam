@@ -1,5 +1,5 @@
-import { getCart, saveCart, getCartKey } from "./cartStorage.js"; // modules for localstorage
-import { updateCartCounter } from "./cartCounter.js"; // module for updating the cart counter
+import { getCart, saveCart, getCartKey } from "./cartStorage.js";
+import { updateCartCounter } from "./cartCounter.js";
 import { getCartSubtotal, formatPrice } from "./cartTotal.js";
 import { backButton } from "./backBtn.js";
 
@@ -10,37 +10,33 @@ backButton();
 function renderCart() {
   const cartItemsContainer = document.querySelector("#cartItems");
   const cartItemTemplate = document.querySelector("#cartItemTemplate");
-  // Get the current user's cart form local storage
-  const cart = getCart(); // From cartStorage.js module
+  const cart = getCart(); 
 
-  updateView(cart); // Update which view should be shown (login, empty cart, or full cart)
+  updateView(cart); 
 
-  const isLoggedIn = !!getCartKey(); // Check if user is logged in (true if getCartKey() returns a key)
+  const isLoggedIn = !!getCartKey(); // Check if user is logged in 
 
-  // If the user is NOT logged in OR cart is empty:
   // Clear the item list and show subtotal = 0
   if (!isLoggedIn || cart.length === 0) {
     if (cartItemsContainer) cartItemsContainer.innerHTML = "";
-    updateSummary(0); // show 0.00€
-    return; // stop here (nothing more to render -> nothing more to make visible)
+    updateSummary(0); 
+    return; 
   }
 
   cartItemsContainer.innerHTML = ""; // If there are items, clear the container before re-rendering them
 
-  const fragment = document.createDocumentFragment(); // Create a fragment so we can append multiple items efficiently
+  const fragment = document.createDocumentFragment(); 
 
-  // let subtotal = 0; // Keep track of subtotal (sum of item prices)
 
-  // Loop through every item in the cart
   cart.forEach((item) => {
-    const qty = item.quantity ?? 1; // Quantity fallback: use item.quantity or default 1
-    const node = cartItemTemplate.content.cloneNode(true); // Clone the <template> content so we can populate it
+    const qty = item.quantity ?? 1;
+    const node = cartItemTemplate.content.cloneNode(true); 
 
     // IMAGE
     const img = node.querySelector(".product_image img");
-    img.src = item.image; // set image url
-    img.alt = item.title; // set alt text as the same as the title
-    img.loading = "lazy"; // Question: maybe not needed
+    img.src = item.image;
+    img.alt = item.title;
+    img.loading = "lazy";
 
     // TEXT
     node.querySelector(".product_name").textContent = item.title;
@@ -50,16 +46,13 @@ function renderCart() {
     const qtyDisplay = node.querySelector(".product_qty");
     qtyDisplay.textContent = String(qty);
 
-    // find both +/- buttons for this product
     const qtyButtons = node.querySelectorAll(".quantity-change");
 
     qtyButtons.forEach((qbtn) => {
       const change = Number(qbtn.dataset.change) || 0; // -1 or +1
 
       qbtn.addEventListener("click", () => {
-        // new quantity = current quantity + change
         const newQty = Math.max(1, qty + change); // minimum 1
-
         updateCartItem(item.id, newQty);
       });
     });
@@ -67,29 +60,26 @@ function renderCart() {
     // REMOVE BUTTON
     const removeBtn = node.querySelector(".product_remove_btn");
     removeBtn.addEventListener("click", () => {
-      removeCartItem(item.id); // remove item from cart
+      removeCartItem(item.id); 
     });
 
-    fragment.appendChild(node); // Add this rendered item to the fragment
-
-    // subtotal += item.price * qty; // Add item's price x wuantity to subtotal
+    fragment.appendChild(node);
   });
 
-  cartItemsContainer.appendChild(fragment); // Add all rendered items to the cart container in one go
+  cartItemsContainer.appendChild(fragment); 
 
-  // updateSummary(subtotal); // Update subtotal display
-  updateSummary(getCartSubtotal()); // Update subtotal display
+  updateSummary(getCartSubtotal());
 
-  updateCartCounter(); // Update cart counter
+  updateCartCounter();
 }
-// Render the cart when this module loads (DOM is ready because of type="module")
-// Render cart immediately (module runs after HTML is parsed)
+
 renderCart();
 
+
+// Different states of cart
 function updateView(cart) {
-  // Different states of cart
-  const cartEmpty = document.querySelector("#cartEmpty"); // 2. User IS logged in, but NO items in cart
-  const cartFilled = document.querySelector("#cartFilled"); // 3. User IS logged in and HAS items in cart
+  const cartEmpty = document.querySelector("#cartEmpty"); 
+  const cartFilled = document.querySelector("#cartFilled");
 
   const hasItems = cart && cart.length > 0; // true if there are items in the cart
 
@@ -97,60 +87,47 @@ function updateView(cart) {
   if (cartFilled) cartFilled.classList.add("hidden");
 
   if (!hasItems) {
-    // 2. User IS logged in, but NO items in cart
     if (cartEmpty) cartEmpty.classList.remove("hidden");
   } else {
-    // 3. User IS logged in and HAS items in cart
     if (cartFilled) cartFilled.classList.remove("hidden");
   }
 }
 
-// Update the subtotal section in the cart summary
-function updateSummary(subtotal) {
-  // Summary price
-  const subtotalAmount = document.querySelector("#subtotalAmount");
 
-  // If the element is not found in the HTML, then stop the function.
-  // Prevents errors like: Cannot set textContent of null
+// Update the subtotal
+function updateSummary(subtotal) {
+  const subtotalAmount = document.querySelector("#subtotalAmount");
   if (!subtotalAmount) return;
 
-  subtotalAmount.textContent = formatPrice(subtotal); // Insert the subtotal into the <p id="subtotalAmount">
+  subtotalAmount.textContent = formatPrice(subtotal);
 }
 
-// EDIT CART
 
-// Update the quantity for at single cart item
+
+// Update the quantity
 function updateCartItem(id, quantity) {
-  // Get the current cart form localStorage
-  const cart = getCart(); // From cartStorage.js module
-
-  const item = cart.find((product) => product.id === id); // Find the item in the cart that matches the given id
+  const cart = getCart(); 
+  const item = cart.find((product) => product.id === id);
 
   if (!item) return; // If the item does not exsist (safety check), stop the function
 
-  item.quantity = quantity; // Update the item's quantity to the new value
+  item.quantity = quantity;
 
-  // Save the updated cart back to localStorage
-  saveCart(cart); // From cartStorage.js module
+  saveCart(cart);
 
-  updateCartCounter(); // Update cart counter
+  updateCartCounter();
 
-  renderCart(); // Re-render the entire cart to show the new totals and prices at once
+  renderCart();
 }
 
 // Remove an item from the cart
 function removeCartItem(id) {
-  // Load the current cart
-  let cart = getCart(); // From cartStorage.js module
-
-  // Filter out (remove) the product with the matching id
-  // All other products remain in the cart
+  let cart = getCart();
   cart = cart.filter((product) => product.id !== id);
 
-  // Save the updated cart to localStorage
-  saveCart(cart); // From cartStorage.js module
+  saveCart(cart);
 
-  updateCartCounter(); // Update cart counter
+  updateCartCounter(); 
 
-  renderCart(); // Re-render the cart so the removed items disappears at once
+  renderCart();
 }
