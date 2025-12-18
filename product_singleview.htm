@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
@@ -18,27 +18,41 @@
     <!-- JS -->
     <script src="js/loginCheck.js" type="module"></script>
     <script src="js/logout.js" type="module"></script>
-    <script src="js/product_singleview.js" type="module" ></script>
+    <script src="js/product_singleview.js" type="module"></script>
     <script src="js/cartCounter.js" type="module"></script>
 </head>
 
 <body>
     <header>
-        <h1 class="logo"><a href="index.html">UX SHOP</a></h1>
-    
+        <div>
+            <h1 class="logo"><a href="index.html">UX SHOP</a></h1>
+
+            <nav class="all_products_desk">
+                <div>
+                    <a href="index.html" title="All products" class="">All products</a>
+                </div>
+            </nav>
+        </div>
+
         <nav>
             <ul>
-                <li id="home"><a href="index.html" title="All products" class="">All products</a></li>
                 <li id="login"><a href="login.htm" title="Log in" class="btn primary_btn">Log in</a></li>
                 <li id="signup"><a href="signup.htm" title="Sign up" class="btn secondary_btn">Sign up</a></li>
                 <li id="logout" class="hidden"><button id="btnLogout" class="btn secondary_btn">Log out</button></li>
                 <li id="cart" class="hidden">
                     <a href="cart.htm" title="Cart" class="cart_nav" aria-label="Cart">
                         <img src="assets/icons/cart_big.svg" alt="Cart icon" aria-hidden="true">
-                        <span id="cartCounter" class="cart-counter" aria-live="polite" aria-label="Items in cart">0</span>
+                        <span id="cartCounter" class="cart-counter" aria-live="polite"
+                            aria-label="Items in cart">0</span>
                     </a>
                 </li>
             </ul>
+        </nav>
+
+        <nav class="all_products_mobile">
+            <div>
+                <a href="index.html" title="All products">All products</a>
+            </div>
         </nav>
     </header>
 
@@ -52,12 +66,12 @@
                 <h4></h4>
                 <h2></h2>
             </header>
-            
+
             <img src="" alt="">
-            
+
             <div class="price_rating_wrapper">
                 <p id="price"></p>
-                
+
                 <div id="rating">
                     <p>&#9733</p>
                     <p id="rate"></p>
@@ -79,7 +93,7 @@
         <header>
             <h2 class="logo"><a href="index.html"><span>UX</span> SHOP</a></h2>
         </header>
-    
+
         <p>&copy; 2025 UX Shop. All rights reserved.</p>
     </footer>
 
@@ -89,9 +103,9 @@
             <h1 id="modalTitle"></h1>
             <button type="button" class="close" aria-label="Close dialog">&times;</button>
         </header>
-    
+
         <p id="modalText"></p>
-    
+
         <div class="a_wrapper hidden" id="modalAction">
             <a class="btn primary_btn" id="modalLink" href="#"></a>
         </div>
