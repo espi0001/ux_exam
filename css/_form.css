@@ -1,11 +1,11 @@
-/* STYLING FOR SIGNUP & LOGIN & Checkout */
+/* ------- FORM STYLING ------- */
 
 main {
     display: flex;
     justify-content: center;
 }
 
-/* container for the authentication form and tabs */
+/* --- Authentication form and tabs --- */
 .auth-container {
     width: 100%;
     max-width: 100%;
@@ -20,7 +20,7 @@ main {
     }
 }
 
-/* tab navigation for switching between sign up and login */
+/* --- Tab navigation --- */
 .auth-tabs {
     display: flex;
     border-bottom: 0.125rem solid var(--bgColorSecondary);
@@ -68,13 +68,10 @@ main {
     }
 
     h2 {
-        font-family: var(--fontHeader);
         text-align: center;
         margin-bottom: 0.75rem;
-        /* font-size: 1.5rem; */
 
         @media (min-width: 768px) {
-            /* font-size: 2rem; */
             margin-bottom: 1rem;
         }
     }
@@ -82,18 +79,14 @@ main {
     p {
         text-align: center;
         margin-bottom: 1.5rem;
-        font-size: 1rem;
-
         line-height: 1.5;
 
         @media (min-width: 768px) {
-            font-size: 0.9rem;
             margin-bottom: 2rem;
         }
     }
 }
 
-/* FORM STYLING > works for both signup and login form */
 #frmSignup,
 #frmLogin,
 #frmCheckout {
@@ -107,22 +100,18 @@ main {
         label {
             display: block;
             margin-bottom: 0.5rem;
-            font-weight: 500;
-
-
-            @media (min-width: 768px) {
-                _font-size: 1rem;
-            }
+            font-weight: 600;
         }
 
         input {
             width: 100%;
             padding: 0.75rem;
-            border: 0.0625rem solid #ddd;
-            font-size: 1rem;
+            border: 0.0625rem solid var(--colorBorder);
+            font-size: var(--fontSize-body);
 
             &:focus {
                 border-color: var(--buttonPrimaryColor);
+                outline: none;
             }
         }
 

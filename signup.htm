@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 
-    <title>Sign up | UX</title>
-    
+    <title>Sign up | UX SHOP</title>
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/signup.css">
 
@@ -22,29 +22,43 @@
 
 <body>
     <header>
-        <h1 class="logo"><a href="index.html">UX SHOP</a></h1>
-    
+        <div>
+            <h1 class="logo"><a href="index.html">UX SHOP</a></h1>
+
+            <nav class="all_products_desk">
+                <div>
+                    <a href="index.html" title="All products" class="">All products</a>
+                </div>
+            </nav>
+        </div>
+
         <nav>
             <ul>
-                <li id="home"><a href="index.html" title="All products" class="">All products</a></li>
                 <li id="login"><a href="login.htm" title="Log in" class="btn primary_btn">Log in</a></li>
                 <li id="signup"><a href="signup.htm" title="Sign up" class="btn secondary_btn">Sign up</a></li>
                 <li id="logout" class="hidden"><button id="btnLogout" class="btn secondary_btn">Log out</button></li>
                 <li id="cart" class="hidden">
-                    <a href="cart.htm" title="Cart" class="cart_nav">
-                        <img src="assets/icons/cart_big.svg" alt="Cart icon">
-                        <span id="cartCounter" class="cart-counter">0</span>
+                    <a href="cart.htm" title="Cart" class="cart_nav" aria-label="Cart">
+                        <img src="assets/icons/cart_big.svg" alt="Cart icon" aria-hidden="true">
+                        <span id="cartCounter" class="cart-counter" aria-live="polite"
+                            aria-label="Items in cart">0</span>
                     </a>
                 </li>
             </ul>
+        </nav>
+
+        <nav class="all_products_mobile">
+            <div>
+                <a href="index.html" title="All products">All products</a>
+            </div>
         </nav>
     </header>
 
     <main>
         <section class="auth-container">
-            <nav class="auth-tabs" aria-label="Authentication navigation">
-                <a href="signup.htm" class="tab active" aria-current="page">Sign up</a>
+            <nav class="auth-tabs" aria-label="Login and Signup navigation">
                 <a href="login.htm" class="tab">Login</a>
+                <a href="signup.htm" class="tab active" aria-current="page">Sign up</a>
             </nav>
 
             <section class="auth-form">
@@ -57,25 +71,22 @@
                     <fieldset>
                         <div class="form-group">
                             <label for="txtEmail">Email</label>
-                            <input type="email" id="txtEmail" name="email" required aria-required="true"
-                                pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" title="Enter a valid email address.">
+                            <input type="email" id="txtEmail" name="email" required pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+                                title="Enter a valid email address.">
                         </div>
 
                         <div class="form-group">
                             <label for="txtPassword">Password</label>
-                            <input type="password" id="txtPassword" name="password" required aria-required="true"
-                                minlength="8" maxlength="20"
-                                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,20}$"
+                            <input type="password" id="txtPassword" name="password" required minlength="8"
+                                maxlength="20" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,20}$"
                                 title="Password must be 8–20 characters, include lowercase, uppercase, number, and special character.">
                             <p>Password must be 8–20 characters, include lowercase, uppercase, number, and special
-                                character.
-                            </p>
+                                character.</p>
                         </div>
 
                         <div class=" form-group">
                             <label for="txtRepeatPassword">Repeat password</label>
-                            <input type="password" id="txtRepeatPassword" name="repeatPassword" required
-                                aria-required="true">
+                            <input type="password" id="txtRepeatPassword" name="repeatPassword" required>
                         </div>
 
                         <div class="form-group" id="signupBtn">
@@ -91,7 +102,7 @@
         <header>
             <h2 class="logo"><a href="index.html"><span>UX</span> SHOP</a></h2>
         </header>
-    
+
         <p>&copy; 2025 UX Shop. All rights reserved.</p>
     </footer>
 
@@ -103,9 +114,9 @@
         <header>
             <h1 id="modalTitle"></h1>
         </header>
-    
+
         <p id="modalText"></p>
-    
+
         <div class="a_wrapper hidden" id="modalAction">
             <a class="btn primary_btn" id="modalLink" href="#"></a>
         </div>
