@@ -333,7 +333,7 @@ body {
 .backBtn {
   display: flex;
   color: var(--colorTextPrimary);
-  font-size: var(--fontSize-body-big);
+  font-size: var(--fontSize-body-medium);
   text-decoration: none;
   padding-bottom: 2rem;
   width: 100%;
