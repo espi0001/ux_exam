@@ -2,18 +2,12 @@ import { BASE_URL } from "./info.js";
 import { getCart, saveCart, getCartKey } from "./cartStorage.js"; // modules for localstorage handling
 import { updateCartCounter } from "./cartCounter.js"; // module for updating the cart counter
 import { showModal } from "./modal.js"; // import showModal function
-
-let currentProduct = null; // product gets saved here, when its fetched
+import { backButton } from "./backBtn.js";
 
 // BACK BUTTON
+backButton();
 
-const backBtn = document.querySelector("#backBtn");
-if (backBtn) {
-  backBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    window.history.back(); // Navigate back in browser history
-  });
-}
+let currentProduct = null; // product gets saved here, when its fetched
 
 // FETCH PRODUCT & SHOW IT
 const params = new URLSearchParams(window.location.search);
