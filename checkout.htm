@@ -75,8 +75,9 @@
                     <div class="form-group">
                         <label for="txtDeliveryFullName">Full name</label>
                         <input type="text" id="txtDeliveryFullName" name="txtDeliveryFullName"
+                            minlength="2"
                             maxlength="40" 
-                            pattern="^(?=.*[A-Za-zÀ-ÿ].*[A-Za-zÀ-ÿ])[A-Za-zÀ-ÿ' -]+$"
+                            pattern="^(?=(?:.*[A-Za-zÀ-ÿ]){2,})[A-Za-zÀ-ÿ' -]+$"
                             autocomplete="name"
                             title="Enter at least two letters. Spaces and hyphens are allowed."
                             required>
@@ -98,8 +99,9 @@
                     <div class="form-group">
                         <label for="txtBillingFullName">Full name</label>
                         <input type="text" id="txtBillingFullName" name="txtBillingFullName"
+                            minlength="2"
                             maxlength="40" 
-                            pattern="^(?=.*[A-Za-zÀ-ÿ].*[A-Za-zÀ-ÿ])[A-Za-zÀ-ÿ' -]+$"
+                            pattern="^(?=(?:.*[A-Za-zÀ-ÿ]){2,})[A-Za-zÀ-ÿ' -]+$"
                             autocomplete="name"
                             title="Enter at least two letters. Spaces and hyphens are allowed."
                             required>
@@ -120,8 +122,9 @@
                     <div class="form-group">
                         <label for="txtCardHolder">Card holder</label>
                         <input type="text" id="txtCardHolder" name="txtCardHolder" 
+                            minlength="2"
                             maxlength="40" 
-                            pattern="^(?=.*[A-Za-zÀ-ÿ].*[A-Za-zÀ-ÿ])[A-Za-zÀ-ÿ' -]+$"
+                            pattern="^(?=(?:.*[A-Za-zÀ-ÿ]){2,})[A-Za-zÀ-ÿ' -]+$"
                             autocomplete="cc-name"
                             title="Enter at least two letters. Spaces and hyphens are allowed."
                             required>
