@@ -6,58 +6,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 
-    <title>Cart | UX</title>
+    <title>Cart | UX SHOP</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/cart.css">
 
     <!-- JS -->
-    <script src="js/loginCheck.js" type="module"></script> <!-- Er det et module? -->
-    <script src="js/logout.js" type="module"></script> <!-- Er det et module? -->
-    <script src="js/cart.js" type="module"></script> <!-- Er det et module? -->
+    <script src="js/loginCheck.js" type="module"></script>
+    <script src="js/logout.js" type="module"></script>
+    <script src="js/cart.js" type="module"></script>
     <script src="js/cartCounter.js" type="module"></script>
 </head>
 
 <body>
     <header>
-        <h1 class="logo"><a href="index.html">UX SHOP</a></h1>
-    
+        <div>
+            <h1 class="logo"><a href="index.html">UX SHOP</a></h1>
+
+            <nav class="all_products_desk">
+                <div>
+                    <a href="index.html" title="All products" class="">All products</a>
+                </div>
+            </nav>
+        </div>
+
         <nav>
             <ul>
-                <li id="home"><a href="index.html" title="All products" class="">All products</a></li>
                 <li id="login"><a href="login.htm" title="Log in" class="btn primary_btn">Log in</a></li>
                 <li id="signup"><a href="signup.htm" title="Sign up" class="btn secondary_btn">Sign up</a></li>
                 <li id="logout" class="hidden"><button id="btnLogout" class="btn secondary_btn">Log out</button></li>
                 <li id="cart" class="hidden">
-                    <a href="cart.htm" title="Cart" class="cart_nav">
-                        <img src="assets/icons/cart_big.svg" alt="Cart icon">
-                        <span id="cartCounter" class="cart-counter">0</span>
+                    <a href="cart.htm" title="Cart" class="cart_nav" aria-label="Cart">
+                        <img src="assets/icons/cart_big.svg" alt="Cart icon" aria-hidden="true">
+                        <span id="cartCounter" class="cart-counter" aria-live="polite"
+                            aria-label="Items in cart">0</span>
                     </a>
                 </li>
             </ul>
+        </nav>
+
+        <nav class="all_products_mobile">
+            <div>
+                <a href="index.html" title="All products">All products</a>
+            </div>
         </nav>
     </header>
 
     <main>
         <div class="backBtn">
-            <a href="" id="backBtn">&larr; Go back</a> <!-- TODO: gør samme på productlist og checkout -->
+            <a href="" id="backBtn">&larr; Go back</a>
         </div>
-        <!-- All hidden because change depending og logged in and/or empty cart -->
+        <!-- All hidden because change depending on empty or filled cart -->
 
         <!-- CART EMPTY -->
-        <section class="hidden" id="cartEmpty"> <!-- TODO: ADD STYLING -->
+        <section class="hidden" id="cartEmpty">
             <div class="cartEmpty">
                 <header>
                     <h2>Your cart</h2>
                     <h3>Your cart is empty</h3>
                 </header>
-                <p>Items placed in this basket is not reserved.</p>
-                <div class="btn primary_btn">
-                    <a href="index.html" class="">Browse products</a>
+                <div class="browse_products_btn">
+                    <a href="index.html" class="btn primary_btn">Browse products</a>
                 </div>
             </div>
         </section>
@@ -68,7 +81,6 @@
             <div class="cartFilled">
                 <header>
                     <h2>Your cart</h2>
-                    <p>Items placed in this basket is not reserved.</p> <!-- Question: skal den være i header? -->
                 </header>
 
                 <section class="order_summary">
@@ -77,10 +89,7 @@
 
                     <div class="summary_checkout">
                         <!-- Price summary -->
-                        <section class="subtotal">
-                            <p><strong>Subtotal</strong></p>
-                            <p id="subtotalAmount">0.00 €</p>
-                        </section>
+                        <p class="subtotal">Subtotal <span id="subtotalAmount"></span></p>
 
                         <div class="checkout_btn">
                             <a href="checkout.htm" class="btn primary_btn">Checkout</a>
@@ -116,12 +125,15 @@
 
             <div class="qty_remove">
                 <section class="product_quantity">
-                    <button type="button" class="quantity-change" data-product-id="${product.id}"
-                        data-change="-1">&minus;</button>
-                    <p class="product_qty">1</p>
-                    <button type="button" class="quantity-change" data-product-id="${product.id}"
-                        data-change="1">&plus;</button>
+                    <button type="button" class="quantity-change" data-product-id="${product.id}" data-change="-1"
+                        aria-label="Decrease quantity">&minus;</button>
+
+                    <p class="product_qty" aria-live="polite" aria-label="Product quantity">1</p>
+
+                    <button type="button" class="quantity-change" data-product-id="${product.id}" data-change="1"
+                        aria-label="Increase quantity">&plus;</button>
                 </section>
+
                 <button class="btn secondary_btn product_remove_btn" type="button">Remove</button>
             </div>
         </div>

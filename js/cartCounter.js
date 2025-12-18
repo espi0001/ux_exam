@@ -25,7 +25,7 @@ export function updateCartCounter() {
   counterElements.forEach((counter) => {
     counter.textContent = count;
 
-    // Hide counter if count is 0 (optional - you might want to always show it)
+    // Hide counter if count is 0
     if (count === 0) {
       counter.style.display = "none";
     } else {
@@ -38,8 +38,8 @@ export function updateCartCounter() {
 updateCartCounter();
 
 // Also update when page becomes visible (when navigating back to the page)
-document.addEventListener("visibilitychange", () => {
-  if (!document.hidden) {
-    updateCartCounter();
-  }
-});
+// document.addEventListener("visibilitychange", () => {
+//   if (!document.hidden) {
+//     updateCartCounter();
+//   }
+// });

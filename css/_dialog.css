@@ -1,11 +1,12 @@
-/* overlay bag dialogen når den er åben */
+/* ------- DIALOG STYLING ------- */
+
 dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
 dialog {
   margin: 3rem auto;
-  width: 500px;
+  width: var(--dialogWidth);
   max-width: 90%;
   padding: 1rem 1.5rem 1.5rem 1.5rem;
   
@@ -14,7 +15,6 @@ dialog {
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 
   text-align: center;
-  
   
   @media (min-width: 450px) {
     margin: 4rem auto;
@@ -28,8 +28,12 @@ dialog {
     padding: 1rem 2rem 2rem 2rem;
   }
 
+<<<<<<< HEAD
   /* (×) */
   #closeBtn {
+=======
+  >header {
+>>>>>>> 85f1b9a1fd834c1339d2b189119a42e8a2342626
     display: flex;
     justify-content: flex-end;
 

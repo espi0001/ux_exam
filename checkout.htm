@@ -5,13 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 
-    <title>Checkout | UX</title>
+    <title>Checkout | UX SHOP</title>
 
 
     <!-- CSS -->
@@ -27,21 +26,35 @@
 
 <body>
     <header>
-        <h1 class="logo"><a href="index.html">UX SHOP</a></h1>
-    
+        <div>
+            <h1 class="logo"><a href="index.html">UX SHOP</a></h1>
+
+            <nav class="all_products_desk">
+                <div>
+                    <a href="index.html" title="All products" class="">All products</a>
+                </div>
+            </nav>
+        </div>
+
         <nav>
             <ul>
-                <li id="home"><a href="index.html" title="All products" class="">All products</a></li>
                 <li id="login"><a href="login.htm" title="Log in" class="btn primary_btn">Log in</a></li>
                 <li id="signup"><a href="signup.htm" title="Sign up" class="btn secondary_btn">Sign up</a></li>
                 <li id="logout" class="hidden"><button id="btnLogout" class="btn secondary_btn">Log out</button></li>
                 <li id="cart" class="hidden">
-                    <a href="cart.htm" title="Cart" class="cart_nav">
-                        <img src="assets/icons/cart_big.svg" alt="Cart icon">
-                        <span id="cartCounter" class="cart-counter">0</span>
+                    <a href="cart.htm" title="Cart" class="cart_nav" aria-label="Cart">
+                        <img src="assets/icons/cart_big.svg" alt="Cart icon" aria-hidden="true">
+                        <span id="cartCounter" class="cart-counter" aria-live="polite"
+                            aria-label="Items in cart">0</span>
                     </a>
                 </li>
             </ul>
+        </nav>
+
+        <nav class="all_products_mobile">
+            <div>
+                <a href="index.html" title="All products">All products</a>
+            </div>
         </nav>
     </header>
 
@@ -60,25 +73,23 @@
 
                     <div class="form-group">
                         <label for="txtDeliveryAddress">Delivery Address</label>
-                        <input type="text" id="txtDeliveryAddress" name="txtDeliveryAddress" required
-                            aria-required="true">
+                        <input type="text" id="txtDeliveryAddress" name="txtDeliveryAddress" required>
+                        <!-- redundant to have aria-required="true" -->
                     </div>
 
                     <div class="form-group">
                         <label for="txtBillingAddress">Billing Address</label>
-                        <input type="text" id="txtBillingAddress" name="txtBillingAddress" required
-                            aria-required="true">
+                        <input type="text" id="txtBillingAddress" name="txtBillingAddress" required>
                     </div>
 
                     <div class="form-group">
                         <label for="txtCardNumber">Credit Card Number</label>
-                        <input type="text" id="txtCardNumber" name="txtCardNumber" maxlength="19"
-                            placeholder="1234 5678 9012 3456" required aria-required="true">
+                        <input type="text" inputmode="numeric" id="txtCardNumber" name="txtCardNumber" maxlength="21"
+                            placeholder="1234 5678 9012 3456" required>
                     </div>
 
                     <div class="form-group" id="checkoutBtn">
-                        <button type="submit" class="btn primary_btn">Pay <span id="checkoutTotal">
-                                0.00€</span></button>
+                        <button type="submit" class="btn primary_btn">Pay <span id="checkoutTotal"></span></button>
                     </div>
                 </fieldset>
             </form>
@@ -101,9 +112,9 @@
         <header>
             <h1 id="modalTitle"></h1>
         </header>
-    
+
         <p id="modalText"></p>
-    
+
         <div class="a_wrapper hidden" id="modalAction">
             <a class="btn primary_btn" id="modalLink" href="#"></a>
         </div>
