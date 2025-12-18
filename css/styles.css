@@ -99,7 +99,7 @@ body {
   /* ---- NAVIGATION ---- */
   > header {
     padding: 1rem 1.25rem 0 1.25rem;
-    @media (min-width: 520px) {
+    @media (min-width: 732px) {
       padding: 1rem 1.25rem;
     }
     border-bottom: 1px solid var(--colorBorder);
@@ -110,7 +110,7 @@ body {
     justify-content: space-between;
     align-items: center;
 
-    @media screen and (min-width: 520px) {
+    @media screen and (min-width: 732px) {
       flex-direction: row;
     }
     @media screen and (min-width: 768px) {
@@ -119,9 +119,9 @@ body {
     > div {
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 2rem;
       align-items: center;
-      @media (min-width: 520px) {
+      @media (min-width: 732px) {
         flex-direction: row;
       }
 
@@ -140,7 +140,7 @@ body {
     .all_products_desk {
       display: none;
 
-      @media (min-width: 520px) {
+      @media (min-width: 732px) {
         display: block;
       }
     }
@@ -148,7 +148,7 @@ body {
       border-top: 1px solid var(--colorHeaderSeperator);
       width: 100%;
       text-align: center;
-      @media (min-width: 520px) {
+      @media (min-width: 732px) {
         display: none;
       }
     }
