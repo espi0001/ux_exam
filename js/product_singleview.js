@@ -32,7 +32,7 @@ fetch(`${BASE_URL}/products/${id}`)
     img.src = product.image;
     img.alt = `${product.title} - Product image`; // Mere beskrivende alt text
 
-    singleProduct.querySelector("#price").innerText = `€${product.price.toFixed(2)}`; // Format the price to have 2 decimals
+    singleProduct.querySelector("#price").innerText = `${product.price.toFixed(2)} €`; // Format the price to have 2 decimals
     singleProduct.querySelector("#rate").innerText = product.rating.rate;
     singleProduct.querySelector("#count").innerText = `${product.rating.count} reviews`;
     singleProduct.querySelector("#description").innerText = product.description;
