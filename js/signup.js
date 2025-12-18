@@ -14,7 +14,6 @@ document.querySelector("#frmSignup").addEventListener("submit", async (e) => {
   }
 
   try {
-    // Fetch all users
     const response = await fetch(`${USERS_BASE_URL}/users`);
     const users = await response.json();
 
@@ -26,7 +25,6 @@ document.querySelector("#frmSignup").addEventListener("submit", async (e) => {
       return;
     }
 
-    // Create new user
     const newUser = { email, password };
 
     await fetch(`${USERS_BASE_URL}/users`, {
