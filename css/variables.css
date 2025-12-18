@@ -2,7 +2,7 @@
 
 :root {
   /* --- Colors --- */
-  --bgColorPrimary: #fefefe; 
+  --bgColorPrimary: #fefefe;
   --bgColorSecondary: #f5f5f5;
   --bgCard: #f6f6f6;
   --buttonPrimaryColor: #282828;
@@ -11,38 +11,36 @@
   --colorTextSecondary: #fefefe;
 
   --colorBorder: #d3d3d3;
+  --colorHeaderSeperator: #d3d3d378;
 
   --colorFocus: #0011ff;
-  
-  
+
   /* --- FONTS --- */
   --fontHeader: "Roboto Serif", serif;
   --fontMain: "Roboto", sans-serif;
-  
+
   --fontSize-h1: clamp(1.75rem, 1.6477rem + 0.4545vw, 2rem);
   --fontSize-h2: clamp(1.875rem, 1.7727rem + 0.4545vw, 2.125rem);
   --fontSize-h3_h4: 1rem;
-  
+
   --fontSize-body: 1rem;
   --fontSize-body-medium: clamp(1rem, 0.9489rem + 0.2273vw, 1.125rem);
-  
-  
-  
+
   /* --- MAX WIDTH/HEIGHT --- */
   --maxWidth: 1280px;
 
   --cartProductMaxWidth: 250px;
-  
+
   --productCardMaxWidth_small: 300px;
   --productCardMaxWidth_big: 400px;
-  
+
   --productListImageMaxHeight: 350px;
   --singleProductImageMaxWidth: 300px;
-  
+
   --cartCounterSize: 20px;
 
   --dialogWidth: 500px;
-  
+
   --minTouchWidth: 48px;
   --minTouchHeight: 48px;
 }
