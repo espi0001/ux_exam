@@ -46,7 +46,7 @@ h2 {
 
     .image_wrapper {
       height: var(--productListImageMaxHeight);
-      background-color: var(--bgCard);
+      background-color: var(--bgColorSecondary);
       display: flex;
 
       img {
