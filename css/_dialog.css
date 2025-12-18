@@ -28,12 +28,8 @@ dialog {
     padding: 1rem 2rem 2rem 2rem;
   }
 
-<<<<<<< HEAD
   /* (×) */
   #closeBtn {
-=======
-  >header {
->>>>>>> 85f1b9a1fd834c1339d2b189119a42e8a2342626
     display: flex;
     justify-content: flex-end;
 
