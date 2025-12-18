@@ -10,13 +10,32 @@ backButton();
 let currentProduct = null; // product gets saved here, when its fetched
 
 // FETCH PRODUCT & SHOW IT
+const singleProduct = document.querySelector("#singleProduct")
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
-fetch(`${BASE_URL}/products/${id}`)
-  .then((res) => res.json()) // Convert the response into JSON
-  .then((product) => {
-    const singleProduct = document.querySelector("#singleProduct");
+
+async function loadProduct() {
+  if (!singleProduct) return;
+
+  if (!id) {
+    singleProduct.innerHTML = `<p class="error">Product not found.</p>`;
+    return;
+  }
+
+  if (singleProduct) {
+    const h2 = singleProduct.querySelector("h2");
+    if (h2) h2.textContent = "Loading product...";
+  }
+
+  try {
+    const response = await fetch(`${BASE_URL}/products/${id}`);
+    if (!response.ok) {
+      throw new Error("Failed to fetch product");
+    }
+    const product = await response.json();
     currentProduct = product; // save product for the Add to Cart button
+
+    // Render product
 
     // Insert product data into the page
     singleProduct.querySelector("h2").innerText = product.title;
@@ -24,25 +43,30 @@ fetch(`${BASE_URL}/products/${id}`)
 
     const img = singleProduct.querySelector("img");
     img.src = product.image;
-    img.alt = `${product.title} - Product image`; // Mere beskrivende alt text
+    img.alt = `Image of ${product.title}`; 
 
     singleProduct.querySelector("#price").innerText = `${product.price.toFixed(2)} €`; // Format the price to have 2 decimals
     singleProduct.querySelector("#rate").innerText = product.rating.rate;
     singleProduct.querySelector("#count").innerText = `${product.rating.count} reviews`;
     singleProduct.querySelector("#description").innerText = product.description;
-  })
-  .catch((err) => {
-    console.error("Error loading product", err); // Debugging if something goes wrong
-  });
+  } catch (error) {
+    console.error("Error loading product:", error);  // Debugging if something goes wrong
+    singleProduct.innerHTML = `<p class="error">Could not load product right now. Please try again later.</p>`;
+  }
+}
+
+loadProduct();
 
 // ADD TO CART BUTTON
 const addToCartBtn = document.querySelector("#addToCartBtn");
 
 // When clicked -> add the product to the cart
-addToCartBtn.addEventListener("click", () => {
-  if (!currentProduct) return; // Safety, if fetch is not done yet / product not loaded yet
-  addToCart(currentProduct);
-});
+if (addToCartBtn) {
+  addToCartBtn.addEventListener("click", () => {
+    if (!currentProduct) return; // Safety, if fetch is not done yet / product not loaded yet
+    addToCart(currentProduct);
+  });
+}
 
 // ADD PRODUCT TO CART
 function addToCart(product) {
@@ -83,5 +107,6 @@ function addToCart(product) {
   // Update the cart counter
   updateCartCounter();
 }
-updateCartCounter();
-// Update cart counter when page loads
+
+updateCartCounter(); // Update cart counter when page loads
+
