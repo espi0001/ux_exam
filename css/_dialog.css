@@ -12,6 +12,8 @@ dialog {
   border: 2px solid var(--bgColorPrimary);
   border-radius: 1rem;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+
+  text-align: center;
   
   
   @media (min-width: 450px) {
@@ -26,50 +28,49 @@ dialog {
     padding: 1rem 2rem 2rem 2rem;
   }
 
-
-  /* header sektion med titel og luk knap */
-  >header {
-    /* Layout */
+  /* (×) */
+  #closeBtn {
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.75rem 0;
+    justify-content: flex-end;
 
-    color: var(--colorTextPrimary);
-    background-color: var(--bgColorPrimary);
-
-    @media (min-width: 480px) {
-      padding: 1rem 0;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 1.25rem;
-      font-weight: 600;
-    }
-
-    /* (×) */
-    button {
+    >button {
       /* reset af den default button styling */
       background: none;
       border: none;
       padding: 0;
       min-width: var(--minTouchWidth);
       min-height: var(--minTouchHeight);
-
+  
       font-size: 2rem;
       color: var(--colorTextPrimary);
       cursor: pointer;
-
+  
       display: flex;
       align-items: center;
       justify-content: flex-end;
-
+  
       &:hover {
         opacity: 0.7;
       }
     }
+  }
+
+  /* header sektion med titel og luk knap */
+  >header {
+    padding: 0.5rem 0 0.75rem 0;
+
+    color: var(--colorTextPrimary);
+    background-color: var(--bgColorPrimary);
+
+    @media (min-width: 480px) {
+      padding: 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-weight: 600;
+    }
+
   }
 
   /* dialog tekst indhold */
