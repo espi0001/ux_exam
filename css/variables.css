@@ -24,7 +24,7 @@
   --fontSize-h3_h4: 1rem;
   
   --fontSize-body: 1rem;
-  --fontSize-body-big: clamp(1rem, 0.8977rem + 0.4545vw, 1.25rem);
+  --fontSize-body-medium: clamp(1rem, 0.9489rem + 0.2273vw, 1.125rem);
   
   
   

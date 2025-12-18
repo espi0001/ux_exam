@@ -159,6 +159,7 @@ main {
       gap: 1rem;
       font-weight: 600;
       max-width: 100%;
+      font-size: var(--fontSize-body-medium);
       
       >span {
         font-weight: 500;
@@ -173,6 +174,7 @@ main {
     display: flex;
     > a {
       width: 100%;
+      font-size: var(--fontSize-body-medium);
     }
   }
 }

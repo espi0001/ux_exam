@@ -37,6 +37,10 @@
   .price_rating_wrapper {
     grid-area: 2 / 2 / 3 / 3;
 
+    #price {
+      font-size: var(--fontSize-body-medium);
+    }
+
     
     #rating {
       display: flex;
