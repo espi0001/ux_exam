@@ -70,28 +70,71 @@
             </header>
             <form id="frmCheckout">
                 <fieldset>
+                    <legend>Delivery address</legend>
+                    <div class="form-group">
+                        <label for="txtDeliveryFullName">Full name</label>
+                        <input type="text" id="txtDeliveryFullName" name="txtDeliveryFullName" maxlength="20" required>
+                    </div>
 
                     <div class="form-group">
-                        <label for="txtDeliveryAddress">Delivery Address</label>
+                        <label for="txtDeliveryAddress">Address</label>
                         <input type="text" id="txtDeliveryAddress" name="txtDeliveryAddress" required>
                         <!-- redundant to have aria-required="true" -->
                     </div>
+                </fieldset>
+
+
+                <fieldset>
+                    <legend>Billing address</legend>
+                    <div class="form-group">
+                        <label for="txtBillingFullName">Full name</label>
+                        <input type="text" id="txtBillingFullName" name="txtBillingFullName" maxlength="20" required>
+                    </div>
 
                     <div class="form-group">
-                        <label for="txtBillingAddress">Billing Address</label>
+                        <label for="txtBillingAddress">Address</label>
                         <input type="text" id="txtBillingAddress" name="txtBillingAddress" required>
                     </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Payment</legend>
+                    <div class="form-group">
+                        <label for="txtCardHolder">Card holder</label>
+                        <input type="text" id="txtCardHolder" name="txtCardHolder" maxlength="20" required>
+                    </div>
 
                     <div class="form-group">
-                        <label for="txtCardNumber">Credit Card Number</label>
-                        <input type="text" inputmode="numeric" id="txtCardNumber" name="txtCardNumber" maxlength="21"
-                            placeholder="1234 5678 9012 3456" required>
+                        <label for="txtCardNumber">Credit card number</label>
+                        <input type="text" id="txtCardNumber" name="txtCardNumber" 
+                            maxlength="21"
+                            inputmode="numeric" autocomplete="cc-number"
+                            pattern="[0-9]*" 
+                            placeholder="0000 0000 0000 0000" required>
                     </div>
 
-                    <div class="form-group" id="checkoutBtn">
-                        <button type="submit" class="btn primary_btn">Pay <span id="checkoutTotal"></span></button>
+                    <div class="form-group expiry_security_wrapper">
+                        <div class="expiry_date">
+                            <label for="txtExpiryDate">Expiry date</label>
+                            <input type="text" id="txtExpiryDate" name="txtExpiryDate" 
+                                inputmode="numeric" autocomplete="cc-exp"
+                                pattern="[0-9]*"
+                                placeholder="MM/YY" required>
+                        </div>
+                        <div class="security_code">
+                            <label for="txtSecurityCode">Security code</label>
+                            <input type="text" id="txtSecurityCode" name="txtSecurityCode" 
+                                inputmode="numeric" autocomplete="cc-csc"
+                                pattern="[0-9]*"
+                                placeholder="000" required>
+                        </div>
                     </div>
+                    
                 </fieldset>
+                
+                <div class="form-group" id="checkoutBtn">
+                    <button type="submit" class="btn primary_btn">Pay <span id="checkoutTotal"></span></button>
+                </div>
             </form>
         </section>
     </main>

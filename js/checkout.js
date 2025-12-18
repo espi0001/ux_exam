@@ -31,27 +31,6 @@ if (cardNumberInput) {
   });
 }
 
-// Automatisk formatering af credit card nummer med mellemrum efter hver 4. cifre
-if (cardNumberInput) {
-  cardNumberInput.addEventListener("input", (e) => {
-    // Fjern alle ikke-cifre
-    let value = e.target.value.replace(/\D/g, "");
-
-    // Indsæt mellemrum efter hver 4. cifre
-    let formatted = value.match(/.{1,4}/g)?.join(" ") || value;
-
-    // Opdater værdien (men begræns til 18 cifre)
-    if (value.length <= 16) {
-      e.target.value = formatted;
-    } else {
-      // Hvis der er mere end 18 cifre, beholde de første 18
-      value = value.substring(0, 16);
-      formatted = value.match(/.{1,4}/g)?.join(" ") || value;
-      e.target.value = formatted;
-    }
-  });
-}
-
 const form = document.querySelector("#frmCheckout");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
