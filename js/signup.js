@@ -19,7 +19,7 @@ document.querySelector("#frmSignup").addEventListener("submit", async (e) => {
     const users = await response.json();
 
     // Check for duplicate email
-    const emailExists = users.some((user) => user.email.toLowerCase() === email);
+    const emailExists = users.some((user) => user.email.trim().toLowerCase() === email);
 
     if (emailExists) {
       showModal("Signup failed", "This email is already registered. Please log in instead.", "Go to login", "login.htm");

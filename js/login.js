@@ -1,14 +1,11 @@
 import { USERS_BASE_URL, LOCAL_STORAGE_USER_EMAIL } from "./info.js";
 import { showModal } from "./modal.js";
 
-// add event listener to login form
-
 document.querySelector("#frmLogin").addEventListener("submit", (e) => {
-  // no reload
-  e.preventDefault();
+  e.preventDefault(); // no reload
 
   // get the values from the form
-  const email = e.target.txtEmail.value.trim();
+  const email = e.target.txtEmail.value.trim().toLowerCase();
   const password = e.target.txtPassword.value.trim();
 
   // fetch all users from the API

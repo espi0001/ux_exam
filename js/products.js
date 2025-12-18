@@ -1,12 +1,20 @@
 import { BASE_URL } from "./info.js";
 
-await fetch(`${BASE_URL}/products`)
-  .then((response) => response.json())
-  .then((data) => {
-    data = data;
-    console.log(data);
+async function loadProducts() {
+  const productList = document.querySelector("#productList")
+  if (!productList) return;
+  productList.textContent = "Loading products...";
 
-    data.forEach((product) => {
+  try {
+    const response = await fetch(`${BASE_URL}/products`);
+    if (!response.ok) {
+      throw new Error("Falied to fetch products");
+    }
+    const products = await response.json();
+
+    productList.textContent = "";
+
+    products.forEach((product) => {
       const singleProduct = document.querySelector("#singleProduct").content.cloneNode(true);
 
       const imgElement = singleProduct.querySelector("img");
@@ -14,12 +22,17 @@ await fetch(`${BASE_URL}/products`)
       imgElement.alt = `${product.title} product image`;
       imgElement.loading = "lazy";
 
-      singleProduct.querySelector("img").src = product.image;
       singleProduct.querySelector("h3").innerText = product.title;
       singleProduct.querySelector("h4").innerText = product.category;
       singleProduct.querySelector("p").innerText = `${product.price} €`;
       singleProduct.querySelector("a").href = `product_singleview.htm?id=${product.id}`;
 
-      document.querySelector("#productList").appendChild(singleProduct);
+      productList.appendChild(singleProduct);
     });
-  });
+  } catch (error) {
+    console.error("Unable to load products", error);
+    productList.innerHTML = `<p class="error">Could not load products right now. Please try again later.</p>`;
+  }
+}
+
+loadProducts();
